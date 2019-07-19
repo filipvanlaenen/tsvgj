@@ -63,3 +63,27 @@ Java project by adding the following dependency in the project's POM file:
 ```
 
 Be sure to update to the appropriate version number.
+
+Once the dependency is included, you can start to create SVG documents as
+shown in the example above.
+
+## Elements Implemented
+
+Not all SVG elements and concepts have been implemented yet. Below is a list
+with the elements that have been (partially) implemented. More elements and
+attributes will be implemented as
+[requested](https://github.com/filipvanlaenen/tsvgj/issues) or needed by other
+projects.
+
+* Document structure elements
+  * [svg](https://www.w3.org/TR/SVG/struct.html#SVGElement)
+* Basic shapes
+  * [circle](https://www.w3.org/TR/SVG/shapes.html#CircleElement)
+  * [rect](https://www.w3.org/TR/SVG/shapes.html#RectElement)
+* Text
+  * [text](https://www.w3.org/TR/SVG/text.html#TextElement)
+
+## Projects Using TSVGJ
+
+The following projects use TSVGJ:
+* [SHecC](https://github.com/filipvanlaenen/shecc)
