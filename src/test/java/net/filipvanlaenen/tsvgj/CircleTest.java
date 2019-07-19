@@ -9,13 +9,18 @@ import org.junit.jupiter.api.Test;
  */
 public class CircleTest {
     /**
-     * Test verifying that a red unit circle is exported correctly to a string.
+     * The magic number for the color red.
+     */
+    private static final int RED = 0xFF0000;
+
+    /**
+     * Test verifying that a red circle is exported correctly to a string.
      */
     @Test
-    void redUnitCircleIsConvertedCorrectlyToString() {
-        Circle circle = new Circle().cx(0).cy(0).r(1).fill(0xFF0000);
+    void redCircleIsConvertedCorrectlyToString() {
+        Circle circle = new Circle().cx(0).cy(1).r(2).fill(RED);
         String actual = circle.asString();
-        String expected = "<circle cx=\"0\" cy=\"0\" fill=\"#FF0000\" r=\"1\"/>";
+        String expected = "<circle cx=\"0\" cy=\"1\" fill=\"#FF0000\" r=\"2\"/>";
         assertEquals(expected, actual);
     }
 }
