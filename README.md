@@ -36,3 +36,27 @@ following Java code:
   svg.addElement(new Circle().cx(0).cy(0).r(1).fill(0xFF0000));
   System.out.println(svg.asString());
 ```
+
+## Getting Started
+
+First of all, you need to obtain a copy of the source code, complile it and
+install it locally. Run the following commands to do this:
+
+```
+git clone git@github.com:filipvanlaenen/tsvgj.git
+cd tsvgj
+mvn clean install
+```
+
+If everything works well, you'll be able to use the TSVGJ library in another
+Java project by adding the following dependency in the project's POM file:
+
+```xml
+  <dependency>
+    <groupId>net.filipvanlaenen</groupId>
+    <artifactId>tsvgj</artifactId>
+    <version>1.0-SNAPSHOT</version>
+  </dependency>
+```
+
+Be sure to update to the appropriate version number.
