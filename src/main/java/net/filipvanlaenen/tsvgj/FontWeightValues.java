@@ -26,110 +26,68 @@ public enum FontWeightValues implements AttributeValueEnumeration {
     /**
      * Numeric font weight value 100.
      */
-    W100 {
-        /**
-         * Overridden to produce the numeric value.
-         */
-        @Override
-        public String toString() {
-            return "100";
-        }
-    },
+    W100(100),
     /**
      * Numeric font weight value 200.
      */
-    W200 {
-        /**
-         * Overridden to produce the numeric value.
-         */
-        @Override
-        public String toString() {
-            return "200";
-        }
-    },
+    W200(200),
     /**
      * Numeric font weight value 300.
      */
-    W300 {
-        /**
-         * Overridden to produce the numeric value.
-         */
-        @Override
-        public String toString() {
-            return "300";
-        }
-    },
+    W300(300),
     /**
      * Numeric font weight value 400.
      */
-    W400 {
-        /**
-         * Overridden to produce the numeric value.
-         */
-        @Override
-        public String toString() {
-            return "400";
-        }
-    },
+    W400(400),
     /**
      * Numeric font weight value 500.
      */
-    W500 {
-        /**
-         * Overridden to produce the numeric value.
-         */
-        @Override
-        public String toString() {
-            return "500";
-        }
-    },
+    W500(500),
     /**
      * Numeric font weight value 600.
      */
-    W600 {
-        /**
-         * Overridden to produce the numeric value.
-         */
-        @Override
-        public String toString() {
-            return "600";
-        }
-    },
+    W600(600),
     /**
      * Numeric font weight value 700.
      */
-    W700 {
-        /**
-         * Overridden to produce the numeric value.
-         */
-        @Override
-        public String toString() {
-            return "700";
-        }
-    },
+    W700(700),
     /**
      * Numeric font weight value 800.
      */
-    W800 {
-        /**
-         * Overridden to produce the numeric value.
-         */
-        @Override
-        public String toString() {
-            return "800";
-        }
-    },
+    W800(800),
     /**
      * Numeric font weight value 900.
      */
-    W900 {
-        /**
-         * Overridden to produce the numeric value.
-         */
-        @Override
-        public String toString() {
-            return "900";
-        }
+    W900(900);
+
+    /**
+     * The numeric value of the font weight, if it is a numeric value.
+     */
+    private final Integer numericValue;
+
+    /**
+     * Constructs a non-numeric font weight value.
+     */
+    FontWeightValues() {
+        this(null);
+    }
+
+    /**
+     * Constructs a numeric font weight value.
+     *
+     * @param numericValue
+     *            The numeric value.
+     */
+    FontWeightValues(final Integer numericValue) {
+        this.numericValue = numericValue;
+    }
+
+    /**
+     * Overridden to use the numeric value, if the font weight is a numeric value.
+     */
+    @Override
+    public String toString() {
+        return numericValue == null ? super.toString() : "" + numericValue;
     }
 
 }
