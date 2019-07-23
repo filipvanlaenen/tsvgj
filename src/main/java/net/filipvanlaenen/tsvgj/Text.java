@@ -4,6 +4,9 @@ import net.filipvanlaenen.tsvgj.internal.Attributes;
 
 /**
  * A class representing text.
+ *
+ * @see <a href="https://www.w3.org/TR/SVG/text.html#TextElement">Text — SVG 2:
+ *      11.2. The ‘text’ and ‘tspan’ elements</a>
  */
 public class Text implements GraphicsElement {
     /**
@@ -59,6 +62,18 @@ public class Text implements GraphicsElement {
      */
     public Text fontSize(final Number fontSize) {
         attributes.addNumericAttribute("font-size", fontSize);
+        return this;
+    }
+
+    /**
+     * Sets the font weight for the text.
+     *
+     * @param fontWeight
+     *            The font weight for the text.
+     * @return The instance called.
+     */
+    public Text fontWeight(final FontWeightValues fontWeight) {
+        attributes.addEnumerationAttribute("font-weight", fontWeight);
         return this;
     }
 

@@ -59,4 +59,28 @@ public class TextTest {
         String expected = "<text fill=\"#FF0000\" font-family=\"Times New Roman\" font-size=\"2\" transform=\"rotate(3 4,5)\" x=\"0\" y=\"1\">Lorem ipsum</text>";
         assertEquals(expected, actual);
     }
+
+    /**
+     * Test verifying that the font weight is exported correctly.
+     */
+    @Test
+    void fontWeightIsExportedCorrectlyToString() {
+        Text text = new Text("Lorem ipsum").x(0).y(1).fill(RED).fontSize(2).fontFamily("Times New Roman")
+                .fontWeight(FontWeightValues.BOLD);
+        String actual = text.asString();
+        String expected = "<text fill=\"#FF0000\" font-family=\"Times New Roman\" font-size=\"2\" font-weight=\"bold\" x=\"0\" y=\"1\">Lorem ipsum</text>";
+        assertEquals(expected, actual);
+    }
+
+    /**
+     * Test verifying that the numeric font weight is exported correctly.
+     */
+    @Test
+    void numericFontWeightIsExportedCorrectlyToString() {
+        Text text = new Text("Lorem ipsum").x(0).y(1).fill(RED).fontSize(2).fontFamily("Times New Roman")
+                .fontWeight(FontWeightValues.W300);
+        String actual = text.asString();
+        String expected = "<text fill=\"#FF0000\" font-family=\"Times New Roman\" font-size=\"2\" font-weight=\"300\" x=\"0\" y=\"1\">Lorem ipsum</text>";
+        assertEquals(expected, actual);
+    }
 }
