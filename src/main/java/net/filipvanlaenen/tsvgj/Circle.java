@@ -52,6 +52,18 @@ public class Circle implements ShapeElement {
     }
 
     /**
+     * Sets the opacity.
+     *
+     * @param opacity
+     *            The opacity.
+     * @return The instance called.
+     */
+    public Circle opacity(final double opacity) {
+        attributes.addNumericAttribute("opacity", opacity);
+        return this;
+    }
+
+    /**
      * Sets the radius.
      *
      * @param r
