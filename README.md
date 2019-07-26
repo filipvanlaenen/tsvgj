@@ -79,6 +79,7 @@ projects.
   * [svg](https://www.w3.org/TR/SVG/struct.html#SVGElement)
 * Basic shapes
   * [circle](https://www.w3.org/TR/SVG/shapes.html#CircleElement)
+  * [line](https://www.w3.org/TR/SVG/shapes.html#LineElement)
   * [rect](https://www.w3.org/TR/SVG/shapes.html#RectElement)
 * Text
   * [text](https://www.w3.org/TR/SVG/text.html#TextElement)
