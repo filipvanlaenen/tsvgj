@@ -25,7 +25,7 @@ public class Line implements ShapeElement {
         attributes.addColorAttribute("stroke", stroke);
         return this;
     }
-    
+
     /**
      * Sets the stroke width of the line.
      *
