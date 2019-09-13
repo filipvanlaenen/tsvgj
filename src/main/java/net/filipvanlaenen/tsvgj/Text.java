@@ -132,7 +132,20 @@ public class Text implements GraphicsElement {
      */
     @Override
     public String asString() {
-        return "<text" + attributes.asString() + ">" + content + "</text>";
+        return "<text" + attributes.asString() + ">" + xmlEscape(content) + "</text>";
+    }
+
+    /**
+     * Escape special XML characters in a string. The special XML characters that
+     * will be escaped are <code>&lt;</code>, <code>&gt;</code> and
+     * <code>&amp;</code>.
+     *
+     * @param string
+     *            The original text.
+     * @return The text with special XML characters escaped.
+     */
+    private String xmlEscape(final String string) {
+        return string.replaceAll("&", "&amp;").replaceAll("<", "&lt;").replaceAll(">", "&gt;");
     }
 
 }
