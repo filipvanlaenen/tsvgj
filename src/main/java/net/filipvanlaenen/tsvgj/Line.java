@@ -87,12 +87,22 @@ public class Line implements ShapeElement {
     }
 
     /**
+     * Returns a string representation of the line with the provided indentation.
+     *
+     * @return A string representation of the line with the provided indentation.
+     */
+    @Override
+    public String asString(String indent ) {
+        return indent + "<line" + attributes.asString() + "/>";
+    }
+    
+    /**
      * Returns a string representation of the line.
      *
      * @return A string representation of the line.
      */
     @Override
     public String asString() {
-        return "<line" + attributes.asString() + "/>";
+        return asString("");
     }
 }

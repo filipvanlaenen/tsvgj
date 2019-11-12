@@ -76,12 +76,22 @@ public class Circle implements ShapeElement {
     }
 
     /**
+     * Returns a string representation of the circle with the provided indentation.
+     *
+     * @return A string representation of the circle with the provided indentation.
+     */
+    @Override
+    public String asString(String indent) {
+        return indent + "<circle" + attributes.asString() + "/>";
+    }
+
+    /**
      * Returns a string representation of the circle.
      *
      * @return A string representation of the circle.
      */
     @Override
     public String asString() {
-        return "<circle" + attributes.asString() + "/>";
+        return asString("");
     }
 }
