@@ -136,16 +136,6 @@ public class Text implements GraphicsElement {
     }
 
     /**
-     * Returns a string representation of the text.
-     *
-     * @return A string representation of the text.
-     */
-    @Override
-    public String asString() {
-        return asString("");
-    }
-
-    /**
      * Escape special XML characters in a string. The special XML characters that
      * will be escaped are <code>&lt;</code>, <code>&gt;</code> and
      * <code>&amp;</code>.

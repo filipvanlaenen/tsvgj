@@ -9,7 +9,7 @@ import net.filipvanlaenen.tsvgj.internal.Attributes;
 /**
  * Class representing the root element of an SVG document.
  */
-public class Svg {
+public class Svg implements StructuralElement {
 
     /**
      * The attributes.
@@ -84,32 +84,37 @@ public class Svg {
     }
 
     /**
-     * Returns a string representation of the elements.
+     * Returns a string representation of the elements with the provided
+     * indentation.
      *
-     * @return A string representation of the elements.
+     * @param indent
+     *            The indentation.
+     * @return A string representation of the elements with the provided
+     *         indentation.
      */
-    private String elementsAsString() {
+    private String elementsAsString(final String indent) {
         List<String> elementStrings = new ArrayList<String>();
         Iterator<GraphicsElement> elementIterator = elements.iterator();
         while (elementIterator.hasNext()) {
             GraphicsElement element = elementIterator.next();
-            elementStrings.add(element.asString());
+            elementStrings.add(element.asString(indent));
         }
         if (elementStrings.isEmpty()) {
             return "";
         } else {
-            return "  " + String.join("\n  ", elementStrings) + "\n";
+            return String.join("\n" + indent, elementStrings) + "\n";
         }
     }
 
     /**
      * Returns a string representation of the SVG document.
      *
+     * @param indent
+     *            The indentation.
      * @return A string representation of the SVG document.
      */
-    public String asString() {
-        return "<svg" + attributes.asString() + " xmlns=\"http://www.w3.org/2000/svg\""
-                + (elements.isEmpty() ? "/>" : ">\n" + elementsAsString() + "</svg>");
-
+    public String asString(final String indent) {
+        return indent + "<svg" + attributes.asString() + " xmlns=\"http://www.w3.org/2000/svg\""
+                + (elements.isEmpty() ? "/>" : ">\n" + elementsAsString(indent + "  ") + indent + "</svg>");
     }
 }

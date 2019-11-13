@@ -85,14 +85,4 @@ public class Rect implements ShapeElement {
     public String asString(String indent) {
         return "<rect" + attributes.asString() + "/>";
     }
-
-    /**
-     * Returns a string representation of the rectangle.
-     *
-     * @return A string representation of the rectangle.
-     */
-    @Override
-    public String asString() {
-        return asString("");
-    }
 }

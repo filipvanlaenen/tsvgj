@@ -5,12 +5,4 @@ package net.filipvanlaenen.tsvgj;
  */
 public interface ShapeElement extends GraphicsElement {
 
-    /**
-     * Returns a string representation of the shape element.
-     *
-     * @return A string representation of the shape element.
-     */
-    @Override
-    String asString();
-
 }
