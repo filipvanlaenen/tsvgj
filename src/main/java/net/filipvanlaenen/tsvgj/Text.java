@@ -128,10 +128,12 @@ public class Text implements GraphicsElement {
     /**
      * Returns a string representation of the text with the provided indentation.
      *
+     * @param indent
+     *            The indentation.
      * @return A string representation of the text with the provided indentation.
      */
     @Override
-    public String asString(String indent) {
+    public String asString(final String indent) {
         return indent + "<text" + attributes.asString() + ">" + xmlEscape(content) + "</text>";
     }
 

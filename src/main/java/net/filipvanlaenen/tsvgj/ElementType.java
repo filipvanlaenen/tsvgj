@@ -1,5 +1,8 @@
 package net.filipvanlaenen.tsvgj;
 
+/**
+ * Top interface for all SVG element types.
+ */
 public interface ElementType {
     /**
      * Returns a string representation of the element.
