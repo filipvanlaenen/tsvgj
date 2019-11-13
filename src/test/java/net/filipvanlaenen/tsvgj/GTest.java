@@ -13,6 +13,15 @@ public class GTest {
     private static final int RED = 0xFF0000;
 
     /**
+     * Test verifying that an empty grouping is exported correctly to a string.
+     */
+    @Test
+    void emptyGroupingIsConvertedCorrectlyToString() {
+        G g = new G();
+        assertEquals("<g/>", g.asString());
+    }
+
+    /**
      * Test verifying that a circle in a grouping is exported correctly to a string.
      */
     @Test
