@@ -38,6 +38,15 @@ public class G implements StructuralElement {
     }
 
     /**
+     * Adds a text.
+     *
+     * @param text A text.
+     */
+    public void addElement(final Text text) {
+        this.elements.add(text);
+    }
+
+    /**
      * Returns a string representation of the elements with the provided
      * indentation.
      *
