@@ -18,7 +18,7 @@ public class Svg implements StructuralElement {
     /**
      * A list with the elements.
      */
-    private final List<GraphicsElement> elements = new ArrayList<GraphicsElement>();
+    private final List<ElementType> elements = new ArrayList<ElementType>();
 
     /**
      * Sets the height.
@@ -74,6 +74,16 @@ public class Svg implements StructuralElement {
     }
 
     /**
+     * Adds a structural element.
+     *
+     * @param structuralElement
+     *            A structural element.
+     */
+    public void addElement(final StructuralElement structuralElement) {
+        this.elements.add(structuralElement);
+    }
+
+    /**
      * Adds a text element.
      *
      * @param text
@@ -94,9 +104,9 @@ public class Svg implements StructuralElement {
      */
     private String elementsAsString(final String indent) {
         List<String> elementStrings = new ArrayList<String>();
-        Iterator<GraphicsElement> elementIterator = elements.iterator();
+        Iterator<ElementType> elementIterator = elements.iterator();
         while (elementIterator.hasNext()) {
-            GraphicsElement element = elementIterator.next();
+            ElementType element = elementIterator.next();
             elementStrings.add(element.asString(indent));
         }
         if (elementStrings.isEmpty()) {
