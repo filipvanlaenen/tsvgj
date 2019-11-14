@@ -102,7 +102,7 @@ public class Svg implements StructuralElement {
         if (elementStrings.isEmpty()) {
             return "";
         } else {
-            return String.join("\n" + indent, elementStrings) + "\n";
+            return String.join("\n", elementStrings) + "\n";
         }
     }
 
