@@ -82,6 +82,10 @@ public class Attributes {
         attributes.put(name, new EnumerationAttribute(name, value));
     }
 
+    public void addPathDefinitionAttribute(final String name, final PathDefinition pathDefinition) {
+        attributes.put(name, pathDefinition);
+    }
+
     /**
      * Adds a transformation attribute to the set of attributes.
      *
@@ -116,4 +120,5 @@ public class Attributes {
             return " " + String.join(" ", attributeStrings);
         }
     }
+
 }
