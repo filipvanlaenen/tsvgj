@@ -28,7 +28,7 @@ public class ArcToCommand implements PathCommand {
     public String asString() {
         return "A " + Attribute.DECIMAL_FORMAT.format(rx) + " " + Attribute.DECIMAL_FORMAT.format(ry) + " "
                 + Attribute.DECIMAL_FORMAT.format(xAxisRotation) + " " + largeArcFlag.getValue() + " "
-                + sweepFlag.getValue() + " " + Attribute.DECIMAL_FORMAT.format(cx) + " "
+                + sweepFlag.getSvgValue() + " " + Attribute.DECIMAL_FORMAT.format(cx) + " "
                 + Attribute.DECIMAL_FORMAT.format(cy);
     }
 
