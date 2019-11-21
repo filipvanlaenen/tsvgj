@@ -57,4 +57,16 @@ public class PathTest {
         String expected = "<path d=\"M 0 1 A 3 4 5 1 1 6 7\" stroke=\"#FF0000\" stroke-width=\"4\"/>";
         assertEquals(expected, actual);
     }
+
+    /**
+     * Test verifying that a path describing a red triangle is exported correctly to
+     * a string.
+     */
+    @Test
+    void redTriangleIsConvertedCorrectlyToString() {
+        Path path = new Path().moveTo(0, 1).lineTo(THREE, FOUR).lineTo(FIVE, SIX).closePath().fill(RED);
+        String actual = path.asString();
+        String expected = "<path d=\"M 0 1 L 3 4 L 5 6 Z\" fill=\"#FF0000\"/>";
+        assertEquals(expected, actual);
+    }
 }

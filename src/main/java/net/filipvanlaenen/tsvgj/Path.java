@@ -2,6 +2,7 @@ package net.filipvanlaenen.tsvgj;
 
 import net.filipvanlaenen.tsvgj.internal.ArcToCommand;
 import net.filipvanlaenen.tsvgj.internal.Attributes;
+import net.filipvanlaenen.tsvgj.internal.ClosePathCommand;
 import net.filipvanlaenen.tsvgj.internal.LineToCommand;
 import net.filipvanlaenen.tsvgj.internal.MoveToCommand;
 import net.filipvanlaenen.tsvgj.internal.PathDefinition;
@@ -53,6 +54,28 @@ public class Path implements GraphicsElement, ShapeElement {
     public Path arcTo(final Number rx, final Number ry, final Number xAxisRotation,
             final LargeArcFlagValues largeArcFlag, final SweepFlagValues sweepFlag, final Number cx, final Number cy) {
         definition.add(new ArcToCommand(rx, ry, xAxisRotation, largeArcFlag, sweepFlag, cx, cy));
+        return this;
+    }
+
+    /**
+     * Adds a close-path command to the path definition.
+     *
+     * @return The instance called.
+     */
+    public Path closePath() {
+        definition.add(new ClosePathCommand());
+        return this;
+    }
+
+    /**
+     * Sets the fill color.
+     *
+     * @param fill
+     *            The fill color as an integer.
+     * @return The instance called.
+     */
+    public Path fill(final Integer fill) {
+        attributes.addColorAttribute("fill", fill);
         return this;
     }
 
@@ -195,5 +218,4 @@ public class Path implements GraphicsElement, ShapeElement {
             return svgValue;
         }
     }
-
 }
