@@ -82,6 +82,14 @@ public class Attributes {
         attributes.put(name, new EnumerationAttribute(name, value));
     }
 
+    /**
+     * Adds a path definition attribute to the set of attributes.
+     *
+     * @param name
+     *            The name of the attribute.
+     * @param pathDefinition
+     *            The path definition.
+     */
     public void addPathDefinitionAttribute(final String name, final PathDefinition pathDefinition) {
         attributes.put(name, pathDefinition);
     }
