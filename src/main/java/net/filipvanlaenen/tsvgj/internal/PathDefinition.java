@@ -25,6 +25,8 @@ public class PathDefinition implements Attribute {
 
     /**
      * Returns a string representation of the path definition.
+     *
+     * @return A string representation of the path definition.
      */
     @Override
     public String asString() {
