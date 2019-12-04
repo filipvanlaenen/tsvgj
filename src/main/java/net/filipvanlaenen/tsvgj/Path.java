@@ -108,6 +108,18 @@ public class Path implements GraphicsElement, ShapeElement {
     }
 
     /**
+     * Sets the opacity.
+     *
+     * @param opacity
+     *            The opacity.
+     * @return The instance called.
+     */
+    public Path opacity(final double opacity) {
+        attributes.addNumericAttribute("opacity", opacity);
+        return this;
+    }
+
+    /**
      * Sets the stroke color of the path.
      *
      * @param stroke

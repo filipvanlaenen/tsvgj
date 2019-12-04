@@ -13,6 +13,10 @@ public class PathTest {
      */
     private static final int RED = 0xFF0000;
     /**
+     * The magic number 0.5.
+     */
+    private static final double HALF = 0.5D;
+    /**
      * The magic number three.
      */
     private static final int THREE = 3;
@@ -67,6 +71,18 @@ public class PathTest {
         Path path = new Path().moveTo(0, 1).lineTo(THREE, FOUR).lineTo(FIVE, SIX).closePath().fill(RED);
         String actual = path.asString();
         String expected = "<path d=\"M 0 1 L 3 4 L 5 6 Z\" fill=\"#FF0000\"/>";
+        assertEquals(expected, actual);
+    }
+
+    /**
+     * Test verifying that a path describing a half opaque red triangle is exported
+     * correctly to a string.
+     */
+    @Test
+    void halfOpaqueRedTriangleIsConvertedCorrectlyToString() {
+        Path path = new Path().moveTo(0, 1).lineTo(THREE, FOUR).lineTo(FIVE, SIX).closePath().fill(RED).opacity(HALF);
+        String actual = path.asString();
+        String expected = "<path d=\"M 0 1 L 3 4 L 5 6 Z\" fill=\"#FF0000\" opacity=\"0.5\"/>";
         assertEquals(expected, actual);
     }
 }
