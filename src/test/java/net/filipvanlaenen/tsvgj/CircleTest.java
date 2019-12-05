@@ -18,13 +18,26 @@ public class CircleTest {
     private static final double HALF = 0.5D;
 
     /**
-     * Test verifying that a red circle is exported correctly to a string.
+     * Test verifying that a circle with a color specified as a hexadecimal integer
+     * is exported correctly to a string.
      */
     @Test
-    void redCircleIsConvertedCorrectlyToString() {
+    void circleWithHexadecimalColorIsConvertedCorrectlyToString() {
         Circle circle = new Circle().cx(0).cy(1).r(2).fill(RED);
         String actual = circle.asString();
         String expected = "<circle cx=\"0\" cy=\"1\" fill=\"#FF0000\" r=\"2\"/>";
+        assertEquals(expected, actual);
+    }
+
+    /**
+     * Test verifying that a circle with a color specified using a color keyword is
+     * exported correctly to a string.
+     */
+    @Test
+    void circleWithKeywordColorIsConvertedCorrectlyToString() {
+        Circle circle = new Circle().cx(0).cy(1).r(2).fill(ColorKeyword.BLUE);
+        String actual = circle.asString();
+        String expected = "<circle cx=\"0\" cy=\"1\" fill=\"blue\" r=\"2\"/>";
         assertEquals(expected, actual);
     }
 
@@ -34,9 +47,9 @@ public class CircleTest {
      */
     @Test
     void redCircleHalfOpaqueIsConvertedCorrectlyToString() {
-        Circle circle = new Circle().cx(0).cy(1).r(2).fill(RED).opacity(HALF);
+        Circle circle = new Circle().cx(0).cy(1).r(2).fill(ColorKeyword.BLUE).opacity(HALF);
         String actual = circle.asString();
-        String expected = "<circle cx=\"0\" cy=\"1\" fill=\"#FF0000\" opacity=\"0.5\" r=\"2\"/>";
+        String expected = "<circle cx=\"0\" cy=\"1\" fill=\"blue\" opacity=\"0.5\" r=\"2\"/>";
         assertEquals(expected, actual);
     }
 }

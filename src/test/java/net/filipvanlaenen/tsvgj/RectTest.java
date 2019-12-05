@@ -22,6 +22,18 @@ public class RectTest {
      */
     @Test
     void redRectangleIsConvertedCorrectlyToString() {
+        Rect rect = new Rect().x(0).y(1).width(2).height(THREE).fill(ColorKeyword.RED);
+        String actual = rect.asString();
+        String expected = "<rect fill=\"red\" height=\"3\" width=\"2\" x=\"0\" y=\"1\"/>";
+        assertEquals(expected, actual);
+    }
+
+    /**
+     * Test verifying that a rectangle using a hexadecimal integer for the fill
+     * color is exported correctly to a string.
+     */
+    @Test
+    void rectangleWithHexadecimalFillColorIsConvertedCorrectlyToString() {
         Rect rect = new Rect().x(0).y(1).width(2).height(THREE).fill(RED);
         String actual = rect.asString();
         String expected = "<rect fill=\"#FF0000\" height=\"3\" width=\"2\" x=\"0\" y=\"1\"/>";

@@ -9,6 +9,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
+import net.filipvanlaenen.tsvgj.ColorKeyword;
 import net.filipvanlaenen.tsvgj.Transform;
 
 /**
@@ -34,16 +35,28 @@ public class Attributes {
     }
 
     /**
-     * Adds a color attribute to the set of attributes, the color specified as an
-     * integer number.
+     * Adds a color attribute to the set of attributes, the color specified as a hexadecimal
+     * integer.
      *
      * @param name
      *            The name of the attribute.
      * @param color
-     *            The color specified as an integer number.
+     *            The color specified as a hexadecimal integer.
      */
     public void addColorAttribute(final String name, final Integer color) {
-        attributes.put(name, new ColorAttribute(name, color));
+        attributes.put(name, new HexadecimalColorAttribute(name, color));
+    }
+
+    /**
+     * Adds a color attribute to the set of attributes, the color specified using a color keyword.
+     *
+     * @param name
+     *            The name of the attribute.
+     * @param color
+     *            The color specified using a color keyword.
+     */
+    public void addColorAttribute(final String name, final ColorKeyword color) {
+        attributes.put(name, new KeywordColorAttribute(name, color));
     }
 
     /**

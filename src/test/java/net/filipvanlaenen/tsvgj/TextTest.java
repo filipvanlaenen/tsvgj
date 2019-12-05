@@ -30,6 +30,19 @@ public class TextTest {
      */
     @Test
     void redTextIsConvertedCorrectlyToString() {
+        Text text = new Text("Lorem ipsum").x(0).y(1).fill(ColorKeyword.RED).fontSize(2).fontFamily("Times New Roman");
+        String actual = text.asString();
+        String expected = "<text fill=\"red\" font-family=\"Times New Roman\" font-size=\"2\" x=\"0\""
+                + " y=\"1\">Lorem ipsum</text>";
+        assertEquals(expected, actual);
+    }
+
+    /**
+     * Test verifying that a piece of text with the fill color specified as a
+     * hexadecimal integer is exported correctly to a string.
+     */
+    @Test
+    void textWithHexadecimalFillColorIsConvertedCorrectlyToString() {
         Text text = new Text("Lorem ipsum").x(0).y(1).fill(RED).fontSize(2).fontFamily("Times New Roman");
         String actual = text.asString();
         String expected = "<text fill=\"#FF0000\" font-family=\"Times New Roman\" font-size=\"2\" x=\"0\""

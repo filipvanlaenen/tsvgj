@@ -22,13 +22,26 @@ public class LineTest {
     private static final int FOUR = 4;
 
     /**
-     * Test verifying that a red line is exported correctly to a string.
+     * Test verifying that a line with a hexadecimal color is exported correctly to
+     * a string.
      */
     @Test
-    void redLineIsConvertedCorrectlyToString() {
+    void lineWithHexadecimalColorStrokeIsConvertedCorrectlyToString() {
         Line line = new Line().x1(0).y1(1).x2(2).y2(THREE).stroke(RED).strokeWidth(FOUR);
         String actual = line.asString();
         String expected = "<line stroke=\"#FF0000\" stroke-width=\"4\" x1=\"0\" x2=\"2\" y1=\"1\" y2=\"3\"/>";
+        assertEquals(expected, actual);
+    }
+
+    /**
+     * Test verifying that a line with a keyword color is exported correctly to a
+     * string.
+     */
+    @Test
+    void lineWithKeywordColorStrokeIsConvertedCorrectlyToString() {
+        Line line = new Line().x1(0).y1(1).x2(2).y2(THREE).stroke(ColorKeyword.RED).strokeWidth(FOUR);
+        String actual = line.asString();
+        String expected = "<line stroke=\"red\" stroke-width=\"4\" x1=\"0\" x2=\"2\" y1=\"1\" y2=\"3\"/>";
         assertEquals(expected, actual);
     }
 

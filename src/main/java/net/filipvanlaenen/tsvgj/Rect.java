@@ -15,13 +15,25 @@ public class Rect implements ShapeElement {
     private final Attributes attributes = new Attributes();
 
     /**
-     * Sets the fill color.
+     * Sets the fill color as a hexadecimal integer.
      *
      * @param fill
-     *            The fill color as an integer.
+     *            The fill color as a hexadecimal integer.
      * @return The instance called.
      */
     public Rect fill(final Integer fill) {
+        attributes.addColorAttribute("fill", fill);
+        return this;
+    }
+
+    /**
+     * Sets the fill color using a color keyword.
+     *
+     * @param fill
+     *            The fill color using a color keyword.
+     * @return The instance called.
+     */
+    public Rect fill(final ColorKeyword fill) {
         attributes.addColorAttribute("fill", fill);
         return this;
     }

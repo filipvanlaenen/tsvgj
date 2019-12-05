@@ -15,13 +15,25 @@ public class Line implements ShapeElement {
     private final Attributes attributes = new Attributes();
 
     /**
-     * Sets the stroke color of the line.
+     * Sets the stroke color of the line using a hexadecimal integer.
      *
      * @param stroke
-     *            The stroke color of the line.
+     *            The stroke color of the line as a hexadecimal integer.
      * @return The instance called.
      */
     public Line stroke(final Integer stroke) {
+        attributes.addColorAttribute("stroke", stroke);
+        return this;
+    }
+
+    /**
+     * Sets the stroke color of the line using a color keyword.
+     *
+     * @param stroke
+     *            The stroke color of the line using a color keyword.
+     * @return The instance called.
+     */
+    public Line stroke(final ColorKeyword stroke) {
         attributes.addColorAttribute("stroke", stroke);
         return this;
     }

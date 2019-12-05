@@ -68,13 +68,25 @@ public class Path implements GraphicsElement, ShapeElement {
     }
 
     /**
-     * Sets the fill color.
+     * Sets the fill color as a hexadecimal integer.
      *
      * @param fill
-     *            The fill color as an integer.
+     *            The fill color as a hexadecimal integer.
      * @return The instance called.
      */
     public Path fill(final Integer fill) {
+        attributes.addColorAttribute("fill", fill);
+        return this;
+    }
+
+    /**
+     * Sets the fill color using a color keyword.
+     *
+     * @param fill
+     *            The fill color using a color keyword.
+     * @return The instance called.
+     */
+    public Path fill(final ColorKeyword fill) {
         attributes.addColorAttribute("fill", fill);
         return this;
     }
@@ -120,10 +132,22 @@ public class Path implements GraphicsElement, ShapeElement {
     }
 
     /**
-     * Sets the stroke color of the path.
+     * Sets the stroke color of the path using a color keyword.
      *
      * @param stroke
-     *            The stroke color of the path.
+     *            The stroke color of the path using a color keyword.
+     * @return The instance called.
+     */
+    public Path stroke(final ColorKeyword stroke) {
+        attributes.addColorAttribute("stroke", stroke);
+        return this;
+    }
+
+    /**
+     * Sets the stroke color of the path as a hexadecimal integer.
+     *
+     * @param stroke
+     *            The stroke color of the path as a hexadecimal integer.
      * @return The instance called.
      */
     public Path stroke(final Integer stroke) {
