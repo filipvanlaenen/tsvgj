@@ -96,7 +96,7 @@ public class Text implements GraphicsElement {
      *            The text anchor for the text.
      * @return The instance called.
      */
-    public Text textAnchor(final TextAnchorValues textAnchor) {
+    public Text textAnchor(final TextAnchorValue textAnchor) {
         attributes.addEnumerationAttribute("text-anchor", textAnchor);
         return this;
     }

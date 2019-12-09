@@ -56,7 +56,7 @@ public class TextTest {
     @Test
     void textAnchorIsExportedCorrectlyToString() {
         Text text = new Text("Lorem ipsum").x(0).y(1).fill(RED).fontSize(2).fontFamily("Times New Roman")
-                .textAnchor(TextAnchorValues.MIDDLE);
+                .textAnchor(TextAnchorValue.MIDDLE);
         String actual = text.asString();
         String expected = "<text fill=\"#FF0000\" font-family=\"Times New Roman\" font-size=\"2\""
                 + " text-anchor=\"middle\" x=\"0\" y=\"1\">Lorem ipsum</text>";

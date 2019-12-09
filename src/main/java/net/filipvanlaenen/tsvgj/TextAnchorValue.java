@@ -5,7 +5,7 @@ import net.filipvanlaenen.tsvgj.internal.AttributeValueEnumeration;
 /**
  * An enumeration listing the values for the <code>text-anchor</code> attribute.
  */
-public enum TextAnchorValues implements AttributeValueEnumeration {
+public enum TextAnchorValue implements AttributeValueEnumeration {
 
     /**
      * Anchor text at the start.
