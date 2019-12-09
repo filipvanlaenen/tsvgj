@@ -1,5 +1,8 @@
 package net.filipvanlaenen.tsvgj;
 
+/**
+ * An enumeration with all the SVG color keywords.
+ */
 public enum ColorKeyword {
     /**
      * SVG color keyword for aliceblue.

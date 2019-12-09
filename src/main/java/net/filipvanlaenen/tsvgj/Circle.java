@@ -50,7 +50,7 @@ public class Circle implements ShapeElement {
         attributes.addColorAttribute("fill", fill);
         return this;
     }
-    
+
     /**
      * Sets the fill color using a color keyword.
      *

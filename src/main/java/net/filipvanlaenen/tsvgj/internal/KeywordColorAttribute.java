@@ -2,6 +2,9 @@ package net.filipvanlaenen.tsvgj.internal;
 
 import net.filipvanlaenen.tsvgj.ColorKeyword;
 
+/**
+ * A class representing a color attribute using a color keyword.
+ */
 public class KeywordColorAttribute extends ColorAttribute {
     /**
      * The color keyword.

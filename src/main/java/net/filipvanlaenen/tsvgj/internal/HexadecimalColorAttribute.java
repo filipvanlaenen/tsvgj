@@ -1,5 +1,8 @@
 package net.filipvanlaenen.tsvgj.internal;
 
+/**
+ * A class representing a color attribute using a hexadecimal integer.
+ */
 public class HexadecimalColorAttribute extends ColorAttribute {
     /**
      * The color as an integer.
