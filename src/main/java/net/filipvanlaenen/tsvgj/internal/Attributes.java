@@ -10,6 +10,7 @@ import java.util.Map;
 import java.util.Set;
 
 import net.filipvanlaenen.tsvgj.ColorKeyword;
+import net.filipvanlaenen.tsvgj.NoneValue;
 import net.filipvanlaenen.tsvgj.Transform;
 
 /**
@@ -35,8 +36,8 @@ public class Attributes {
     }
 
     /**
-     * Adds a color attribute to the set of attributes, the color specified as a hexadecimal
-     * integer.
+     * Adds a color attribute to the set of attributes, the color specified as a
+     * hexadecimal integer.
      *
      * @param name
      *            The name of the attribute.
@@ -48,7 +49,8 @@ public class Attributes {
     }
 
     /**
-     * Adds a color attribute to the set of attributes, the color specified using a color keyword.
+     * Adds a color attribute to the set of attributes, the color specified using a
+     * color keyword.
      *
      * @param name
      *            The name of the attribute.
@@ -57,6 +59,18 @@ public class Attributes {
      */
     public void addColorAttribute(final String name, final ColorKeyword color) {
         attributes.put(name, new KeywordColorAttribute(name, color));
+    }
+
+    /**
+     * Adds an attribute with value none to the set of attributes.
+     *
+     * @param name
+     *            The name of the attribute.
+     * @param none
+     *            The value none.
+     */
+    public void addNoneValueAttribute(final String name, final NoneValue none) {
+        attributes.put(name, new EnumerationAttribute<NoneValue>(name, none));
     }
 
     /**

@@ -54,14 +54,14 @@ public class CircleTest {
     }
 
     /**
-     * Test verifying that a red circle with a stroke and stroke width is exported
-     * correctly to a string.
+     * Test verifying that a red circle with a stroke and stroke width but no fill
+     * is exported correctly to a string.
      */
     @Test
     void redOutlinedCircleIsConvertedCorrectlyToString() {
-        Circle circle = new Circle().cx(0).cy(1).r(2).stroke(ColorKeyword.BLUE).strokeWidth(HALF);
+        Circle circle = new Circle().cx(0).cy(1).r(2).fill(NoneValue.NONE).stroke(ColorKeyword.BLUE).strokeWidth(HALF);
         String actual = circle.asString();
-        String expected = "<circle cx=\"0\" cy=\"1\" r=\"2\" stroke=\"blue\" stroke-width=\"0.5\"/>";
+        String expected = "<circle cx=\"0\" cy=\"1\" fill=\"none\" r=\"2\" stroke=\"blue\" stroke-width=\"0.5\"/>";
         assertEquals(expected, actual);
     }
 

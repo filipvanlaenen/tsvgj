@@ -64,6 +64,18 @@ public class Circle implements ShapeElement {
     }
 
     /**
+     * Sets the fill color to none.
+     *
+     * @param none
+     *            The value none.
+     * @return The instance called.
+     */
+    public Circle fill(final NoneValue none) {
+        attributes.addNoneValueAttribute("fill", none);
+        return this;
+    }
+
+    /**
      * Sets the opacity.
      *
      * @param opacity
