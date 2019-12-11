@@ -88,6 +88,42 @@ public class Circle implements ShapeElement {
     }
 
     /**
+     * Sets the stroke color using a hexadecimal integer.
+     *
+     * @param stroke
+     *            The stroke color as a hexadecimal integer.
+     * @return The instance called.
+     */
+    public Circle stroke(final Integer stroke) {
+        attributes.addColorAttribute("stroke", stroke);
+        return this;
+    }
+
+    /**
+     * Sets the stroke color using a color keyword.
+     *
+     * @param stroke
+     *            The stroke color using a color keyword.
+     * @return The instance called.
+     */
+    public Circle stroke(final ColorKeyword stroke) {
+        attributes.addColorAttribute("stroke", stroke);
+        return this;
+    }
+
+    /**
+     * Sets the stroke width.
+     *
+     * @param strokeWidth
+     *            The stroke width.
+     * @return The instance called.
+     */
+    public Circle strokeWidth(final double strokeWidth) {
+        attributes.addNumericAttribute("stroke-width", strokeWidth);
+        return this;
+    }
+
+    /**
      * Returns a string representation of the circle with the provided indentation.
      *
      * @return A string representation of the circle with the provided indentation.

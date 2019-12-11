@@ -52,4 +52,28 @@ public class CircleTest {
         String expected = "<circle cx=\"0\" cy=\"1\" fill=\"blue\" opacity=\"0.5\" r=\"2\"/>";
         assertEquals(expected, actual);
     }
+
+    /**
+     * Test verifying that a red circle with a stroke and stroke width is exported
+     * correctly to a string.
+     */
+    @Test
+    void redOutlinedCircleIsConvertedCorrectlyToString() {
+        Circle circle = new Circle().cx(0).cy(1).r(2).stroke(ColorKeyword.BLUE).strokeWidth(HALF);
+        String actual = circle.asString();
+        String expected = "<circle cx=\"0\" cy=\"1\" r=\"2\" stroke=\"blue\" stroke-width=\"0.5\"/>";
+        assertEquals(expected, actual);
+    }
+
+    /**
+     * Test verifying that a circle with a hexadecimal stroke color and a stroke
+     * width is exported correctly to a string.
+     */
+    @Test
+    void hexadecimalColorOutlinedCircleIsConvertedCorrectlyToString() {
+        Circle circle = new Circle().cx(0).cy(1).r(2).stroke(RED).strokeWidth(HALF);
+        String actual = circle.asString();
+        String expected = "<circle cx=\"0\" cy=\"1\" r=\"2\" stroke=\"#FF0000\" stroke-width=\"0.5\"/>";
+        assertEquals(expected, actual);
+    }
 }
