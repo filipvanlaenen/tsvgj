@@ -54,6 +54,18 @@ public class CircleTest {
     }
 
     /**
+     * Test verifying that a red circle with fill opacity 0.5 is exported correctly
+     * to a string.
+     */
+    @Test
+    void redCircleFillHalfOpaqueIsConvertedCorrectlyToString() {
+        Circle circle = new Circle().cx(0).cy(1).r(2).fill(ColorKeyword.BLUE).fillOpacity(HALF);
+        String actual = circle.asString();
+        String expected = "<circle cx=\"0\" cy=\"1\" fill=\"blue\" fill-opacity=\"0.5\" r=\"2\"/>";
+        assertEquals(expected, actual);
+    }
+
+    /**
      * Test verifying that a red circle with a stroke and stroke width but no fill
      * is exported correctly to a string.
      */
