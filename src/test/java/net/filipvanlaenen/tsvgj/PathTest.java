@@ -92,6 +92,19 @@ public class PathTest {
     }
 
     /**
+     * Test verifying that a path describing a red triangle with no fill is exported
+     * correctly to a string.
+     */
+    @Test
+    void redOutlinedTriangleIsConvertedCorrectlyToString() {
+        Path path = new Path().moveTo(0, 1).lineTo(THREE, FOUR).lineTo(FIVE, SIX).closePath().fill(NoneValue.NONE)
+                .opacity(HALF);
+        String actual = path.asString();
+        String expected = "<path d=\"M 0 1 L 3 4 L 5 6 Z\" fill=\"none\" opacity=\"0.5\"/>";
+        assertEquals(expected, actual);
+    }
+
+    /**
      * Test verifying that a path using hexadecimal integers to specify the fill and
      * stroke color is exported correctly to a string.
      */

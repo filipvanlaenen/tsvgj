@@ -92,6 +92,18 @@ public class Path implements GraphicsElement, ShapeElement {
     }
 
     /**
+     * Sets the fill color to none.
+     *
+     * @param none
+     *            The value none.
+     * @return The instance called.
+     */
+    public Path fill(final NoneValue none) {
+        attributes.addNoneValueAttribute("fill", none);
+        return this;
+    }
+
+    /**
      * Adds an absolute line-to command to the path definition.
      *
      * @param x
