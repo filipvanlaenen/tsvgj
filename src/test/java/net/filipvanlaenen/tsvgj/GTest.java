@@ -35,7 +35,8 @@ public class GTest {
     }
 
     /**
-     * Test verifying that a circle in a grouping in a grouping is exported correctly to a string.
+     * Test verifying that a circle in a grouping in a grouping is exported
+     * correctly to a string.
      */
     @Test
     void redCircleInAGroupingInAGroupingIsConvertedCorrectlyToString() {
@@ -46,6 +47,24 @@ public class GTest {
         inner.addElement(circle);
         String actual = outer.asString();
         String expected = "<g>\n  <g>\n    <circle cx=\"0\" cy=\"1\" fill=\"#FF0000\" r=\"2\"/>\n  </g>\n</g>";
+        assertEquals(expected, actual);
+    }
+
+    /**
+     * Test verifying that a text in a grouping is exported correctly to a string.
+     */
+    @Test
+    void textInAGroupingIsConvertedCorrectlyToString() {
+        Text text = new Text("Lorem ipsum").x(0).y(1).fill(ColorKeyword.RED).fontSize(2).fontFamily("Times New Roman");
+        G g = new G();
+        g.addElement(text);
+        String actual = g.asString();
+        StringBuilder sb = new StringBuilder();
+        sb.append("<g>\n");
+        sb.append("  <text fill=\"red\" font-family=\"Times New Roman\" font-size=\"2\" x=\"0\"");
+        sb.append(" y=\"1\">Lorem ipsum</text>\n");
+        sb.append("</g>");
+        String expected = sb.toString();
         assertEquals(expected, actual);
     }
 }
