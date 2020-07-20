@@ -18,8 +18,7 @@ public class Circle implements ShapeElement {
     /**
      * Sets the x coordinate of the center.
      *
-     * @param cx
-     *            The x coordinate of the center.
+     * @param cx The x coordinate of the center.
      * @return The instance called.
      */
     public Circle cx(final Number cx) {
@@ -30,8 +29,7 @@ public class Circle implements ShapeElement {
     /**
      * Sets the y coordinate of the center.
      *
-     * @param cy
-     *            The y coordinate of the center.
+     * @param cy The y coordinate of the center.
      * @return The instance called.
      */
     public Circle cy(final Number cy) {
@@ -42,8 +40,7 @@ public class Circle implements ShapeElement {
     /**
      * Sets the fill color using a hexadecimal integer.
      *
-     * @param fill
-     *            The fill color as a hexadecimal integer.
+     * @param fill The fill color as a hexadecimal integer.
      * @return The instance called.
      */
     public Circle fill(final Integer fill) {
@@ -54,8 +51,7 @@ public class Circle implements ShapeElement {
     /**
      * Sets the fill color using a color keyword.
      *
-     * @param fill
-     *            The fill color using a color keyword.
+     * @param fill The fill color using a color keyword.
      * @return The instance called.
      */
     public Circle fill(final ColorKeyword fill) {
@@ -66,8 +62,7 @@ public class Circle implements ShapeElement {
     /**
      * Sets the fill color to none.
      *
-     * @param none
-     *            The value none.
+     * @param none The value none.
      * @return The instance called.
      */
     public Circle fill(final NoneValue none) {
@@ -75,11 +70,15 @@ public class Circle implements ShapeElement {
         return this;
     }
 
+    public ShapeElement fill(PaintServerElement paintServerElement) {
+        attributes.addReferringAttribute("fill", paintServerElement);
+        return this;
+    }
+
     /**
      * Sets the fill opacity.
      *
-     * @param fillOpacity
-     *            The fill opacity.
+     * @param fillOpacity The fill opacity.
      * @return The instance called.
      */
     public Circle fillOpacity(final double fillOpacity) {
@@ -90,8 +89,7 @@ public class Circle implements ShapeElement {
     /**
      * Sets the opacity.
      *
-     * @param opacity
-     *            The opacity.
+     * @param opacity The opacity.
      * @return The instance called.
      */
     public Circle opacity(final double opacity) {
@@ -102,8 +100,7 @@ public class Circle implements ShapeElement {
     /**
      * Sets the radius.
      *
-     * @param r
-     *            The radius.
+     * @param r The radius.
      * @return The instance called.
      */
     public Circle r(final Number r) {
@@ -114,8 +111,7 @@ public class Circle implements ShapeElement {
     /**
      * Sets the stroke color using a hexadecimal integer.
      *
-     * @param stroke
-     *            The stroke color as a hexadecimal integer.
+     * @param stroke The stroke color as a hexadecimal integer.
      * @return The instance called.
      */
     public Circle stroke(final Integer stroke) {
@@ -126,8 +122,7 @@ public class Circle implements ShapeElement {
     /**
      * Sets the stroke color using a color keyword.
      *
-     * @param stroke
-     *            The stroke color using a color keyword.
+     * @param stroke The stroke color using a color keyword.
      * @return The instance called.
      */
     public Circle stroke(final ColorKeyword stroke) {
@@ -138,8 +133,7 @@ public class Circle implements ShapeElement {
     /**
      * Sets the stroke width.
      *
-     * @param strokeWidth
-     *            The stroke width.
+     * @param strokeWidth The stroke width.
      * @return The instance called.
      */
     public Circle strokeWidth(final double strokeWidth) {

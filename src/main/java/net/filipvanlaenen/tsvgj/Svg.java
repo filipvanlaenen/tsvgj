@@ -19,12 +19,12 @@ public class Svg implements StructuralElement {
      * A list with the elements.
      */
     private final List<ElementType> elements = new ArrayList<ElementType>();
+    private Defs defs;
 
     /**
      * Sets the height.
      *
-     * @param height
-     *            The height.
+     * @param height The height.
      * @return The instance called.
      */
     public Svg height(final Number height) {
@@ -35,8 +35,7 @@ public class Svg implements StructuralElement {
     /**
      * Sets the width.
      *
-     * @param width
-     *            The width.
+     * @param width The width.
      * @return The instance called.
      */
     public Svg width(final Number width) {
@@ -48,26 +47,21 @@ public class Svg implements StructuralElement {
      * Sets the view box attribute, a list of four numbers (minX, minY, width and
      * height).
      *
-     * @param minX
-     *            The x coordinate of the top left corner.
-     * @param minY
-     *            The y coordinate of the top left corner.
-     * @param width
-     *            The width of the view box.
-     * @param height
-     *            The height of the view box.
+     * @param minX   The x coordinate of the top left corner.
+     * @param minY   The y coordinate of the top left corner.
+     * @param width  The width of the view box.
+     * @param height The height of the view box.
      * @return The instance called.
      */
     public Svg viewBox(final Number minX, final Number minY, final Number width, final Number height) {
-        attributes.addNumericArrayAttribute("viewBox", new Number[] {minX, minY, width, height});
+        attributes.addNumericArrayAttribute("viewBox", new Number[] { minX, minY, width, height });
         return this;
     }
 
     /**
      * Adds a shape element.
      *
-     * @param shape
-     *            A shape element.
+     * @param shape A shape element.
      */
     public void addElement(final ShapeElement shape) {
         this.elements.add(shape);
@@ -76,8 +70,7 @@ public class Svg implements StructuralElement {
     /**
      * Adds a structural element.
      *
-     * @param structuralElement
-     *            A structural element.
+     * @param structuralElement A structural element.
      */
     public void addElement(final StructuralElement structuralElement) {
         this.elements.add(structuralElement);
@@ -86,8 +79,7 @@ public class Svg implements StructuralElement {
     /**
      * Adds a text element.
      *
-     * @param text
-     *            A text element.
+     * @param text A text element.
      */
     public void addElement(final Text text) {
         this.elements.add(text);
@@ -97,8 +89,7 @@ public class Svg implements StructuralElement {
      * Returns a string representation of the elements with the provided
      * indentation.
      *
-     * @param indent
-     *            The indentation.
+     * @param indent The indentation.
      * @return A string representation of the elements with the provided
      *         indentation.
      */
@@ -119,12 +110,19 @@ public class Svg implements StructuralElement {
     /**
      * Returns a string representation of the SVG document.
      *
-     * @param indent
-     *            The indentation.
+     * @param indent The indentation.
      * @return A string representation of the SVG document.
      */
     public String asString(final String indent) {
         return indent + "<svg" + attributes.asString() + " xmlns=\"http://www.w3.org/2000/svg\""
                 + (elements.isEmpty() ? "/>" : ">\n" + elementsAsString(indent + "  ") + indent + "</svg>");
+    }
+
+    public void registerElementForReference(PaintServerElement paintServerElement) {
+        if (defs == null) {
+            defs = new Defs();
+            this.elements.add(defs);
+        }
+        defs.addElement(paintServerElement);
     }
 }

@@ -11,6 +11,7 @@ import java.util.Set;
 
 import net.filipvanlaenen.tsvgj.ColorKeyword;
 import net.filipvanlaenen.tsvgj.NoneValue;
+import net.filipvanlaenen.tsvgj.PaintServerElement;
 import net.filipvanlaenen.tsvgj.Transform;
 
 /**
@@ -136,6 +137,10 @@ public class Attributes {
         } else {
             return " " + String.join(" ", attributeStrings);
         }
+    }
+
+    public void addReferringAttribute(String name, PaintServerElement paintServerElement) {
+        attributes.put(name, new ReferringAttribute(paintServerElement));
     }
 
 }

@@ -13,7 +13,7 @@ import net.filipvanlaenen.tsvgj.internal.Attributes;
  *      Servers: Solid Colors, Gradients, and Patterns — SVG 2: 14.3.
  *      Patterns</a>
  */
-public class Pattern implements ElementType {
+public class Pattern implements PaintServerElement {
     /**
      * The attributes.
      */
@@ -22,6 +22,10 @@ public class Pattern implements ElementType {
      * A list with the elements.
      */
     private final List<ElementType> elements = new ArrayList<ElementType>();
+    /**
+     * The ID of the pattern element.
+     */
+    private String id;
 
     /**
      * Adds a shape element.
@@ -41,6 +45,17 @@ public class Pattern implements ElementType {
     public Pattern height(final Number height) {
         attributes.addNumericAttribute("height", height);
         return this;
+    }
+
+    @Override
+    public String getId() {
+        return id;
+    }
+
+    @Override
+    public void setId(int i) {
+        id = "pattern-" + Integer.toString(i);
+        attributes.addStringAttribute("id", id);
     }
 
     /**
