@@ -26,10 +26,8 @@ public class Attributes {
     /**
      * Adds a numeric attribute to the set of attributes.
      *
-     * @param name
-     *            The name of the attribute.
-     * @param number
-     *            The numeric value of the attribute.
+     * @param name   The name of the attribute.
+     * @param number The numeric value of the attribute.
      */
     public void addNumericAttribute(final String name, final Number number) {
         attributes.put(name, new NumericAttribute(name, number));
@@ -39,10 +37,8 @@ public class Attributes {
      * Adds a color attribute to the set of attributes, the color specified as a
      * hexadecimal integer.
      *
-     * @param name
-     *            The name of the attribute.
-     * @param color
-     *            The color specified as a hexadecimal integer.
+     * @param name  The name of the attribute.
+     * @param color The color specified as a hexadecimal integer.
      */
     public void addColorAttribute(final String name, final Integer color) {
         attributes.put(name, new HexadecimalColorAttribute(name, color));
@@ -52,10 +48,8 @@ public class Attributes {
      * Adds a color attribute to the set of attributes, the color specified using a
      * color keyword.
      *
-     * @param name
-     *            The name of the attribute.
-     * @param color
-     *            The color specified using a color keyword.
+     * @param name  The name of the attribute.
+     * @param color The color specified using a color keyword.
      */
     public void addColorAttribute(final String name, final ColorKeyword color) {
         attributes.put(name, new KeywordColorAttribute(name, color));
@@ -64,10 +58,8 @@ public class Attributes {
     /**
      * Adds an attribute with value none to the set of attributes.
      *
-     * @param name
-     *            The name of the attribute.
-     * @param none
-     *            The value none.
+     * @param name The name of the attribute.
+     * @param none The value none.
      */
     public void addNoneValueAttribute(final String name, final NoneValue none) {
         attributes.put(name, new EnumerationAttribute<NoneValue>(name, none));
@@ -76,10 +68,8 @@ public class Attributes {
     /**
      * Adds a string attribute to the set of attributes.
      *
-     * @param name
-     *            The name of the attribute.
-     * @param string
-     *            The string value of the attribute.
+     * @param name   The name of the attribute.
+     * @param string The string value of the attribute.
      */
     public void addStringAttribute(final String name, final String string) {
         attributes.put(name, new StringAttribute(name, string));
@@ -88,10 +78,8 @@ public class Attributes {
     /**
      * Adds a numeric array attribute to the set of attributes.
      *
-     * @param name
-     *            The name of the attribute.
-     * @param numbers
-     *            The numeric array value of the attribute.
+     * @param name    The name of the attribute.
+     * @param numbers The numeric array value of the attribute.
      */
     public void addNumericArrayAttribute(final String name, final Number... numbers) {
         attributes.put(name, new NumericArrayAttribute(name, numbers));
@@ -100,10 +88,8 @@ public class Attributes {
     /**
      * Adds an attribute value enumeration attribute to the set of attributes.
      *
-     * @param name
-     *            The name of the attribute.
-     * @param value
-     *            The value of the attribute.
+     * @param name  The name of the attribute.
+     * @param value The value of the attribute.
      */
     public void addEnumerationAttribute(final String name, final AttributeValueEnumeration value) {
         attributes.put(name, new EnumerationAttribute(name, value));
@@ -112,10 +98,8 @@ public class Attributes {
     /**
      * Adds a path definition attribute to the set of attributes.
      *
-     * @param name
-     *            The name of the attribute.
-     * @param pathDefinition
-     *            The path definition.
+     * @param name           The name of the attribute.
+     * @param pathDefinition The path definition.
      */
     public void addPathDefinitionAttribute(final String name, final PathDefinition pathDefinition) {
         attributes.put(name, pathDefinition);
@@ -124,10 +108,8 @@ public class Attributes {
     /**
      * Adds a transformation attribute to the set of attributes.
      *
-     * @param name
-     *            The name of the attribute.
-     * @param transformation
-     *            The transformation.
+     * @param name           The name of the attribute.
+     * @param transformation The transformation.
      */
     public void addTransformationAttribute(final String name, final Transform transformation) {
         attributes.put(name, transformation);

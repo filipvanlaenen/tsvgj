@@ -86,6 +86,8 @@ projects.
   * [rect](https://www.w3.org/TR/SVG/shapes.html#RectElement)
 * Text
   * [text](https://www.w3.org/TR/SVG/text.html#TextElement)
+* Paint servers
+  * [pattern](https://www.w3.org/TR/SVG/pservers.html#Patterns)
 
 ## Projects Using TSVGJ
 

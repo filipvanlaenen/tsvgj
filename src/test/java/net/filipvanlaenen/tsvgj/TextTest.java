@@ -82,7 +82,7 @@ public class TextTest {
     @Test
     void fontWeightIsExportedCorrectlyToString() {
         Text text = new Text("Lorem ipsum").x(0).y(1).fill(RED).fontSize(2).fontFamily("Times New Roman")
-                .fontWeight(FontWeightValues.BOLD);
+                .fontWeight(FontWeightValue.BOLD);
         String actual = text.asString();
         String expected = "<text fill=\"#FF0000\" font-family=\"Times New Roman\" font-size=\"2\""
                 + " font-weight=\"bold\" x=\"0\" y=\"1\">Lorem ipsum</text>";
@@ -95,7 +95,7 @@ public class TextTest {
     @Test
     void numericFontWeightIsExportedCorrectlyToString() {
         Text text = new Text("Lorem ipsum").x(0).y(1).fill(RED).fontSize(2).fontFamily("Times New Roman")
-                .fontWeight(FontWeightValues.W300);
+                .fontWeight(FontWeightValue.W300);
         String actual = text.asString();
         String expected = "<text fill=\"#FF0000\" font-family=\"Times New Roman\" font-size=\"2\" font-weight=\"300\""
                 + " x=\"0\" y=\"1\">Lorem ipsum</text>";

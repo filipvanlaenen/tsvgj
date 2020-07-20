@@ -5,7 +5,7 @@ import net.filipvanlaenen.tsvgj.internal.AttributeValueEnumeration;
 /**
  * An enumeration listing the values for the <code>font-weight</code> attribute.
  */
-public enum FontWeightValues implements AttributeValueEnumeration {
+public enum FontWeightValue implements AttributeValueEnumeration {
 
     /**
      * Normal text.
@@ -68,7 +68,7 @@ public enum FontWeightValues implements AttributeValueEnumeration {
     /**
      * Constructs a non-numeric font weight value.
      */
-    FontWeightValues() {
+    FontWeightValue() {
         this(null);
     }
 
@@ -78,7 +78,7 @@ public enum FontWeightValues implements AttributeValueEnumeration {
      * @param numericValue
      *            The numeric value.
      */
-    FontWeightValues(final Integer numericValue) {
+    FontWeightValue(final Integer numericValue) {
         this.numericValue = numericValue;
     }
 

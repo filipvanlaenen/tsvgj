@@ -84,7 +84,7 @@ public class Text implements GraphicsElement {
      *            The font weight for the text.
      * @return The instance called.
      */
-    public Text fontWeight(final FontWeightValues fontWeight) {
+    public Text fontWeight(final FontWeightValue fontWeight) {
         attributes.addEnumerationAttribute("font-weight", fontWeight);
         return this;
     }
@@ -105,7 +105,7 @@ public class Text implements GraphicsElement {
      * Adds a transformation to the text.
      *
      * @param transformation
-     *            The specification of the transformation, as a string.
+     *            The specification of the transformation.
      * @return The instance called.
      */
     public Text transform(final Transform transformation) {
