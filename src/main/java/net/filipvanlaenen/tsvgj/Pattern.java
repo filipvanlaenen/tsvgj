@@ -1,9 +1,7 @@
 package net.filipvanlaenen.tsvgj;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import net.filipvanlaenen.tsvgj.internal.Attributes;
+import net.filipvanlaenen.tsvgj.internal.Elements;
 
 /**
  * A class representing a pattern.
@@ -20,7 +18,7 @@ public class Pattern implements PaintServerElement {
     /**
      * A list with the elements.
      */
-    private final List<ElementType> elements = new ArrayList<ElementType>();
+    private final Elements elements = new Elements();
     /**
      * The ID of the pattern element.
      */
@@ -32,7 +30,7 @@ public class Pattern implements PaintServerElement {
      * @param shape A shape element.
      */
     public void addElement(final ShapeElement shape) {
-        this.elements.add(shape);
+        elements.add(shape);
     }
 
     /**
@@ -127,7 +125,7 @@ public class Pattern implements PaintServerElement {
             sb.append("/>");
         } else {
             sb.append(">\n");
-            sb.append(elementsAsString(indent + "  ", elements.iterator()));
+            sb.append(elements.asString(indent + "  "));
             sb.append(indent);
             sb.append("</pattern>");
         }

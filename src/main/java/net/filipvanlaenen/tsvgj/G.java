@@ -1,7 +1,6 @@
 package net.filipvanlaenen.tsvgj;
 
-import java.util.ArrayList;
-import java.util.List;
+import net.filipvanlaenen.tsvgj.internal.Elements;
 
 /**
  * A class representing a grouping.
@@ -10,11 +9,10 @@ import java.util.List;
  *      Structure — SVG 2: 5.2.2. The ‘g’ element</a>
  */
 public class G implements StructuralElement {
-
     /**
      * A list with the elements.
      */
-    private final List<ElementType> elements = new ArrayList<ElementType>();
+    private final Elements elements = new Elements();
 
     /**
      * Adds a shape element.
@@ -22,7 +20,7 @@ public class G implements StructuralElement {
      * @param shape A shape element.
      */
     public void addElement(final ShapeElement shape) {
-        this.elements.add(shape);
+        elements.add(shape);
     }
 
     /**
@@ -31,7 +29,7 @@ public class G implements StructuralElement {
      * @param structuralElement A structural element.
      */
     public void addElement(final StructuralElement structuralElement) {
-        this.elements.add(structuralElement);
+        elements.add(structuralElement);
     }
 
     /**
@@ -40,7 +38,7 @@ public class G implements StructuralElement {
      * @param text A text.
      */
     public void addElement(final Text text) {
-        this.elements.add(text);
+        elements.add(text);
     }
 
     /**
@@ -52,7 +50,6 @@ public class G implements StructuralElement {
      *         indentation.
      */
     public String asString(final String indent) {
-        return indent + "<g" + (elements.isEmpty() ? "/>"
-                : ">\n" + elementsAsString(indent + "  ", elements.iterator()) + indent + "</g>");
+        return indent + "<g" + (elements.isEmpty() ? "/>" : ">\n" + elements.asString(indent + "  ") + indent + "</g>");
     }
 }

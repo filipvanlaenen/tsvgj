@@ -18,7 +18,6 @@ import net.filipvanlaenen.tsvgj.Transform;
  * A class helping to export attributes from SVG elements to a string.
  */
 public class Attributes {
-
     /**
      * A map with all the attributes.
      */

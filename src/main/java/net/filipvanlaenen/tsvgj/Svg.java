@@ -1,15 +1,12 @@
 package net.filipvanlaenen.tsvgj;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import net.filipvanlaenen.tsvgj.internal.Attributes;
+import net.filipvanlaenen.tsvgj.internal.Elements;
 
 /**
  * Class representing the root element of an SVG document.
  */
 public class Svg implements StructuralElement {
-
     /**
      * The attributes.
      */
@@ -17,7 +14,7 @@ public class Svg implements StructuralElement {
     /**
      * A list with the elements.
      */
-    private final List<ElementType> elements = new ArrayList<ElementType>();
+    private final Elements elements = new Elements();
     private Defs defs;
 
     /**
@@ -63,7 +60,7 @@ public class Svg implements StructuralElement {
      * @param shape A shape element.
      */
     public void addElement(final ShapeElement shape) {
-        this.elements.add(shape);
+        elements.add(shape);
     }
 
     /**
@@ -72,7 +69,7 @@ public class Svg implements StructuralElement {
      * @param structuralElement A structural element.
      */
     public void addElement(final StructuralElement structuralElement) {
-        this.elements.add(structuralElement);
+        elements.add(structuralElement);
     }
 
     /**
@@ -81,7 +78,7 @@ public class Svg implements StructuralElement {
      * @param text A text element.
      */
     public void addElement(final Text text) {
-        this.elements.add(text);
+        elements.add(text);
     }
 
     /**
@@ -92,14 +89,13 @@ public class Svg implements StructuralElement {
      */
     public String asString(final String indent) {
         return indent + "<svg" + attributes.asString() + " xmlns=\"http://www.w3.org/2000/svg\""
-                + (elements.isEmpty() ? "/>"
-                        : ">\n" + elementsAsString(indent + "  ", elements.iterator()) + indent + "</svg>");
+                + (elements.isEmpty() ? "/>" : ">\n" + elements.asString(indent + "  ") + indent + "</svg>");
     }
 
     public void registerElementForReference(PaintServerElement paintServerElement) {
         if (defs == null) {
             defs = new Defs();
-            this.elements.add(defs);
+            elements.add(defs);
         }
         defs.addElement(paintServerElement);
     }
