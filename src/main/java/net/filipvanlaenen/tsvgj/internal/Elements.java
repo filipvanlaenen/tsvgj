@@ -10,6 +10,10 @@ import net.filipvanlaenen.tsvgj.ShapeElement;
 import net.filipvanlaenen.tsvgj.StructuralElement;
 import net.filipvanlaenen.tsvgj.Text;
 
+/**
+ * A class helping to export elements contained by other SVG elements to a
+ * string.
+ */
 public class Elements {
     /**
      * A list with the elements.
@@ -19,9 +23,9 @@ public class Elements {
     /**
      * Adds a paint server element.
      *
-     * @param shape A pain server element.
+     * @param paintServerElement A pain server element.
      */
-    public void add(PaintServerElement paintServerElement) {
+    public void add(final PaintServerElement paintServerElement) {
         elements.add(paintServerElement);
     }
 
@@ -53,6 +57,15 @@ public class Elements {
     }
 
     /**
+     * Returns whether the list of elements is empty.
+     *
+     * @return True if the list of elements is empty.
+     */
+    public boolean isEmpty() {
+        return elements.isEmpty();
+    }
+
+    /**
      * Returns a string representation of the elements with the provided
      * indentation.
      *
@@ -74,10 +87,11 @@ public class Elements {
         }
     }
 
-    public boolean isEmpty() {
-        return elements.isEmpty();
-    }
-
+    /**
+     * Returns the number of elements currently in the list.
+     *
+     * @return The number of elements currently in the list.
+     */
     public int size() {
         return elements.size();
     }

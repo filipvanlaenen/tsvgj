@@ -29,7 +29,13 @@ public class DefsTest {
      * The magic number seven.
      */
     private static final int SEVEN = 7;
+    /**
+     * The SVG object to run the tests on.
+     */
     private Svg svg;
+    /**
+     * The pattern used to refer to in the tests.
+     */
     private Pattern pattern;
 
     /**

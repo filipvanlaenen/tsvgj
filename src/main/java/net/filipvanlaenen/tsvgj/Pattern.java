@@ -44,8 +44,13 @@ public class Pattern implements PaintServerElement {
         return this;
     }
 
+    /**
+     * Sets the ID for the pattern.
+     *
+     * @param id The ID for the pattern.
+     */
     @Override
-    public void setId(int id) {
+    public void setId(final int id) {
         this.id = id;
     }
 
@@ -132,6 +137,11 @@ public class Pattern implements PaintServerElement {
         return sb.toString();
     }
 
+    /**
+     * Returns a reference to the pattern.
+     *
+     * @return A reference to the pattern.
+     */
     @Override
     public String getReference() {
         return "pattern-" + id.toString();

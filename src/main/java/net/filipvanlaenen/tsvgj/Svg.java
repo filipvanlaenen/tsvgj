@@ -5,6 +5,9 @@ import net.filipvanlaenen.tsvgj.internal.Elements;
 
 /**
  * Class representing the root element of an SVG document.
+ *
+ * @see <a href="https://www.w3.org/TR/SVG/struct.html#SVGElement">Document
+ *      Structure — SVG 2: 5.1.4. The ‘svg’ element</a>
  */
 public class Svg implements StructuralElement {
     /**
@@ -15,6 +18,9 @@ public class Svg implements StructuralElement {
      * A list with the elements.
      */
     private final Elements elements = new Elements();
+    /**
+     * The definitions element.
+     */
     private Defs defs;
 
     /**
@@ -92,7 +98,12 @@ public class Svg implements StructuralElement {
                 + (elements.isEmpty() ? "/>" : ">\n" + elements.asString(indent + "  ") + indent + "</svg>");
     }
 
-    public void registerElementForReference(PaintServerElement paintServerElement) {
+    /**
+     * Registers a paint server element for reference.
+     *
+     * @param paintServerElement The paint server element to register.
+     */
+    public void registerElementForReference(final PaintServerElement paintServerElement) {
         if (defs == null) {
             defs = new Defs();
             elements.add(defs);

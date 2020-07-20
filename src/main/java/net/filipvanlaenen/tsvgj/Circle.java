@@ -7,7 +7,6 @@ import net.filipvanlaenen.tsvgj.internal.Attributes;
  *
  * @see <a href="https://www.w3.org/TR/SVG/shapes.html#CircleElement">Basic
  *      Shapes — SVG 2: 10.3. The ‘circle’ element</a>
- *
  */
 public class Circle implements ShapeElement {
     /**
@@ -70,7 +69,13 @@ public class Circle implements ShapeElement {
         return this;
     }
 
-    public ShapeElement fill(PaintServerElement paintServerElement) {
+    /**
+     * Sets the fill color using a paint server element.
+     *
+     * @param paintServerElement The paint server element used to fill the circle.
+     * @return The instance called.
+     */
+    public ShapeElement fill(final PaintServerElement paintServerElement) {
         attributes.addReferringAttribute("fill", paintServerElement);
         return this;
     }

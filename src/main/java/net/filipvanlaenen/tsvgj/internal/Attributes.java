@@ -106,6 +106,16 @@ public class Attributes {
     }
 
     /**
+     * Adds a reference to a paint server element to the set of attributes.
+     *
+     * @param name               The name of the attribute.
+     * @param paintServerElement The paint server element to refer to.
+     */
+    public void addReferringAttribute(final String name, final PaintServerElement paintServerElement) {
+        attributes.put(name, new ReferringAttribute(paintServerElement));
+    }
+
+    /**
      * Adds a transformation attribute to the set of attributes.
      *
      * @param name           The name of the attribute.
@@ -137,9 +147,4 @@ public class Attributes {
             return " " + String.join(" ", attributeStrings);
         }
     }
-
-    public void addReferringAttribute(String name, PaintServerElement paintServerElement) {
-        attributes.put(name, new ReferringAttribute(paintServerElement));
-    }
-
 }
