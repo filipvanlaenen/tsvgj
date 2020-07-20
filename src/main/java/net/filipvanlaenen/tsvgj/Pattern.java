@@ -1,7 +1,6 @@
 package net.filipvanlaenen.tsvgj;
 
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
 
 import net.filipvanlaenen.tsvgj.internal.Attributes;
@@ -25,7 +24,7 @@ public class Pattern implements PaintServerElement {
     /**
      * The ID of the pattern element.
      */
-    private String id;
+    private Integer id;
 
     /**
      * Adds a shape element.
@@ -48,14 +47,8 @@ public class Pattern implements PaintServerElement {
     }
 
     @Override
-    public String getId() {
-        return id;
-    }
-
-    @Override
-    public void setId(int i) {
-        id = "pattern-" + Integer.toString(i);
-        attributes.addStringAttribute("id", id);
+    public void setId(int id) {
+        this.id = id;
     }
 
     /**
@@ -114,28 +107,6 @@ public class Pattern implements PaintServerElement {
     }
 
     /**
-     * Returns a string representation of the elements with the provided
-     * indentation.
-     *
-     * @param indent The indentation.
-     * @return A string representation of the elements with the provided
-     *         indentation.
-     */
-    private String elementsAsString(final String indent) {
-        List<String> elementStrings = new ArrayList<String>();
-        Iterator<ElementType> elementIterator = elements.iterator();
-        while (elementIterator.hasNext()) {
-            ElementType element = elementIterator.next();
-            elementStrings.add(element.asString(indent));
-        }
-        if (elementStrings.isEmpty()) {
-            return "";
-        } else {
-            return String.join("\n", elementStrings) + "\n";
-        }
-    }
-
-    /**
      * Returns a string representation of the pattern with the provided indentation.
      *
      * @param indent The indentation.
@@ -143,7 +114,28 @@ public class Pattern implements PaintServerElement {
      */
     @Override
     public String asString(final String indent) {
-        return indent + "<pattern" + attributes.asString()
-                + (elements.isEmpty() ? "/>" : ">\n" + elementsAsString(indent + "  ") + indent + "</pattern>");
+        StringBuilder sb = new StringBuilder();
+        sb.append(indent);
+        sb.append("<pattern");
+        if (id != null) {
+            sb.append(" id=\"");
+            sb.append(getReference());
+            sb.append("\"");
+        }
+        sb.append(attributes.asString());
+        if (elements.isEmpty()) {
+            sb.append("/>");
+        } else {
+            sb.append(">\n");
+            sb.append(elementsAsString(indent + "  ", elements.iterator()));
+            sb.append(indent);
+            sb.append("</pattern>");
+        }
+        return sb.toString();
+    }
+
+    @Override
+    public String getReference() {
+        return "pattern-" + id.toString();
     }
 }

@@ -1,8 +1,8 @@
 package net.filipvanlaenen.tsvgj;
 
-public interface PaintServerElement {
+public interface PaintServerElement extends ElementType {
 
-    String getId();
+    String getReference();
 
     void setId(int i);
 

@@ -1,7 +1,6 @@
 package net.filipvanlaenen.tsvgj;
 
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
 
 /**
@@ -20,8 +19,7 @@ public class G implements StructuralElement {
     /**
      * Adds a shape element.
      *
-     * @param shape
-     *            A shape element.
+     * @param shape A shape element.
      */
     public void addElement(final ShapeElement shape) {
         this.elements.add(shape);
@@ -30,8 +28,7 @@ public class G implements StructuralElement {
     /**
      * Adds a structural element.
      *
-     * @param structuralElement
-     *            A structural element.
+     * @param structuralElement A structural element.
      */
     public void addElement(final StructuralElement structuralElement) {
         this.elements.add(structuralElement);
@@ -47,38 +44,15 @@ public class G implements StructuralElement {
     }
 
     /**
-     * Returns a string representation of the elements with the provided
-     * indentation.
-     *
-     * @param indent
-     *            The indentation.
-     * @return A string representation of the elements with the provided
-     *         indentation.
-     */
-    private String elementsAsString(final String indent) {
-        List<String> elementStrings = new ArrayList<String>();
-        Iterator<ElementType> elementIterator = elements.iterator();
-        while (elementIterator.hasNext()) {
-            ElementType element = elementIterator.next();
-            elementStrings.add(element.asString(indent));
-        }
-        if (elementStrings.isEmpty()) {
-            return "";
-        } else {
-            return String.join("\n", elementStrings) + "\n";
-        }
-    }
-
-    /**
      * Returns a string representation of the grouping element with the provided
      * indentation.
      *
-     * @param indent
-     *            The indentation.
+     * @param indent The indentation.
      * @return A string representation of the grouping element with the provided
      *         indentation.
      */
     public String asString(final String indent) {
-        return indent + "<g" + (elements.isEmpty() ? "/>" : ">\n" + elementsAsString(indent + "  ") + indent + "</g>");
+        return indent + "<g" + (elements.isEmpty() ? "/>"
+                : ">\n" + elementsAsString(indent + "  ", elements.iterator()) + indent + "</g>");
     }
 }

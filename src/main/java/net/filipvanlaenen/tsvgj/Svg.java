@@ -1,7 +1,6 @@
 package net.filipvanlaenen.tsvgj;
 
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
 
 import net.filipvanlaenen.tsvgj.internal.Attributes;
@@ -86,28 +85,6 @@ public class Svg implements StructuralElement {
     }
 
     /**
-     * Returns a string representation of the elements with the provided
-     * indentation.
-     *
-     * @param indent The indentation.
-     * @return A string representation of the elements with the provided
-     *         indentation.
-     */
-    private String elementsAsString(final String indent) {
-        List<String> elementStrings = new ArrayList<String>();
-        Iterator<ElementType> elementIterator = elements.iterator();
-        while (elementIterator.hasNext()) {
-            ElementType element = elementIterator.next();
-            elementStrings.add(element.asString(indent));
-        }
-        if (elementStrings.isEmpty()) {
-            return "";
-        } else {
-            return String.join("\n", elementStrings) + "\n";
-        }
-    }
-
-    /**
      * Returns a string representation of the SVG document.
      *
      * @param indent The indentation.
@@ -115,7 +92,8 @@ public class Svg implements StructuralElement {
      */
     public String asString(final String indent) {
         return indent + "<svg" + attributes.asString() + " xmlns=\"http://www.w3.org/2000/svg\""
-                + (elements.isEmpty() ? "/>" : ">\n" + elementsAsString(indent + "  ") + indent + "</svg>");
+                + (elements.isEmpty() ? "/>"
+                        : ">\n" + elementsAsString(indent + "  ", elements.iterator()) + indent + "</svg>");
     }
 
     public void registerElementForReference(PaintServerElement paintServerElement) {

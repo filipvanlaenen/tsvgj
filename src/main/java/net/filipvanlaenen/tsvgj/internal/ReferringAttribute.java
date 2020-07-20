@@ -11,6 +11,6 @@ public class ReferringAttribute implements Attribute {
 
     @Override
     public String asString() {
-        return "url(#" + paintServerElement.getId() + ")";
+        return "url(#" + paintServerElement.getReference() + ")";
     }
 }
