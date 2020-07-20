@@ -77,6 +77,7 @@ projects.
 
 * Document structure elements
   * [svg](https://www.w3.org/TR/SVG/struct.html#SVGElement)
+  * [defs](https://www.w3.org/TR/SVG/struct.html#DefsElement) (implicitly)
   * [g](https://www.w3.org/TR/SVG/struct.html#GElement)
 * Paths
   * [path](https://www.w3.org/TR/SVG/paths.html#PathElement)
