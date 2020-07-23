@@ -51,6 +51,18 @@ public class TextTest {
     }
 
     /**
+     * Test verifying that the text align is exported correctly.
+     */
+    @Test
+    void textAlignIsExportedCorrectlyToString() {
+        Text text = new Text("Lorem ipsum").x(0).y(1).fill(RED).fontSize(2).fontFamily("Times New Roman")
+                .textAlign(TextAlignValue.CENTER);
+        String actual = text.asString();
+        String expected = "<text fill=\"#FF0000\" font-family=\"Times New Roman\" font-size=\"2\""
+                + " text-align=\"center\" x=\"0\" y=\"1\">Lorem ipsum</text>";
+        assertEquals(expected, actual);
+    }
+    /**
      * Test verifying that the text anchor is exported correctly.
      */
     @Test
@@ -76,6 +88,18 @@ public class TextTest {
         assertEquals(expected, actual);
     }
 
+    /**
+     * Test verifying that the font style is exported correctly.
+     */
+    @Test
+    void fontStyletIsExportedCorrectlyToString() {
+        Text text = new Text("Lorem ipsum").x(0).y(1).fill(RED).fontSize(2).fontFamily("Times New Roman")
+                .fontStyle(FontStyleValue.NORMAL);
+        String actual = text.asString();
+        String expected = "<text fill=\"#FF0000\" font-family=\"Times New Roman\" font-size=\"2\""
+                + " font-style=\"normal\" x=\"0\" y=\"1\">Lorem ipsum</text>";
+        assertEquals(expected, actual);
+    }
     /**
      * Test verifying that the font weight is exported correctly.
      */
