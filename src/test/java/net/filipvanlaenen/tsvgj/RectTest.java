@@ -39,4 +39,16 @@ public class RectTest {
         String expected = "<rect fill=\"#FF0000\" height=\"3\" width=\"2\" x=\"0\" y=\"1\"/>";
         assertEquals(expected, actual);
     }
+
+    /**
+     * Test verifying that a rectangle with stroke none is exported correctly to a
+     * string.
+     */
+    @Test
+    void rectangleWithStrokeNoneIsConvertedCorrectlyToString() {
+        Rect rect = new Rect().x(0).y(1).width(2).height(THREE).fill(RED).stroke(NoneValue.NONE);
+        String actual = rect.asString();
+        String expected = "<rect fill=\"#FF0000\" height=\"3\" stroke=\"none\" width=\"2\" x=\"0\" y=\"1\"/>";
+        assertEquals(expected, actual);
+    }
 }
