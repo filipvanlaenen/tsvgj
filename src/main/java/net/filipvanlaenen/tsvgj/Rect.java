@@ -26,6 +26,18 @@ public class Rect implements ShapeElement {
     }
 
     /**
+     * Sets the fill color using a paint server element.
+     *
+     * @param paintServerElement The paint server element used to fill the
+     *                           rectangle.
+     * @return The instance called.
+     */
+    public Rect fill(final PaintServerElement paintServerElement) {
+        attributes.addReferringAttribute("fill", paintServerElement);
+        return this;
+    }
+
+    /**
      * Sets the fill color using a color keyword.
      *
      * @param fill The fill color using a color keyword.

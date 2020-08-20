@@ -70,10 +70,10 @@ public class DefsTest {
 
     /**
      * Verifying that a pattern that has been added is referenced correctly when it
-     * is used.
+     * is used in a circle.
      */
     @Test
-    void patternIsReferencedCorrectly() {
+    void patternIsReferencedCorrectlyFromCircle() {
         svg.addElement(new Circle().cx(0).cy(0).r(1).fill(pattern));
         String actual = svg.asString();
         StringBuilder sb = new StringBuilder();
@@ -84,6 +84,27 @@ public class DefsTest {
         sb.append("    </pattern>\n");
         sb.append("  </defs>\n");
         sb.append("  <circle cx=\"0\" cy=\"0\" fill=\"url(#pattern-1)\" r=\"1\"/>\n");
+        sb.append("</svg>");
+        String expected = sb.toString();
+        assertEquals(expected, actual);
+    }
+
+    /**
+     * Verifying that a pattern that has been added is referenced correctly when it
+     * is used in a rectangle.
+     */
+    @Test
+    void patternIsReferencedCorrectlyFromRectangle() {
+        svg.addElement(new Rect().x(0).y(1).width(2).height(THREE).fill(pattern));
+        String actual = svg.asString();
+        StringBuilder sb = new StringBuilder();
+        sb.append("<svg xmlns=\"http://www.w3.org/2000/svg\">\n");
+        sb.append("  <defs>\n");
+        sb.append("    <pattern id=\"pattern-1\" height=\"3\" width=\"2\" x=\"0\" y=\"1\">\n");
+        sb.append("      <rect fill=\"red\" height=\"7\" width=\"6\" x=\"4\" y=\"5\"/>\n");
+        sb.append("    </pattern>\n");
+        sb.append("  </defs>\n");
+        sb.append("  <rect fill=\"url(#pattern-1)\" height=\"3\" width=\"2\" x=\"0\" y=\"1\"/>\n");
         sb.append("</svg>");
         String expected = sb.toString();
         assertEquals(expected, actual);
