@@ -16,6 +16,10 @@ public class RectTest {
      * The magic number three.
      */
     private static final int THREE = 3;
+    /**
+     * The magic number 0.5.
+     */
+    private static final double HALF = 0.5D;
 
     /**
      * Test verifying that a red rectangle is exported correctly to a string.
@@ -49,6 +53,17 @@ public class RectTest {
         Rect rect = new Rect().x(0).y(1).width(2).height(THREE).fill(RED).stroke(NoneValue.NONE);
         String actual = rect.asString();
         String expected = "<rect fill=\"#FF0000\" height=\"3\" stroke=\"none\" width=\"2\" x=\"0\" y=\"1\"/>";
+        assertEquals(expected, actual);
+    }
+    /**
+     * Test verifying that a rectangle using a hexadecimal integer for the stroke
+     * color is exported correctly to a string.
+     */
+    @Test
+    void rectangleWithHexadecimalStrokeColorIsConvertedCorrectlyToString() {
+        Rect rect = new Rect().x(0).y(1).width(2).height(THREE).stroke(RED).strokeWidth(HALF);
+        String actual = rect.asString();
+        String expected = "<rect height=\"3\" stroke=\"#FF0000\" stroke-width=\"0.5\" width=\"2\" x=\"0\" y=\"1\"/>";
         assertEquals(expected, actual);
     }
 }

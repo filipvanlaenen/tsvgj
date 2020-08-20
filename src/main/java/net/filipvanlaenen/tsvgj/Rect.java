@@ -59,6 +59,28 @@ public class Rect implements ShapeElement {
     }
 
     /**
+     * Sets the stroke color using a hexadecimal integer.
+     *
+     * @param stroke The stroke color as a hexadecimal integer.
+     * @return The instance called.
+     */
+    public Rect stroke(final Integer stroke) {
+        attributes.addColorAttribute("stroke", stroke);
+        return this;
+    }
+
+    /**
+     * Sets the stroke width.
+     *
+     * @param strokeWidth The stroke width.
+     * @return The instance called.
+     */
+    public Rect strokeWidth(final double strokeWidth) {
+        attributes.addNumericAttribute("stroke-width", strokeWidth);
+        return this;
+    }
+
+    /**
      * Sets the width of the rectangle.
      *
      * @param width The width of the rectangle.
