@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
-import net.filipvanlaenen.tsvgj.ElementType;
+import net.filipvanlaenen.tsvgj.SvgElement;
 import net.filipvanlaenen.tsvgj.PaintServerElement;
 import net.filipvanlaenen.tsvgj.ShapeElement;
 import net.filipvanlaenen.tsvgj.StructuralElement;
@@ -18,7 +18,7 @@ public class Elements {
     /**
      * A list with the elements.
      */
-    private final List<ElementType> elements = new ArrayList<ElementType>();
+    private final List<SvgElement> elements = new ArrayList<SvgElement>();
 
     /**
      * Adds a paint server element.
@@ -75,9 +75,9 @@ public class Elements {
      */
     public String asString(final String indent) {
         List<String> elementStrings = new ArrayList<String>();
-        Iterator<ElementType> elementIterator = elements.iterator();
+        Iterator<SvgElement> elementIterator = elements.iterator();
         while (elementIterator.hasNext()) {
-            ElementType element = elementIterator.next();
+            SvgElement element = elementIterator.next();
             elementStrings.add(element.asString(indent));
         }
         if (elementStrings.isEmpty()) {

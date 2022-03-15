@@ -8,7 +8,7 @@ package net.filipvanlaenen.tsvgj;
  *      Filling, Stroking and Marker Symbols — SVG 2: 13.2. Specifying paint –
  *      paint server element</a>
  */
-public interface PaintServerElement extends ElementType {
+public interface PaintServerElement extends SvgElement {
     /**
      * Returns a reference to the paint server element.
      *
