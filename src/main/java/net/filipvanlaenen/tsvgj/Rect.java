@@ -17,7 +17,8 @@ public class Rect implements ShapeElement {
     /**
      * Sets the fill color as a hexadecimal integer.
      *
-     * @param fill The fill color as a hexadecimal integer.
+     * @param fill
+     *            The fill color as a hexadecimal integer.
      * @return The instance called.
      */
     public Rect fill(final Integer fill) {
@@ -28,8 +29,8 @@ public class Rect implements ShapeElement {
     /**
      * Sets the fill color using a paint server element.
      *
-     * @param paintServerElement The paint server element used to fill the
-     *                           rectangle.
+     * @param paintServerElement
+     *            The paint server element used to fill the rectangle.
      * @return The instance called.
      */
     public Rect fill(final PaintServerElement paintServerElement) {
@@ -40,7 +41,8 @@ public class Rect implements ShapeElement {
     /**
      * Sets the fill color using a color keyword.
      *
-     * @param fill The fill color using a color keyword.
+     * @param fill
+     *            The fill color using a color keyword.
      * @return The instance called.
      */
     public Rect fill(final ColorKeyword fill) {
@@ -51,7 +53,8 @@ public class Rect implements ShapeElement {
     /**
      * Sets the height of the rectangle.
      *
-     * @param height The height of the rectangle.
+     * @param height
+     *            The height of the rectangle.
      * @return The instance called.
      */
     public Rect height(final Number height) {
@@ -62,7 +65,8 @@ public class Rect implements ShapeElement {
     /**
      * Sets the stroke color to none.
      *
-     * @param none The value none.
+     * @param none
+     *            The value none.
      * @return The instance called.
      */
     public Rect stroke(final NoneValue none) {
@@ -73,7 +77,8 @@ public class Rect implements ShapeElement {
     /**
      * Sets the stroke color using a hexadecimal integer.
      *
-     * @param stroke The stroke color as a hexadecimal integer.
+     * @param stroke
+     *            The stroke color as a hexadecimal integer.
      * @return The instance called.
      */
     public Rect stroke(final Integer stroke) {
@@ -84,7 +89,8 @@ public class Rect implements ShapeElement {
     /**
      * Sets the stroke width.
      *
-     * @param strokeWidth The stroke width.
+     * @param strokeWidth
+     *            The stroke width.
      * @return The instance called.
      */
     public Rect strokeWidth(final double strokeWidth) {
@@ -95,7 +101,8 @@ public class Rect implements ShapeElement {
     /**
      * Sets the width of the rectangle.
      *
-     * @param width The width of the rectangle.
+     * @param width
+     *            The width of the rectangle.
      * @return The instance called.
      */
     public Rect width(final Number width) {
@@ -106,7 +113,8 @@ public class Rect implements ShapeElement {
     /**
      * Sets the x coordinate of the left edge of the rectangle.
      *
-     * @param x The x coordinate of left edge of the rectangle.
+     * @param x
+     *            The x coordinate of left edge of the rectangle.
      * @return The instance called.
      */
     public Rect x(final Number x) {
@@ -117,7 +125,8 @@ public class Rect implements ShapeElement {
     /**
      * Sets the y coordinate of the top edge of the rectangle.
      *
-     * @param y The y coordinate of top edge of the rectangle.
+     * @param y
+     *            The y coordinate of top edge of the rectangle.
      * @return The instance called.
      */
     public Rect y(final Number y) {
@@ -129,12 +138,18 @@ public class Rect implements ShapeElement {
      * Returns a string representation of the rectangle with the provided
      * indentation.
      *
-     * @param indent The indentation.
+     * @param indent
+     *            The indentation.
      * @return A string representation of the rectangle with the provided
      *         indentation.
      */
     @Override
     public String asString(final String indent) {
-        return indent + "<rect" + attributes.asString() + "/>";
+        return indent + "<" + getElementName() + attributes.asString() + "/>";
+    }
+
+    @Override
+    public String getElementName() {
+        return "rect";
     }
 }

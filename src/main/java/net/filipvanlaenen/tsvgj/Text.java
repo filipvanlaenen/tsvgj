@@ -22,16 +22,23 @@ public class Text implements GraphicsElement {
     /**
      * Constructs a text element with a string as its content.
      *
-     * @param content A string.
+     * @param content
+     *            A string.
      */
     public Text(final String content) {
         this.content = content;
     }
 
+    @Override
+    public String getElementName() {
+        return "text";
+    }
+
     /**
      * Sets the fill color as a hexadecimal integer.
      *
-     * @param fill The fill color as a hexadecimal integer.
+     * @param fill
+     *            The fill color as a hexadecimal integer.
      * @return The instance called.
      */
     public Text fill(final Integer fill) {
@@ -42,7 +49,8 @@ public class Text implements GraphicsElement {
     /**
      * Sets the fill color using a color keyword.
      *
-     * @param fill The fill color using a color keyword.
+     * @param fill
+     *            The fill color using a color keyword.
      * @return The instance called.
      */
     public Text fill(final ColorKeyword fill) {
@@ -53,7 +61,8 @@ public class Text implements GraphicsElement {
     /**
      * Sets the font family for the text.
      *
-     * @param fontFamily The font family for the text.
+     * @param fontFamily
+     *            The font family for the text.
      * @return The instance called.
      */
     public Text fontFamily(final String fontFamily) {
@@ -64,7 +73,8 @@ public class Text implements GraphicsElement {
     /**
      * Sets the font size for the text.
      *
-     * @param fontSize The font size for the text.
+     * @param fontSize
+     *            The font size for the text.
      * @return The instance called.
      */
     public Text fontSize(final Number fontSize) {
@@ -75,7 +85,8 @@ public class Text implements GraphicsElement {
     /**
      * Sets the font style for the text.
      *
-     * @param fontStyle The font style for the text.
+     * @param fontStyle
+     *            The font style for the text.
      * @return The instance called.
      */
     public Text fontStyle(final FontStyleValue fontStyle) {
@@ -86,7 +97,8 @@ public class Text implements GraphicsElement {
     /**
      * Sets the font weight for the text.
      *
-     * @param fontWeight The font weight for the text.
+     * @param fontWeight
+     *            The font weight for the text.
      * @return The instance called.
      */
     public Text fontWeight(final FontWeightValue fontWeight) {
@@ -97,7 +109,8 @@ public class Text implements GraphicsElement {
     /**
      * Sets the value for the text align.
      *
-     * @param textAlign The text align for the text.
+     * @param textAlign
+     *            The text align for the text.
      * @return The instance called.
      */
     public Text textAlign(final TextAlignValue textAlign) {
@@ -108,7 +121,8 @@ public class Text implements GraphicsElement {
     /**
      * Sets the value for the text anchor.
      *
-     * @param textAnchor The text anchor for the text.
+     * @param textAnchor
+     *            The text anchor for the text.
      * @return The instance called.
      */
     public Text textAnchor(final TextAnchorValue textAnchor) {
@@ -119,7 +133,8 @@ public class Text implements GraphicsElement {
     /**
      * Adds a transformation to the text.
      *
-     * @param transformation The specification of the transformation.
+     * @param transformation
+     *            The specification of the transformation.
      * @return The instance called.
      */
     public Text transform(final Transform transformation) {
@@ -130,7 +145,8 @@ public class Text implements GraphicsElement {
     /**
      * Sets the x coordinate of the text.
      *
-     * @param x The x coordinate of the text.
+     * @param x
+     *            The x coordinate of the text.
      * @return The instance called.
      */
     public Text x(final Number x) {
@@ -141,7 +157,8 @@ public class Text implements GraphicsElement {
     /**
      * Sets the y coordinate of the text.
      *
-     * @param y The y coordinate of the text.
+     * @param y
+     *            The y coordinate of the text.
      * @return The instance called.
      */
     public Text y(final Number y) {
@@ -152,7 +169,8 @@ public class Text implements GraphicsElement {
     /**
      * Returns a string representation of the text with the provided indentation.
      *
-     * @param indent The indentation.
+     * @param indent
+     *            The indentation.
      * @return A string representation of the text with the provided indentation.
      */
     @Override
@@ -165,7 +183,8 @@ public class Text implements GraphicsElement {
      * will be escaped are <code>&lt;</code>, <code>&gt;</code> and
      * <code>&amp;</code>.
      *
-     * @param string The original text.
+     * @param string
+     *            The original text.
      * @return The text with special XML characters escaped.
      */
     private String xmlEscape(final String string) {

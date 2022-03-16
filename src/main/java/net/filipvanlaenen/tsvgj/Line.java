@@ -107,6 +107,11 @@ public class Line implements ShapeElement {
      */
     @Override
     public String asString(final String indent) {
-        return indent + "<line" + attributes.asString() + "/>";
+        return indent + "<" + getElementName() + attributes.asString() + "/>";
+    }
+
+    @Override
+    public String getElementName() {
+        return "line";
     }
 }

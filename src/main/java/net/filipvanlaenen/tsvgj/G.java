@@ -17,7 +17,8 @@ public class G implements StructuralElement {
     /**
      * Adds a shape element.
      *
-     * @param shape A shape element.
+     * @param shape
+     *            A shape element.
      */
     public void addElement(final ShapeElement shape) {
         elements.add(shape);
@@ -26,7 +27,8 @@ public class G implements StructuralElement {
     /**
      * Adds a structural element.
      *
-     * @param structuralElement A structural element.
+     * @param structuralElement
+     *            A structural element.
      */
     public void addElement(final StructuralElement structuralElement) {
         elements.add(structuralElement);
@@ -35,7 +37,8 @@ public class G implements StructuralElement {
     /**
      * Adds a text.
      *
-     * @param text A text.
+     * @param text
+     *            A text.
      */
     public void addElement(final Text text) {
         elements.add(text);
@@ -45,11 +48,17 @@ public class G implements StructuralElement {
      * Returns a string representation of the grouping element with the provided
      * indentation.
      *
-     * @param indent The indentation.
+     * @param indent
+     *            The indentation.
      * @return A string representation of the grouping element with the provided
      *         indentation.
      */
     public String asString(final String indent) {
         return indent + "<g" + (elements.isEmpty() ? "/>" : ">\n" + elements.asString(indent + "  ") + indent + "</g>");
+    }
+
+    @Override
+    public String getElementName() {
+        return "g";
     }
 }

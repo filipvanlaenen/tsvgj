@@ -47,4 +47,9 @@ public class Defs implements StructuralElement {
         }
         return sb.toString();
     }
+
+    @Override
+    public String getElementName() {
+        return "defs";
+    }
 }

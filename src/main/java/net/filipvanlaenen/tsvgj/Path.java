@@ -103,6 +103,11 @@ public class Path implements GraphicsElement, ShapeElement {
         return this;
     }
 
+    @Override
+    public String getElementName() {
+        return "path";
+    }
+
     /**
      * Adds an absolute line-to command to the path definition.
      *
@@ -188,7 +193,7 @@ public class Path implements GraphicsElement, ShapeElement {
      */
     @Override
     public String asString(final String indent) {
-        return indent + "<path" + attributes.asString() + "/>";
+        return indent + "<" + getElementName() + attributes.asString() + "/>";
     }
 
     /**
