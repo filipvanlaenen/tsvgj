@@ -27,7 +27,8 @@ public class Pattern implements PaintServerElement {
     /**
      * Adds a shape element.
      *
-     * @param shape A shape element.
+     * @param shape
+     *            A shape element.
      */
     public void addElement(final ShapeElement shape) {
         elements.add(shape);
@@ -36,7 +37,8 @@ public class Pattern implements PaintServerElement {
     /**
      * Sets the height of the pattern.
      *
-     * @param height The height of the pattern.
+     * @param height
+     *            The height of the pattern.
      * @return The instance called.
      */
     public Pattern height(final Number height) {
@@ -47,7 +49,8 @@ public class Pattern implements PaintServerElement {
     /**
      * Sets the ID for the pattern.
      *
-     * @param id The ID for the pattern.
+     * @param id
+     *            The ID for the pattern.
      */
     @Override
     public void setId(final int id) {
@@ -57,7 +60,8 @@ public class Pattern implements PaintServerElement {
     /**
      * Adds a transformation to the pattern.
      *
-     * @param transformation The specification of the transformation.
+     * @param transformation
+     *            The specification of the transformation.
      * @return The instance called.
      */
     public Pattern patternTransform(final Transform transformation) {
@@ -68,7 +72,8 @@ public class Pattern implements PaintServerElement {
     /**
      * Sets the value for the pattern units.
      *
-     * @param patternUnits The units for the pattern.
+     * @param patternUnits
+     *            The units for the pattern.
      * @return The instance called.
      */
     public Pattern patternUnits(final PatternUnitsValue patternUnits) {
@@ -79,7 +84,8 @@ public class Pattern implements PaintServerElement {
     /**
      * Sets the width of the pattern.
      *
-     * @param width The width of the pattern.
+     * @param width
+     *            The width of the pattern.
      * @return The instance called.
      */
     public Pattern width(final Number width) {
@@ -90,7 +96,8 @@ public class Pattern implements PaintServerElement {
     /**
      * Sets the x coordinate of the left edge of the pattern.
      *
-     * @param x The x coordinate of left edge of the pattern.
+     * @param x
+     *            The x coordinate of left edge of the pattern.
      * @return The instance called.
      */
     public Pattern x(final Number x) {
@@ -101,7 +108,8 @@ public class Pattern implements PaintServerElement {
     /**
      * Sets the y coordinate of the top edge of the pattern.
      *
-     * @param y The y coordinate of top edge of the pattern.
+     * @param y
+     *            The y coordinate of top edge of the pattern.
      * @return The instance called.
      */
     public Pattern y(final Number y) {
@@ -112,7 +120,8 @@ public class Pattern implements PaintServerElement {
     /**
      * Returns a string representation of the pattern with the provided indentation.
      *
-     * @param indent The indentation.
+     * @param indent
+     *            The indentation.
      * @return A string representation of the pattern with the provided indentation.
      */
     @Override
@@ -135,6 +144,11 @@ public class Pattern implements PaintServerElement {
             sb.append("</pattern>");
         }
         return sb.toString();
+    }
+
+    @Override
+    public String getElementName() {
+        return "pattern";
     }
 
     /**
