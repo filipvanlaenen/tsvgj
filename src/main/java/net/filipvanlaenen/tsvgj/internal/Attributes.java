@@ -9,7 +9,6 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
-import net.filipvanlaenen.tsvgj.ColorKeyword;
 import net.filipvanlaenen.tsvgj.PaintServerElement;
 
 /**
@@ -31,32 +30,6 @@ public class Attributes {
      */
     public void addNumericAttribute(final String name, final Number number) {
         attributes.put(name, new NumericAttribute(name, number));
-    }
-
-    /**
-     * Adds a color attribute to the set of attributes, the color specified as a
-     * hexadecimal integer.
-     *
-     * @param name
-     *            The name of the attribute.
-     * @param color
-     *            The color specified as a hexadecimal integer.
-     */
-    public void addColorAttribute(final String name, final Integer color) {
-        attributes.put(name, new DeprecatedHexadecimalColorAttribute(name, color));
-    }
-
-    /**
-     * Adds a color attribute to the set of attributes, the color specified using a
-     * color keyword.
-     *
-     * @param name
-     *            The name of the attribute.
-     * @param color
-     *            The color specified using a color keyword.
-     */
-    public void addColorAttribute(final String name, final ColorKeyword color) {
-        attributes.put(name, new DeprecatedKeywordColorAttribute(name, color));
     }
 
     /**
