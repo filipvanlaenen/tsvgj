@@ -1,6 +1,6 @@
 package net.filipvanlaenen.tsvgj;
 
-import net.filipvanlaenen.tsvgj.internal.Attributes;
+import net.filipvanlaenen.tsvgj.internal.SvgElementWithAttributes;
 
 /**
  * A class representing a circle.
@@ -8,12 +8,7 @@ import net.filipvanlaenen.tsvgj.internal.Attributes;
  * @see <a href="https://www.w3.org/TR/SVG/shapes.html#CircleElement">Basic
  *      Shapes — SVG 2: 10.3. The ‘circle’ element</a>
  */
-public class Circle implements ShapeElement {
-    /**
-     * The attributes.
-     */
-    private final Attributes attributes = new Attributes();
-
+public class Circle extends SvgElementWithAttributes implements ShapeElement {
     /**
      * Sets the x coordinate of the center.
      *
@@ -22,7 +17,7 @@ public class Circle implements ShapeElement {
      * @return The instance called.
      */
     public Circle cx(final Number cx) {
-        attributes.addNumericAttribute("cx", cx);
+        addNumericAttribute("cx", cx);
         return this;
     }
 
@@ -34,7 +29,7 @@ public class Circle implements ShapeElement {
      * @return The instance called.
      */
     public Circle cy(final Number cy) {
-        attributes.addNumericAttribute("cy", cy);
+        addNumericAttribute("cy", cy);
         return this;
     }
 
@@ -46,7 +41,7 @@ public class Circle implements ShapeElement {
      * @return The instance called.
      */
     public Circle fill(final Integer fill) {
-        attributes.addColorAttribute("fill", fill);
+        addColorAttribute("fill", fill);
         return this;
     }
 
@@ -58,7 +53,7 @@ public class Circle implements ShapeElement {
      * @return The instance called.
      */
     public Circle fill(final ColorKeyword fill) {
-        attributes.addColorAttribute("fill", fill);
+        addColorAttribute("fill", fill);
         return this;
     }
 
@@ -70,7 +65,7 @@ public class Circle implements ShapeElement {
      * @return The instance called.
      */
     public Circle fill(final NoneValue none) {
-        attributes.addNoneValueAttribute("fill", none);
+        addEnumerationAttribute("fill", none);
         return this;
     }
 
@@ -82,7 +77,7 @@ public class Circle implements ShapeElement {
      * @return The instance called.
      */
     public ShapeElement fill(final PaintServerElement paintServerElement) {
-        attributes.addReferringAttribute("fill", paintServerElement);
+        addReferringAttribute("fill", paintServerElement);
         return this;
     }
 
@@ -94,7 +89,7 @@ public class Circle implements ShapeElement {
      * @return The instance called.
      */
     public Circle fillOpacity(final double fillOpacity) {
-        attributes.addNumericAttribute("fill-opacity", fillOpacity);
+        addNumericAttribute("fill-opacity", fillOpacity);
         return this;
     }
 
@@ -106,7 +101,7 @@ public class Circle implements ShapeElement {
      * @return The instance called.
      */
     public Circle opacity(final double opacity) {
-        attributes.addNumericAttribute("opacity", opacity);
+        addNumericAttribute("opacity", opacity);
         return this;
     }
 
@@ -118,7 +113,7 @@ public class Circle implements ShapeElement {
      * @return The instance called.
      */
     public Circle r(final Number r) {
-        attributes.addNumericAttribute("r", r);
+        addNumericAttribute("r", r);
         return this;
     }
 
@@ -130,7 +125,7 @@ public class Circle implements ShapeElement {
      * @return The instance called.
      */
     public Circle stroke(final Integer stroke) {
-        attributes.addColorAttribute("stroke", stroke);
+        addColorAttribute("stroke", stroke);
         return this;
     }
 
@@ -142,7 +137,7 @@ public class Circle implements ShapeElement {
      * @return The instance called.
      */
     public Circle stroke(final ColorKeyword stroke) {
-        attributes.addColorAttribute("stroke", stroke);
+        addColorAttribute("stroke", stroke);
         return this;
     }
 
@@ -154,18 +149,8 @@ public class Circle implements ShapeElement {
      * @return The instance called.
      */
     public Circle strokeWidth(final double strokeWidth) {
-        attributes.addNumericAttribute("stroke-width", strokeWidth);
+        addNumericAttribute("stroke-width", strokeWidth);
         return this;
-    }
-
-    /**
-     * Returns a string representation of the circle with the provided indentation.
-     *
-     * @return A string representation of the circle with the provided indentation.
-     */
-    @Override
-    public String asString(final String indent) {
-        return indent + "<" + getElementName() + attributes.asString() + "/>";
     }
 
     @Override

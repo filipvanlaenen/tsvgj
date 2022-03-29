@@ -1,6 +1,6 @@
 package net.filipvanlaenen.tsvgj;
 
-import net.filipvanlaenen.tsvgj.internal.AttributeValueEnumeration;
+import net.filipvanlaenen.bltxmlepj.AttributeValueEnumeration;
 
 /**
  * An enumeration listing the values for the <code>text-align</code> attribute.

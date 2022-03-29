@@ -1,6 +1,6 @@
 package net.filipvanlaenen.tsvgj;
 
-import net.filipvanlaenen.tsvgj.internal.Attributes;
+import net.filipvanlaenen.tsvgj.internal.SvgElementWithAttributes;
 
 /**
  * A class representing a rectangle.
@@ -8,12 +8,7 @@ import net.filipvanlaenen.tsvgj.internal.Attributes;
  * @see <a href="https://www.w3.org/TR/SVG/shapes.html#RectElement">Basic Shapes
  *      — SVG 2: 10.2. The ‘rect’ element</a>
  */
-public class Rect implements ShapeElement {
-    /**
-     * The attributes.
-     */
-    private final Attributes attributes = new Attributes();
-
+public class Rect extends SvgElementWithAttributes implements ShapeElement {
     /**
      * Sets the fill color as a hexadecimal integer.
      *
@@ -22,7 +17,7 @@ public class Rect implements ShapeElement {
      * @return The instance called.
      */
     public Rect fill(final Integer fill) {
-        attributes.addColorAttribute("fill", fill);
+        addColorAttribute("fill", fill);
         return this;
     }
 
@@ -34,7 +29,7 @@ public class Rect implements ShapeElement {
      * @return The instance called.
      */
     public Rect fill(final PaintServerElement paintServerElement) {
-        attributes.addReferringAttribute("fill", paintServerElement);
+        addReferringAttribute("fill", paintServerElement);
         return this;
     }
 
@@ -46,7 +41,7 @@ public class Rect implements ShapeElement {
      * @return The instance called.
      */
     public Rect fill(final ColorKeyword fill) {
-        attributes.addColorAttribute("fill", fill);
+        addColorAttribute("fill", fill);
         return this;
     }
 
@@ -58,7 +53,7 @@ public class Rect implements ShapeElement {
      * @return The instance called.
      */
     public Rect height(final Number height) {
-        attributes.addNumericAttribute("height", height);
+        addNumericAttribute("height", height);
         return this;
     }
 
@@ -70,7 +65,7 @@ public class Rect implements ShapeElement {
      * @return The instance called.
      */
     public Rect stroke(final NoneValue none) {
-        attributes.addNoneValueAttribute("stroke", none);
+        addEnumerationAttribute("stroke", none);
         return this;
     }
 
@@ -82,7 +77,7 @@ public class Rect implements ShapeElement {
      * @return The instance called.
      */
     public Rect stroke(final Integer stroke) {
-        attributes.addColorAttribute("stroke", stroke);
+        addColorAttribute("stroke", stroke);
         return this;
     }
 
@@ -94,7 +89,7 @@ public class Rect implements ShapeElement {
      * @return The instance called.
      */
     public Rect strokeWidth(final double strokeWidth) {
-        attributes.addNumericAttribute("stroke-width", strokeWidth);
+        addNumericAttribute("stroke-width", strokeWidth);
         return this;
     }
 
@@ -106,7 +101,7 @@ public class Rect implements ShapeElement {
      * @return The instance called.
      */
     public Rect width(final Number width) {
-        attributes.addNumericAttribute("width", width);
+        addNumericAttribute("width", width);
         return this;
     }
 
@@ -118,7 +113,7 @@ public class Rect implements ShapeElement {
      * @return The instance called.
      */
     public Rect x(final Number x) {
-        attributes.addNumericAttribute("x", x);
+        addNumericAttribute("x", x);
         return this;
     }
 
@@ -130,22 +125,8 @@ public class Rect implements ShapeElement {
      * @return The instance called.
      */
     public Rect y(final Number y) {
-        attributes.addNumericAttribute("y", y);
+        addNumericAttribute("y", y);
         return this;
-    }
-
-    /**
-     * Returns a string representation of the rectangle with the provided
-     * indentation.
-     *
-     * @param indent
-     *            The indentation.
-     * @return A string representation of the rectangle with the provided
-     *         indentation.
-     */
-    @Override
-    public String asString(final String indent) {
-        return indent + "<" + getElementName() + attributes.asString() + "/>";
     }
 
     @Override

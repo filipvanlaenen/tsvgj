@@ -1,11 +1,19 @@
 package net.filipvanlaenen.tsvgj;
 
-import net.filipvanlaenen.tsvgj.internal.Attribute;
+import java.text.DecimalFormat;
+import java.text.DecimalFormatSymbols;
+import java.util.Locale;
+
+import net.filipvanlaenen.bltxmlepj.Attribute;
 
 /**
  * Abstract class representing a transformation.
  */
 public abstract class Transform implements Attribute {
+    /**
+     * The decimal format.
+     */
+    DecimalFormat DECIMAL_FORMAT = new DecimalFormat("#.######", DecimalFormatSymbols.getInstance(Locale.US));
 
     /**
      * Class representing a rotation transformation.
@@ -27,7 +35,8 @@ public abstract class Transform implements Attribute {
         /**
          * Constructs a rotation, using an angle only.
          *
-         * @param angle The angle on which to rotate.
+         * @param angle
+         *            The angle on which to rotate.
          */
         Rotation(final Number angle) {
             this(angle, null, null);
@@ -36,9 +45,12 @@ public abstract class Transform implements Attribute {
         /**
          * Constructs a rotation.
          *
-         * @param angle The angle on which to rotate.
-         * @param cx    The x coordinate of the rotation center.
-         * @param cy    The y coordinate of the rotation center.
+         * @param angle
+         *            The angle on which to rotate.
+         * @param cx
+         *            The x coordinate of the rotation center.
+         * @param cy
+         *            The y coordinate of the rotation center.
          */
         Rotation(final Number angle, final Number cx, final Number cy) {
             this.angle = angle;
@@ -64,7 +76,8 @@ public abstract class Transform implements Attribute {
     /**
      * Constructs a rotation with an angle only.
      *
-     * @param angle The angle on which to rotate.
+     * @param angle
+     *            The angle on which to rotate.
      * @return A rotation.
      */
     public static Transform rotate(final Number angle) {
@@ -74,9 +87,12 @@ public abstract class Transform implements Attribute {
     /**
      * Constructs a rotation with an angle and a rotation center.
      *
-     * @param angle The angle on which to rotate.
-     * @param cx    The x coordinate of the rotation center.
-     * @param cy    The y coordinate of the rotation center.
+     * @param angle
+     *            The angle on which to rotate.
+     * @param cx
+     *            The x coordinate of the rotation center.
+     * @param cy
+     *            The y coordinate of the rotation center.
      * @return A rotation.
      */
     public static Transform rotate(final Number angle, final Number cx, final Number cy) {

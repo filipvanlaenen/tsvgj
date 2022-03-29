@@ -1,6 +1,6 @@
 package net.filipvanlaenen.tsvgj;
 
-import net.filipvanlaenen.tsvgj.internal.Attributes;
+import net.filipvanlaenen.tsvgj.internal.SvgElementWithAttributesAndContent;
 
 /**
  * A class representing text.
@@ -8,17 +8,7 @@ import net.filipvanlaenen.tsvgj.internal.Attributes;
  * @see <a href="https://www.w3.org/TR/SVG/text.html#TextElement">Text — SVG 2:
  *      11.2. The ‘text’ and ‘tspan’ elements</a>
  */
-public class Text implements GraphicsElement {
-    /**
-     * The attributes.
-     */
-    private final Attributes attributes = new Attributes();
-
-    /**
-     * The content.
-     */
-    private final String content;
-
+public class Text extends SvgElementWithAttributesAndContent implements GraphicsElement {
     /**
      * Constructs a text element with a string as its content.
      *
@@ -26,7 +16,7 @@ public class Text implements GraphicsElement {
      *            A string.
      */
     public Text(final String content) {
-        this.content = content;
+        super(content);
     }
 
     @Override
@@ -42,7 +32,7 @@ public class Text implements GraphicsElement {
      * @return The instance called.
      */
     public Text fill(final Integer fill) {
-        attributes.addColorAttribute("fill", fill);
+        addColorAttribute("fill", fill);
         return this;
     }
 
@@ -54,7 +44,7 @@ public class Text implements GraphicsElement {
      * @return The instance called.
      */
     public Text fill(final ColorKeyword fill) {
-        attributes.addColorAttribute("fill", fill);
+        addColorAttribute("fill", fill);
         return this;
     }
 
@@ -66,7 +56,7 @@ public class Text implements GraphicsElement {
      * @return The instance called.
      */
     public Text fontFamily(final String fontFamily) {
-        attributes.addStringAttribute("font-family", fontFamily);
+        addStringAttribute("font-family", fontFamily);
         return this;
     }
 
@@ -78,7 +68,7 @@ public class Text implements GraphicsElement {
      * @return The instance called.
      */
     public Text fontSize(final Number fontSize) {
-        attributes.addNumericAttribute("font-size", fontSize);
+        addNumericAttribute("font-size", fontSize);
         return this;
     }
 
@@ -90,7 +80,7 @@ public class Text implements GraphicsElement {
      * @return The instance called.
      */
     public Text fontStyle(final FontStyleValue fontStyle) {
-        attributes.addEnumerationAttribute("font-style", fontStyle);
+        addEnumerationAttribute("font-style", fontStyle);
         return this;
     }
 
@@ -102,7 +92,7 @@ public class Text implements GraphicsElement {
      * @return The instance called.
      */
     public Text fontWeight(final FontWeightValue fontWeight) {
-        attributes.addEnumerationAttribute("font-weight", fontWeight);
+        addEnumerationAttribute("font-weight", fontWeight);
         return this;
     }
 
@@ -114,7 +104,7 @@ public class Text implements GraphicsElement {
      * @return The instance called.
      */
     public Text textAlign(final TextAlignValue textAlign) {
-        attributes.addEnumerationAttribute("text-align", textAlign);
+        addEnumerationAttribute("text-align", textAlign);
         return this;
     }
 
@@ -126,7 +116,7 @@ public class Text implements GraphicsElement {
      * @return The instance called.
      */
     public Text textAnchor(final TextAnchorValue textAnchor) {
-        attributes.addEnumerationAttribute("text-anchor", textAnchor);
+        addEnumerationAttribute("text-anchor", textAnchor);
         return this;
     }
 
@@ -138,7 +128,7 @@ public class Text implements GraphicsElement {
      * @return The instance called.
      */
     public Text transform(final Transform transformation) {
-        attributes.addTransformationAttribute("transform", transformation);
+        addAttribute("transform", transformation);
         return this;
     }
 
@@ -150,7 +140,7 @@ public class Text implements GraphicsElement {
      * @return The instance called.
      */
     public Text x(final Number x) {
-        attributes.addNumericAttribute("x", x);
+        addNumericAttribute("x", x);
         return this;
     }
 
@@ -162,33 +152,7 @@ public class Text implements GraphicsElement {
      * @return The instance called.
      */
     public Text y(final Number y) {
-        attributes.addNumericAttribute("y", y);
+        addNumericAttribute("y", y);
         return this;
     }
-
-    /**
-     * Returns a string representation of the text with the provided indentation.
-     *
-     * @param indent
-     *            The indentation.
-     * @return A string representation of the text with the provided indentation.
-     */
-    @Override
-    public String asString(final String indent) {
-        return indent + "<text" + attributes.asString() + ">" + xmlEscape(content) + "</text>";
-    }
-
-    /**
-     * Escape special XML characters in a string. The special XML characters that
-     * will be escaped are <code>&lt;</code>, <code>&gt;</code> and
-     * <code>&amp;</code>.
-     *
-     * @param string
-     *            The original text.
-     * @return The text with special XML characters escaped.
-     */
-    private String xmlEscape(final String string) {
-        return string.replaceAll("&", "&amp;").replaceAll("<", "&lt;").replaceAll(">", "&gt;");
-    }
-
 }

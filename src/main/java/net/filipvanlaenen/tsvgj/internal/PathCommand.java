@@ -10,5 +10,4 @@ interface PathCommand {
      * @return A string representation of the path command.
      */
     String asString();
-
 }

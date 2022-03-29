@@ -1,9 +1,13 @@
 package net.filipvanlaenen.tsvgj.internal;
 
-import net.filipvanlaenen.bltxmlepj.Attribute;
 import net.filipvanlaenen.tsvgj.PaintServerElement;
 
-public class ReferringAttribute implements Attribute {
+/**
+ * A class representing an attribute referring to a paint server element.
+ * 
+ * TODO: Should be deleted.
+ */
+public class DeprecatedReferringAttribute implements Attribute {
     /**
      * The paint server element the attribute refers to.
      */
@@ -13,10 +17,9 @@ public class ReferringAttribute implements Attribute {
      * Constructor using the paint server element to which to refer as its
      * parameter.
      *
-     * @param paintServerElement
-     *            The paint server element to refer to.
+     * @param paintServerElement The paint server element to refer to.
      */
-    public ReferringAttribute(final PaintServerElement paintServerElement) {
+    public DeprecatedReferringAttribute(final PaintServerElement paintServerElement) {
         this.paintServerElement = paintServerElement;
     }
 

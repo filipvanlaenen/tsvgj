@@ -59,7 +59,7 @@ public class DefsTest {
         StringBuilder sb = new StringBuilder();
         sb.append("<svg xmlns=\"http://www.w3.org/2000/svg\">\n");
         sb.append("  <defs>\n");
-        sb.append("    <pattern id=\"pattern-1\" height=\"3\" width=\"2\" x=\"0\" y=\"1\">\n");
+        sb.append("    <pattern height=\"3\" id=\"pattern-1\" width=\"2\" x=\"0\" y=\"1\">\n");
         sb.append("      <rect fill=\"red\" height=\"7\" width=\"6\" x=\"4\" y=\"5\"/>\n");
         sb.append("    </pattern>\n");
         sb.append("  </defs>\n");
@@ -79,7 +79,7 @@ public class DefsTest {
         StringBuilder sb = new StringBuilder();
         sb.append("<svg xmlns=\"http://www.w3.org/2000/svg\">\n");
         sb.append("  <defs>\n");
-        sb.append("    <pattern id=\"pattern-1\" height=\"3\" width=\"2\" x=\"0\" y=\"1\">\n");
+        sb.append("    <pattern height=\"3\" id=\"pattern-1\" width=\"2\" x=\"0\" y=\"1\">\n");
         sb.append("      <rect fill=\"red\" height=\"7\" width=\"6\" x=\"4\" y=\"5\"/>\n");
         sb.append("    </pattern>\n");
         sb.append("  </defs>\n");
@@ -100,7 +100,7 @@ public class DefsTest {
         StringBuilder sb = new StringBuilder();
         sb.append("<svg xmlns=\"http://www.w3.org/2000/svg\">\n");
         sb.append("  <defs>\n");
-        sb.append("    <pattern id=\"pattern-1\" height=\"3\" width=\"2\" x=\"0\" y=\"1\">\n");
+        sb.append("    <pattern height=\"3\" id=\"pattern-1\" width=\"2\" x=\"0\" y=\"1\">\n");
         sb.append("      <rect fill=\"red\" height=\"7\" width=\"6\" x=\"4\" y=\"5\"/>\n");
         sb.append("    </pattern>\n");
         sb.append("  </defs>\n");

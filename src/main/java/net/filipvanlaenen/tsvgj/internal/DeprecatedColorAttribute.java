@@ -2,8 +2,10 @@ package net.filipvanlaenen.tsvgj.internal;
 
 /**
  * A class representing a color attribute.
+ * 
+ * TODO: Should be deleted.
  */
-public abstract class ColorAttribute implements Attribute {
+public abstract class DeprecatedColorAttribute implements Attribute {
     /**
      * The name of the attribute.
      */
@@ -15,7 +17,7 @@ public abstract class ColorAttribute implements Attribute {
      * @param name
      *            The name of the attribute.
      */
-    ColorAttribute(final String name) {
+    DeprecatedColorAttribute(final String name) {
         this.name = name;
     }
 }

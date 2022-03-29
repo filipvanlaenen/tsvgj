@@ -1,11 +1,11 @@
 package net.filipvanlaenen.tsvgj;
 
 import net.filipvanlaenen.tsvgj.internal.ArcToCommand;
-import net.filipvanlaenen.tsvgj.internal.Attributes;
 import net.filipvanlaenen.tsvgj.internal.ClosePathCommand;
 import net.filipvanlaenen.tsvgj.internal.LineToCommand;
 import net.filipvanlaenen.tsvgj.internal.MoveToCommand;
 import net.filipvanlaenen.tsvgj.internal.PathDefinition;
+import net.filipvanlaenen.tsvgj.internal.SvgElementWithAttributes;
 
 /**
  * A class representing a path.
@@ -13,12 +13,7 @@ import net.filipvanlaenen.tsvgj.internal.PathDefinition;
  * @see <a href="https://www.w3.org/TR/SVG/paths.html#PathElement">Paths — SVG
  *      2: 9.2. The ‘path’ element</a>
  */
-public class Path implements GraphicsElement, ShapeElement {
-    /**
-     * The attributes.
-     */
-    private final Attributes attributes = new Attributes();
-
+public class Path extends SvgElementWithAttributes implements GraphicsElement, ShapeElement {
     /**
      * The path definition.
      */
@@ -28,7 +23,7 @@ public class Path implements GraphicsElement, ShapeElement {
      * Constructs a path.
      */
     public Path() {
-        attributes.addPathDefinitionAttribute("d", definition);
+        addAttribute("d", definition);
     }
 
     /**
@@ -75,7 +70,7 @@ public class Path implements GraphicsElement, ShapeElement {
      * @return The instance called.
      */
     public Path fill(final Integer fill) {
-        attributes.addColorAttribute("fill", fill);
+        addColorAttribute("fill", fill);
         return this;
     }
 
@@ -87,7 +82,7 @@ public class Path implements GraphicsElement, ShapeElement {
      * @return The instance called.
      */
     public Path fill(final ColorKeyword fill) {
-        attributes.addColorAttribute("fill", fill);
+        addColorAttribute("fill", fill);
         return this;
     }
 
@@ -99,7 +94,7 @@ public class Path implements GraphicsElement, ShapeElement {
      * @return The instance called.
      */
     public Path fill(final NoneValue none) {
-        attributes.addNoneValueAttribute("fill", none);
+        addEnumerationAttribute("fill", none);
         return this;
     }
 
@@ -144,7 +139,7 @@ public class Path implements GraphicsElement, ShapeElement {
      * @return The instance called.
      */
     public Path opacity(final double opacity) {
-        attributes.addNumericAttribute("opacity", opacity);
+        addNumericAttribute("opacity", opacity);
         return this;
     }
 
@@ -156,7 +151,7 @@ public class Path implements GraphicsElement, ShapeElement {
      * @return The instance called.
      */
     public Path stroke(final ColorKeyword stroke) {
-        attributes.addColorAttribute("stroke", stroke);
+        addColorAttribute("stroke", stroke);
         return this;
     }
 
@@ -168,7 +163,7 @@ public class Path implements GraphicsElement, ShapeElement {
      * @return The instance called.
      */
     public Path stroke(final Integer stroke) {
-        attributes.addColorAttribute("stroke", stroke);
+        addColorAttribute("stroke", stroke);
         return this;
     }
 
@@ -180,20 +175,8 @@ public class Path implements GraphicsElement, ShapeElement {
      * @return The instance called.
      */
     public Path strokeWidth(final Number strokeWidth) {
-        attributes.addNumericAttribute("stroke-width", strokeWidth);
+        addNumericAttribute("stroke-width", strokeWidth);
         return this;
-    }
-
-    /**
-     * Returns a string representation of the path with the provided indentation.
-     *
-     * @param indent
-     *            The indentation.
-     * @return A string representation of the path with the provided indentation.
-     */
-    @Override
-    public String asString(final String indent) {
-        return indent + "<" + getElementName() + attributes.asString() + "/>";
     }
 
     /**

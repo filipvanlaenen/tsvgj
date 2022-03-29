@@ -3,6 +3,7 @@ package net.filipvanlaenen.tsvgj.internal;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
+import net.filipvanlaenen.bltxmlepj.Attribute;
 
 /**
  * A class representing the definition of a {@link Path}.
