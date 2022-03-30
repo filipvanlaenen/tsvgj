@@ -8,7 +8,12 @@ import net.filipvanlaenen.tsvgj.internal.SvgElementWithAttributes;
  * @see <a href="https://www.w3.org/TR/SVG/shapes.html#LineElement">Basic Shapes
  *      — SVG 2: 10.5. The ‘line’ element</a>
  */
-public class Line extends SvgElementWithAttributes implements ShapeElement {
+public final class Line extends SvgElementWithAttributes implements ShapeElement {
+    @Override
+    public String getElementName() {
+        return "line";
+    }
+
     /**
      * Sets the stroke color of the line using a hexadecimal integer.
      *
@@ -91,10 +96,5 @@ public class Line extends SvgElementWithAttributes implements ShapeElement {
     public Line y2(final Number y2) {
         addNumericAttribute("y2", y2);
         return this;
-    }
-
-    @Override
-    public String getElementName() {
-        return "line";
     }
 }
