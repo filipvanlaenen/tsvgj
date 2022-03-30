@@ -13,7 +13,8 @@ public abstract class Transform implements Attribute {
     /**
      * The decimal format.
      */
-    DecimalFormat DECIMAL_FORMAT = new DecimalFormat("#.######", DecimalFormatSymbols.getInstance(Locale.US));
+    private static final DecimalFormat DECIMAL_FORMAT = new DecimalFormat("#.######",
+            DecimalFormatSymbols.getInstance(Locale.US));
 
     /**
      * Class representing a rotation transformation.

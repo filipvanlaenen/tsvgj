@@ -3,6 +3,9 @@ package net.filipvanlaenen.tsvgj.internal;
 import net.filipvanlaenen.bltxmlepj.Attribute;
 import net.filipvanlaenen.tsvgj.PaintServerElement;
 
+/**
+ * A class representing an attribute referring to an element.
+ */
 public class ReferringAttribute implements Attribute {
     /**
      * The paint server element the attribute refers to.

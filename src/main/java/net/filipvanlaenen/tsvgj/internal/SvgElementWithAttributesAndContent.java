@@ -3,7 +3,17 @@ package net.filipvanlaenen.tsvgj.internal;
 import net.filipvanlaenen.bltxmlepj.ElementWithAttributesAndContent;
 import net.filipvanlaenen.tsvgj.ColorKeyword;
 
+/**
+ * Extension of the <code>ElementWithAttributesAndContent</code> class with
+ * methods specific for SVG.
+ */
 public abstract class SvgElementWithAttributesAndContent extends ElementWithAttributesAndContent {
+    /**
+     * Constructor taking the content as its parameter.
+     *
+     * @param content
+     *            The content.
+     */
     protected SvgElementWithAttributesAndContent(final String content) {
         super(content);
     }

@@ -8,7 +8,7 @@ import net.filipvanlaenen.tsvgj.internal.SvgElementWithAttributesAndContent;
  * @see <a href="https://www.w3.org/TR/SVG/text.html#TextElement">Text — SVG 2:
  *      11.2. The ‘text’ and ‘tspan’ elements</a>
  */
-public class Text extends SvgElementWithAttributesAndContent implements GraphicsElement {
+public final class Text extends SvgElementWithAttributesAndContent implements GraphicsElement {
     /**
      * Constructs a text element with a string as its content.
      *

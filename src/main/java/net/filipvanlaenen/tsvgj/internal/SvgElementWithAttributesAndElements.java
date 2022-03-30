@@ -2,6 +2,10 @@ package net.filipvanlaenen.tsvgj.internal;
 
 import net.filipvanlaenen.bltxmlepj.ElementWithAttributesAndElements;
 
+/**
+ * Extension of the <code>ElementWithAttributesAndElements</code> class with
+ * methods specific for SVG.
+ */
 public abstract class SvgElementWithAttributesAndElements extends ElementWithAttributesAndElements {
     /**
      * Adds a numeric array attribute to the set of attributes.

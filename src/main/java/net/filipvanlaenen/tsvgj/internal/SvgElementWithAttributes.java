@@ -4,6 +4,10 @@ import net.filipvanlaenen.bltxmlepj.ElementWithAttributes;
 import net.filipvanlaenen.tsvgj.ColorKeyword;
 import net.filipvanlaenen.tsvgj.PaintServerElement;
 
+/**
+ * Extension of the <code>ElementWithAttributes</code> class with methods
+ * specific for SVG.
+ */
 public abstract class SvgElementWithAttributes extends ElementWithAttributes {
     /**
      * Adds a color attribute to the set of attributes.
