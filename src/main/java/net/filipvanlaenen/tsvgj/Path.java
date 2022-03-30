@@ -13,7 +13,7 @@ import net.filipvanlaenen.tsvgj.internal.SvgElementWithAttributes;
  * @see <a href="https://www.w3.org/TR/SVG/paths.html#PathElement">Paths — SVG
  *      2: 9.2. The ‘path’ element</a>
  */
-public class Path extends SvgElementWithAttributes implements GraphicsElement, ShapeElement {
+public final class Path extends SvgElementWithAttributes implements GraphicsElement, ShapeElement {
     /**
      * The path definition.
      */
