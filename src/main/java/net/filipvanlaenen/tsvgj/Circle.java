@@ -8,7 +8,7 @@ import net.filipvanlaenen.tsvgj.internal.SvgElementWithAttributes;
  * @see <a href="https://www.w3.org/TR/SVG/shapes.html#CircleElement">Basic
  *      Shapes — SVG 2: 10.3. The ‘circle’ element</a>
  */
-public class Circle extends SvgElementWithAttributes implements ShapeElement {
+public final class Circle extends SvgElementWithAttributes implements ShapeElement {
     /**
      * Sets the x coordinate of the center.
      *
@@ -93,6 +93,11 @@ public class Circle extends SvgElementWithAttributes implements ShapeElement {
         return this;
     }
 
+    @Override
+    public String getElementName() {
+        return "circle";
+    }
+
     /**
      * Sets the opacity.
      *
@@ -151,10 +156,5 @@ public class Circle extends SvgElementWithAttributes implements ShapeElement {
     public Circle strokeWidth(final double strokeWidth) {
         addNumericAttribute("stroke-width", strokeWidth);
         return this;
-    }
-
-    @Override
-    public String getElementName() {
-        return "circle";
     }
 }
