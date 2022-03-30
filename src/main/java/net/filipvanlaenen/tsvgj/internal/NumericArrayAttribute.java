@@ -1,17 +1,23 @@
 package net.filipvanlaenen.tsvgj.internal;
 
+import java.text.DecimalFormat;
+import java.text.DecimalFormatSymbols;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
+
+import net.filipvanlaenen.bltxmlepj.Attribute;
 
 /**
  * A class representing a numeric array attribute.
  */
-public class NumericArrayAttribute implements DeprecatedAttribute {
-
+public class NumericArrayAttribute implements Attribute {
     /**
-     * The name of the attribute.
+     * The decimal format.
      */
-    private final String name;
+    private static final DecimalFormat DECIMAL_FORMAT = new DecimalFormat("#.######",
+            DecimalFormatSymbols.getInstance(Locale.US));
+
     /**
      * The value of the attribute, an array of numbers.
      */
@@ -20,13 +26,10 @@ public class NumericArrayAttribute implements DeprecatedAttribute {
     /**
      * Constructs an attribute with a numeric array value.
      *
-     * @param name
-     *            The name of the attribute.
      * @param numbers
      *            The numbers.
      */
-    NumericArrayAttribute(final String name, final Number... numbers) {
-        this.name = name;
+    NumericArrayAttribute(final Number... numbers) {
         this.numbers = numbers;
     }
 
@@ -43,5 +46,4 @@ public class NumericArrayAttribute implements DeprecatedAttribute {
         }
         return String.join(" ", values);
     }
-
 }

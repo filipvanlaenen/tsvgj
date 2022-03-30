@@ -1,7 +1,6 @@
 package net.filipvanlaenen.tsvgj;
 
-import net.filipvanlaenen.tsvgj.internal.DeprecatedAttributes;
-import net.filipvanlaenen.tsvgj.internal.DeprecatedElements;
+import net.filipvanlaenen.tsvgj.internal.SvgElementWithAttributesAndElements;
 
 /**
  * Class representing the root element of an SVG document.
@@ -9,19 +8,53 @@ import net.filipvanlaenen.tsvgj.internal.DeprecatedElements;
  * @see <a href="https://www.w3.org/TR/SVG/struct.html#SVGElement">Document
  *      Structure — SVG 2: 5.1.4. The ‘svg’ element</a>
  */
-public class Svg implements StructuralElement {
-    /**
-     * The attributes.
-     */
-    private final DeprecatedAttributes attributes = new DeprecatedAttributes();
-    /**
-     * A list with the elements.
-     */
-    private final DeprecatedElements elements = new DeprecatedElements();
+public final class Svg extends SvgElementWithAttributesAndElements implements StructuralElement {
     /**
      * The definitions element.
      */
     private Defs defs;
+
+    /**
+     * Default constructor.
+     */
+    public Svg() {
+        addStringAttribute("xmlns", "http://www.w3.org/2000/svg");
+    }
+
+    /**
+     * Adds a shape element.
+     *
+     * @param shape
+     *            A shape element.
+     */
+    public void addElement(final ShapeElement shape) {
+        super.addElement(shape);
+    }
+
+    /**
+     * Adds a structural element.
+     *
+     * @param structuralElement
+     *            A structural element.
+     */
+    public void addElement(final StructuralElement structuralElement) {
+        super.addElement(structuralElement);
+    }
+
+    /**
+     * Adds a text element.
+     *
+     * @param text
+     *            A text element.
+     */
+    public void addElement(final Text text) {
+        super.addElement(text);
+    }
+
+    @Override
+    public String getElementName() {
+        return "svg";
+    }
 
     /**
      * Sets the height.
@@ -31,20 +64,22 @@ public class Svg implements StructuralElement {
      * @return The instance called.
      */
     public Svg height(final Number height) {
-        attributes.addNumericAttribute("height", height);
+        addNumericAttribute("height", height);
         return this;
     }
 
     /**
-     * Sets the width.
+     * Registers a paint server element for reference.
      *
-     * @param width
-     *            The width.
-     * @return The instance called.
+     * @param paintServerElement
+     *            The paint server element to register.
      */
-    public Svg width(final Number width) {
-        attributes.addNumericAttribute("width", width);
-        return this;
+    public void registerElementForReference(final PaintServerElement paintServerElement) {
+        if (defs == null) {
+            defs = new Defs();
+            addElement(defs);
+        }
+        defs.addElement(paintServerElement);
     }
 
     /**
@@ -62,68 +97,19 @@ public class Svg implements StructuralElement {
      * @return The instance called.
      */
     public Svg viewBox(final Number minX, final Number minY, final Number width, final Number height) {
-        attributes.addNumericArrayAttribute("viewBox", new Number[] {minX, minY, width, height});
+        addNumericArrayAttribute("viewBox", minX, minY, width, height);
         return this;
     }
 
     /**
-     * Adds a shape element.
+     * Sets the width.
      *
-     * @param shape
-     *            A shape element.
+     * @param width
+     *            The width.
+     * @return The instance called.
      */
-    public void addElement(final ShapeElement shape) {
-        elements.add(shape);
-    }
-
-    /**
-     * Adds a structural element.
-     *
-     * @param structuralElement
-     *            A structural element.
-     */
-    public void addElement(final StructuralElement structuralElement) {
-        elements.add(structuralElement);
-    }
-
-    /**
-     * Adds a text element.
-     *
-     * @param text
-     *            A text element.
-     */
-    public void addElement(final Text text) {
-        elements.add(text);
-    }
-
-    /**
-     * Returns a string representation of the SVG document.
-     *
-     * @param indent
-     *            The indentation.
-     * @return A string representation of the SVG document.
-     */
-    public String asString(final String indent) {
-        return indent + "<svg" + attributes.asString() + " xmlns=\"http://www.w3.org/2000/svg\""
-                + (elements.isEmpty() ? "/>" : ">\n" + elements.asString(indent + "  ") + indent + "</svg>");
-    }
-
-    @Override
-    public String getElementName() {
-        return "svg";
-    }
-
-    /**
-     * Registers a paint server element for reference.
-     *
-     * @param paintServerElement
-     *            The paint server element to register.
-     */
-    public void registerElementForReference(final PaintServerElement paintServerElement) {
-        if (defs == null) {
-            defs = new Defs();
-            elements.add(defs);
-        }
-        defs.addElement(paintServerElement);
+    public Svg width(final Number width) {
+        addNumericAttribute("width", width);
+        return this;
     }
 }

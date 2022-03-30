@@ -75,10 +75,9 @@ public class ArcToCommand implements PathCommand {
      */
     @Override
     public String asString() {
-        return "A " + DeprecatedAttribute.DECIMAL_FORMAT.format(rx) + " " + DeprecatedAttribute.DECIMAL_FORMAT.format(ry) + " "
-                + DeprecatedAttribute.DECIMAL_FORMAT.format(xAxisRotation) + " " + largeArcFlag.getValue() + " "
-                + sweepFlag.getSvgValue() + " " + DeprecatedAttribute.DECIMAL_FORMAT.format(cx) + " "
-                + DeprecatedAttribute.DECIMAL_FORMAT.format(cy);
+        return "A " + DECIMAL_FORMAT.format(rx) + " " + DECIMAL_FORMAT.format(ry) + " "
+                + DECIMAL_FORMAT.format(xAxisRotation) + " " + largeArcFlag.getValue() + " " + sweepFlag.getSvgValue()
+                + " " + DECIMAL_FORMAT.format(cx) + " " + DECIMAL_FORMAT.format(cy);
     }
 
 }

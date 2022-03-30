@@ -33,6 +33,6 @@ public class MoveToCommand implements PathCommand {
      */
     @Override
     public String asString() {
-        return "M " + DeprecatedAttribute.DECIMAL_FORMAT.format(x) + " " + DeprecatedAttribute.DECIMAL_FORMAT.format(y);
+        return "M " + DECIMAL_FORMAT.format(x) + " " + DECIMAL_FORMAT.format(y);
     }
 }
