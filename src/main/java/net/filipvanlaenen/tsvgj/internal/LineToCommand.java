@@ -33,7 +33,7 @@ public class LineToCommand implements PathCommand {
      */
     @Override
     public String asString() {
-        return "L " + Attribute.DECIMAL_FORMAT.format(x) + " " + Attribute.DECIMAL_FORMAT.format(y);
+        return "L " + DeprecatedAttribute.DECIMAL_FORMAT.format(x) + " " + DeprecatedAttribute.DECIMAL_FORMAT.format(y);
     }
 
 }

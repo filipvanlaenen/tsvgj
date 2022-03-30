@@ -1,7 +1,7 @@
 package net.filipvanlaenen.tsvgj;
 
-import net.filipvanlaenen.tsvgj.internal.Attributes;
-import net.filipvanlaenen.tsvgj.internal.Elements;
+import net.filipvanlaenen.tsvgj.internal.DeprecatedAttributes;
+import net.filipvanlaenen.tsvgj.internal.DeprecatedElements;
 
 /**
  * Class representing the root element of an SVG document.
@@ -13,11 +13,11 @@ public class Svg implements StructuralElement {
     /**
      * The attributes.
      */
-    private final Attributes attributes = new Attributes();
+    private final DeprecatedAttributes attributes = new DeprecatedAttributes();
     /**
      * A list with the elements.
      */
-    private final Elements elements = new Elements();
+    private final DeprecatedElements elements = new DeprecatedElements();
     /**
      * The definitions element.
      */

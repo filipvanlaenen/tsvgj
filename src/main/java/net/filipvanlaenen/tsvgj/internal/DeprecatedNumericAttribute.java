@@ -7,7 +7,7 @@ import java.util.Locale;
 /**
  * A class representing a numeric attribute.
  */
-public class NumericAttribute implements Attribute {
+public class DeprecatedNumericAttribute implements DeprecatedAttribute {
     /**
      * The decimal format.
      */
@@ -31,7 +31,7 @@ public class NumericAttribute implements Attribute {
      * @param number
      *            The number.
      */
-    NumericAttribute(final String name, final Number number) {
+    DeprecatedNumericAttribute(final String name, final Number number) {
         this.name = name;
         this.number = number;
     }

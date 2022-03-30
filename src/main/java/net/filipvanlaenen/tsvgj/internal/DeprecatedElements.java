@@ -14,7 +14,7 @@ import net.filipvanlaenen.tsvgj.Text;
  * A class helping to export elements contained by other SVG elements to a
  * string.
  */
-public class Elements {
+public class DeprecatedElements {
     /**
      * A list with the elements.
      */

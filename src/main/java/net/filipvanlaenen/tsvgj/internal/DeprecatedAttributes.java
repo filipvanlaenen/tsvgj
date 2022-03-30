@@ -9,16 +9,14 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
-import net.filipvanlaenen.tsvgj.PaintServerElement;
-
 /**
  * A class helping to export attributes from SVG elements to a string.
  */
-public class Attributes {
+public class DeprecatedAttributes {
     /**
      * A map with all the attributes.
      */
-    private final Map<String, Attribute> attributes = new HashMap<String, Attribute>();
+    private final Map<String, DeprecatedAttribute> attributes = new HashMap<String, DeprecatedAttribute>();
 
     /**
      * Adds a numeric attribute to the set of attributes.
@@ -29,7 +27,7 @@ public class Attributes {
      *            The numeric value of the attribute.
      */
     public void addNumericAttribute(final String name, final Number number) {
-        attributes.put(name, new NumericAttribute(name, number));
+        attributes.put(name, new DeprecatedNumericAttribute(name, number));
     }
 
     /**
@@ -41,7 +39,7 @@ public class Attributes {
      *            The string value of the attribute.
      */
     public void addStringAttribute(final String name, final String string) {
-        attributes.put(name, new StringAttribute(name, string));
+        attributes.put(name, new DeprecatedStringAttribute(name, string));
     }
 
     /**
@@ -54,18 +52,6 @@ public class Attributes {
      */
     public void addNumericArrayAttribute(final String name, final Number... numbers) {
         attributes.put(name, new NumericArrayAttribute(name, numbers));
-    }
-
-    /**
-     * Adds a reference to a paint server element to the set of attributes.
-     *
-     * @param name
-     *            The name of the attribute.
-     * @param paintServerElement
-     *            The paint server element to refer to.
-     */
-    public void addReferringAttribute(final String name, final PaintServerElement paintServerElement) {
-        attributes.put(name, new DeprecatedReferringAttribute(paintServerElement));
     }
 
     /**

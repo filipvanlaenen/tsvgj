@@ -9,7 +9,7 @@ import net.filipvanlaenen.bltxmlepj.ElementWithAttributesAndElements;
  *      Servers: Solid Colors, Gradients, and Patterns — SVG 2: 14.3.
  *      Patterns</a>
  */
-public class Pattern extends ElementWithAttributesAndElements implements PaintServerElement {
+public final class Pattern extends ElementWithAttributesAndElements implements PaintServerElement {
     /**
      * The ID of the pattern element.
      */
@@ -23,6 +23,21 @@ public class Pattern extends ElementWithAttributesAndElements implements PaintSe
      */
     public void addElement(final ShapeElement shape) {
         super.addElement(shape);
+    }
+
+    @Override
+    public String getElementName() {
+        return "pattern";
+    }
+
+    /**
+     * Returns a reference to the pattern.
+     *
+     * @return A reference to the pattern.
+     */
+    @Override
+    public String getReference() {
+        return "pattern-" + id.toString();
     }
 
     /**
@@ -107,20 +122,5 @@ public class Pattern extends ElementWithAttributesAndElements implements PaintSe
     public Pattern y(final Number y) {
         addNumericAttribute("y", y);
         return this;
-    }
-
-    @Override
-    public String getElementName() {
-        return "pattern";
-    }
-
-    /**
-     * Returns a reference to the pattern.
-     *
-     * @return A reference to the pattern.
-     */
-    @Override
-    public String getReference() {
-        return "pattern-" + id.toString();
     }
 }

@@ -7,7 +7,7 @@ import java.util.Locale;
 /**
  * An interface defining attributes.
  */
-public interface Attribute {
+public interface DeprecatedAttribute {
 
     /**
      * The decimal format.

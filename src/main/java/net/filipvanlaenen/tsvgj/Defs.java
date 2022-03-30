@@ -1,6 +1,6 @@
 package net.filipvanlaenen.tsvgj;
 
-import net.filipvanlaenen.tsvgj.internal.Elements;
+import net.filipvanlaenen.tsvgj.internal.DeprecatedElements;
 
 /**
  * A class representing definitions.
@@ -12,7 +12,7 @@ public class Defs implements StructuralElement {
     /**
      * A list with the elements.
      */
-    private final Elements elements = new Elements();
+    private final DeprecatedElements elements = new DeprecatedElements();
 
     /**
      * Adds a paint server element.

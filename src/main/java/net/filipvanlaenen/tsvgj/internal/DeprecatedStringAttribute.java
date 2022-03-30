@@ -3,7 +3,7 @@ package net.filipvanlaenen.tsvgj.internal;
 /**
  * A class representing a string attribute.
  */
-public class StringAttribute implements Attribute {
+public class DeprecatedStringAttribute implements DeprecatedAttribute {
 
     /**
      * The name of the attribute.
@@ -22,7 +22,7 @@ public class StringAttribute implements Attribute {
      * @param string
      *            The string.
      */
-    StringAttribute(final String name, final String string) {
+    DeprecatedStringAttribute(final String name, final String string) {
         this.name = name;
         this.string = string;
     }

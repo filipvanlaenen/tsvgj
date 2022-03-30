@@ -6,7 +6,7 @@ import java.util.List;
 /**
  * A class representing a numeric array attribute.
  */
-public class NumericArrayAttribute implements Attribute {
+public class NumericArrayAttribute implements DeprecatedAttribute {
 
     /**
      * The name of the attribute.
