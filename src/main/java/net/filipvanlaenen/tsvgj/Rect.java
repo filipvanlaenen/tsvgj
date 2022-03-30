@@ -8,7 +8,13 @@ import net.filipvanlaenen.tsvgj.internal.SvgElementWithAttributes;
  * @see <a href="https://www.w3.org/TR/SVG/shapes.html#RectElement">Basic Shapes
  *      — SVG 2: 10.2. The ‘rect’ element</a>
  */
-public class Rect extends SvgElementWithAttributes implements ShapeElement {
+public final class Rect extends SvgElementWithAttributes implements ShapeElement {
+
+    @Override
+    public String getElementName() {
+        return "rect";
+    }
+
     /**
      * Sets the fill color as a hexadecimal integer.
      *
@@ -127,10 +133,5 @@ public class Rect extends SvgElementWithAttributes implements ShapeElement {
     public Rect y(final Number y) {
         addNumericAttribute("y", y);
         return this;
-    }
-
-    @Override
-    public String getElementName() {
-        return "rect";
     }
 }
