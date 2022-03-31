@@ -7,7 +7,6 @@ import net.filipvanlaenen.tsvgj.Path.SweepFlagValues;
  * A class representing an absolute arc-to command.
  */
 public class ArcToCommand implements PathCommand {
-
     /**
      * The x coordinate for the center of the arc.
      */
@@ -79,5 +78,4 @@ public class ArcToCommand implements PathCommand {
                 + DECIMAL_FORMAT.format(xAxisRotation) + " " + largeArcFlag.getValue() + " " + sweepFlag.getSvgValue()
                 + " " + DECIMAL_FORMAT.format(cx) + " " + DECIMAL_FORMAT.format(cy);
     }
-
 }

@@ -13,5 +13,4 @@ public class ClosePathCommand implements PathCommand {
     public String asString() {
         return "Z";
     }
-
 }
