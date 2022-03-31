@@ -1,7 +1,6 @@
 package net.filipvanlaenen.tsvgj.internal;
 
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
 import net.filipvanlaenen.bltxmlepj.Attribute;
 
@@ -32,16 +31,9 @@ public class PathDefinition implements Attribute {
     @Override
     public String asString() {
         List<String> commandStrings = new ArrayList<String>();
-        Iterator<PathCommand> iterator = commands.iterator();
-        while (iterator.hasNext()) {
-            PathCommand command = iterator.next();
+        for (PathCommand command : commands) {
             commandStrings.add(command.asString());
         }
-        if (commandStrings.isEmpty()) {
-            return "";
-        } else {
-            return String.join(" ", commandStrings);
-        }
+        return String.join(" ", commandStrings);
     }
-
 }
