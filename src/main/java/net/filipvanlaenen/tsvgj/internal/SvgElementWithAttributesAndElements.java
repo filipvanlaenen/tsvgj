@@ -15,7 +15,7 @@ public abstract class SvgElementWithAttributesAndElements extends ElementWithAtt
      * @param numbers
      *            The numeric array value of the attribute.
      */
-    public void addNumericArrayAttribute(final String name, final Number... numbers) {
+    protected void addNumericArrayAttribute(final String name, final Number... numbers) {
         addAttribute(name, new NumericArrayAttribute(numbers));
     }
 }

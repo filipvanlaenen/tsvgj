@@ -41,7 +41,7 @@ public abstract class SvgElementWithAttributes extends ElementWithAttributes {
      * @param paintServerElement
      *            The paint server element to refer to.
      */
-    public void addReferringAttribute(final String name, final PaintServerElement paintServerElement) {
+    protected void addReferringAttribute(final String name, final PaintServerElement paintServerElement) {
         addAttribute(name, new ReferringAttribute(paintServerElement));
     }
 }
