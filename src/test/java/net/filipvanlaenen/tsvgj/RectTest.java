@@ -55,6 +55,7 @@ public class RectTest {
         String expected = "<rect fill=\"#FF0000\" height=\"3\" stroke=\"none\" width=\"2\" x=\"0\" y=\"1\"/>";
         assertEquals(expected, actual);
     }
+
     /**
      * Test verifying that a rectangle using a hexadecimal integer for the stroke
      * color is exported correctly to a string.
@@ -64,6 +65,20 @@ public class RectTest {
         Rect rect = new Rect().x(0).y(1).width(2).height(THREE).stroke(RED).strokeWidth(HALF);
         String actual = rect.asString();
         String expected = "<rect height=\"3\" stroke=\"#FF0000\" stroke-width=\"0.5\" width=\"2\" x=\"0\" y=\"1\"/>";
+        assertEquals(expected, actual);
+    }
+
+    /**
+     * Test verifying that a rectangle using a pattern as fill is exported
+     * correctly.
+     */
+    @Test
+    void rectangleFilledWithPatternShouldBeConvertedCorrectlyToString() {
+        PaintServerElement fillPattern = new Pattern();
+        fillPattern.setId(1);
+        Rect rect = new Rect().x(0).y(1).width(2).height(THREE).fill(fillPattern);
+        String actual = rect.asString();
+        String expected = "<rect fill=\"url(#pattern-1)\" height=\"3\" width=\"2\" x=\"0\" y=\"1\"/>";
         assertEquals(expected, actual);
     }
 }
