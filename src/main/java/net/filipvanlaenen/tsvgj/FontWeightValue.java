@@ -6,7 +6,6 @@ import net.filipvanlaenen.bltxmlepj.AttributeValueEnumeration;
  * An enumeration listing the values for the <code>font-weight</code> attribute.
  */
 public enum FontWeightValue implements AttributeValueEnumeration {
-
     /**
      * Normal text.
      */
@@ -89,5 +88,4 @@ public enum FontWeightValue implements AttributeValueEnumeration {
     public String toString() {
         return numericValue == null ? super.toString() : "" + numericValue;
     }
-
 }
