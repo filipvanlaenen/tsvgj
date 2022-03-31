@@ -35,5 +35,4 @@ public class LineToCommand implements PathCommand {
     public String asString() {
         return "L " + DECIMAL_FORMAT.format(x) + " " + DECIMAL_FORMAT.format(y);
     }
-
 }
