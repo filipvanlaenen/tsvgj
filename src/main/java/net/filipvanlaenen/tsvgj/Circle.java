@@ -76,7 +76,7 @@ public final class Circle extends SvgElementWithAttributes implements ShapeEleme
      *            The paint server element used to fill the circle.
      * @return The instance called.
      */
-    public ShapeElement fill(final PaintServerElement paintServerElement) {
+    public Circle fill(final PaintServerElement paintServerElement) {
         addReferringAttribute("fill", paintServerElement);
         return this;
     }

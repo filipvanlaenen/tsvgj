@@ -88,4 +88,17 @@ public class CircleTest {
         String expected = "<circle cx=\"0\" cy=\"1\" r=\"2\" stroke=\"#FF0000\" stroke-width=\"0.5\"/>";
         assertEquals(expected, actual);
     }
+
+    /**
+     * Test verifying that a circle using a pattern as fill is exported correctly.
+     */
+    @Test
+    void circleFilledWithPatternShouldBeConvertedCorrectlyToString() {
+        PaintServerElement fillPattern = new Pattern();
+        fillPattern.setId(1);
+        Circle circle = new Circle().cx(0).cy(1).r(2).fill(fillPattern);
+        String actual = circle.asString();
+        String expected = "<circle cx=\"0\" cy=\"1\" fill=\"url(#pattern-1)\" r=\"2\"/>";
+        assertEquals(expected, actual);
+    }
 }
