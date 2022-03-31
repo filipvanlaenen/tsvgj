@@ -28,11 +28,10 @@ public class ArcToCommandTest {
     private static final int SIX = 6;
 
     /**
-     * Test verifying that a path describing a red sector line is exported correctly
-     * to a string.
+     * Test verifying that an arc-to command is exported correctly to a string.
      */
     @Test
-    void redSectorLineIsConvertedCorrectlyToString() {
+    void shouldConvertCorrectlyToString() {
         ArcToCommand arcToCommand = new ArcToCommand(2, THREE, FOUR, Path.LargeArcFlagValues.LARGE_ARC,
                 Path.SweepFlagValues.POSITIVE_ANGLE, FIVE, SIX);
         String actual = arcToCommand.asString();
