@@ -98,4 +98,24 @@ public class PatternTest {
         String expected = sb.toString();
         assertEquals(expected, actual);
     }
+
+    /**
+     * Test verifying that the setter for ID is wired correctly to the getter for
+     * the reference.
+     */
+    @Test
+    void setIdShouldBeWiredCorrectlyToGetReference() {
+        pattern.setId(1);
+        assertEquals("pattern-1", pattern.getReference());
+    }
+
+    /**
+     * Test verifying that when an ID is set, it is also exported as an attribute.
+     */
+    @Test
+    void setIdShouldSetIdAttribute() {
+        Pattern actual = new Pattern();
+        actual.setId(1);
+        assertEquals("<pattern id=\"pattern-1\"/>", actual.asString());
+    }
 }
