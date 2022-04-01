@@ -102,4 +102,30 @@ public class SvgTest {
         String expected = sb.toString();
         assertEquals(expected, actual);
     }
+
+    /**
+     * Test verifying that a pattern can be registered for reference.
+     */
+    @Test
+    void patternShouldBeRegisteredForReference() {
+        Svg svg = new Svg().width(TWO_THOUSAND).height(THOUSAND).viewBox(-1, -1, 2, 1);
+        Pattern pattern = new Pattern().x(0).y(0).width(1).height(1);
+        Rect patternRect = new Rect().x(0).y(0).width(1).height(1).fill(ColorKeyword.RED);
+        pattern.addElement(patternRect);
+        svg.registerElementForReference(pattern);
+        Rect rect = new Rect().x(0).y(0).width(1).height(1).fill(pattern);
+        svg.addElement(rect);
+        String actual = svg.asString();
+        StringBuilder sb = new StringBuilder();
+        sb.append("<svg height=\"1000\" viewBox=\"-1 -1 2 1\" width=\"2000\" xmlns=\"http://www.w3.org/2000/svg\">\n");
+        sb.append("  <defs>\n");
+        sb.append("    <pattern height=\"1\" id=\"pattern-1\" width=\"1\" x=\"0\" y=\"0\">\n");
+        sb.append("      <rect fill=\"red\" height=\"1\" width=\"1\" x=\"0\" y=\"0\"/>\n");
+        sb.append("    </pattern>\n");
+        sb.append("  </defs>\n");
+        sb.append("  <rect fill=\"url(#pattern-1)\" height=\"1\" width=\"1\" x=\"0\" y=\"0\"/>\n");
+        sb.append("</svg>");
+        String expected = sb.toString();
+        assertEquals(expected, actual);
+    }
 }
