@@ -30,23 +30,30 @@ public class SvgTest {
     private static final double MINUS_A_HALF = -0.5D;
 
     /**
-     * Test verifying that a simple SVG document with a red unit circle in a view
-     * box is exported correctly to a string.
+     * Test verifying that a SVG fragment is exported correctly to a string.
+     */
+    @Test
+    void svgFragmentIsConvertedCorrectlyToString() {
+        Svg svg = new Svg(false);
+        assertEquals("<svg/>", svg.asString());
+    }
+
+    /**
+     * Test verifying that a simple SVG document with a red unit circle in a view box is exported correctly to a string.
      */
     @Test
     void redUnitCircleInAViewBoxIsConvertedCorrectlyToString() {
         Svg svg = new Svg().width(TWO_THOUSAND).height(THOUSAND).viewBox(-1, -1, 2, 1);
         svg.addElement(new Circle().cx(0).cy(0).r(1).fill(RED));
         String actual = svg.asString();
-        String expected = "<svg height=\"1000\" viewBox=\"-1 -1 2 1\" width=\"2000\""
-                + " xmlns=\"http://www.w3.org/2000/svg\">\n"
-                + "  <circle cx=\"0\" cy=\"0\" fill=\"#FF0000\" r=\"1\"/>\n" + "</svg>";
+        String expected =
+                "<svg height=\"1000\" viewBox=\"-1 -1 2 1\" width=\"2000\"" + " xmlns=\"http://www.w3.org/2000/svg\">\n"
+                        + "  <circle cx=\"0\" cy=\"0\" fill=\"#FF0000\" r=\"1\"/>\n" + "</svg>";
         assertEquals(expected, actual);
     }
 
     /**
-     * Test verifying that an SVG document with two red unit circles in a view box
-     * is exported correctly to a string.
+     * Test verifying that an SVG document with two red unit circles in a view box is exported correctly to a string.
      */
     @Test
     void twoRedUnitCirclesInAViewBoxAreConvertedCorrectlyToString() {
@@ -54,16 +61,15 @@ public class SvgTest {
         svg.addElement(new Circle().cx(MINUS_A_HALF).cy(0).r(A_HALF).fill(RED));
         svg.addElement(new Circle().cx(A_HALF).cy(0).r(A_HALF).fill(RED));
         String actual = svg.asString();
-        String expected = "<svg height=\"1000\" viewBox=\"-1 -1 2 1\" width=\"2000\""
-                + " xmlns=\"http://www.w3.org/2000/svg\">\n"
-                + "  <circle cx=\"-0.5\" cy=\"0\" fill=\"#FF0000\" r=\"0.5\"/>\n"
-                + "  <circle cx=\"0.5\" cy=\"0\" fill=\"#FF0000\" r=\"0.5\"/>\n" + "</svg>";
+        String expected =
+                "<svg height=\"1000\" viewBox=\"-1 -1 2 1\" width=\"2000\"" + " xmlns=\"http://www.w3.org/2000/svg\">\n"
+                        + "  <circle cx=\"-0.5\" cy=\"0\" fill=\"#FF0000\" r=\"0.5\"/>\n"
+                        + "  <circle cx=\"0.5\" cy=\"0\" fill=\"#FF0000\" r=\"0.5\"/>\n" + "</svg>";
         assertEquals(expected, actual);
     }
 
     /**
-     * Test verifying that a simple SVG document with a text in a view box is
-     * exported correctly to a string.
+     * Test verifying that a simple SVG document with a text in a view box is exported correctly to a string.
      */
     @Test
     void textInAViewBoxIsConvertedCorrectlyToString() {
@@ -81,8 +87,8 @@ public class SvgTest {
     }
 
     /**
-     * Test verifying that a simple SVG document with a text in a grouping in a view
-     * box is exported correctly to a string.
+     * Test verifying that a simple SVG document with a text in a grouping in a view box is exported correctly to a
+     * string.
      */
     @Test
     void textInAGroupingInAViewBoxIsConvertedCorrectlyToString() {
