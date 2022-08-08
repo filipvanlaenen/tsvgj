@@ -34,7 +34,7 @@ public class EnumerationArrayAttribute implements Attribute {
     public String asString() {
         List<String> values = new ArrayList<String>();
         for (AttributeValueEnumeration enumerationValue : enumerationValues) {
-            values.add(enumerationValue.toString());
+            values.add(enumerationValue.asString());
         }
         return String.join(" ", values);
     }
