@@ -75,6 +75,13 @@ public final class Svg extends SvgElementWithAttributesAndElements implements St
         return this;
     }
 
+    /**
+     * Sets the preserveAspectRatio attribute.
+     *
+     * @param align       The align part of the preserveAspectRatio attribute.
+     * @param meetOrSlice The meet or slice part of the preserveAspectRatio attribute.
+     * @return The instance called.
+     */
     public Svg preserveAspectRatio(final PreserveAspectRatioAlignValue align,
             final PreserveAspectRatioMeetOrSliceValue meetOrSlice) {
         addEnumerationArrayAttribute("preserveAspectRatio", align, meetOrSlice);

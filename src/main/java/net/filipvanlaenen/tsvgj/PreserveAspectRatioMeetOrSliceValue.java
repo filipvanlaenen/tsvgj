@@ -9,5 +9,12 @@ import net.filipvanlaenen.bltxmlepj.AttributeValueEnumeration;
  *      attribute</a>
  */
 public enum PreserveAspectRatioMeetOrSliceValue implements AttributeValueEnumeration {
-    MEET, SLICE
+    /**
+     * Meet.
+     */
+    MEET,
+    /**
+     * Slice.
+     */
+    SLICE
 }
