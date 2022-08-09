@@ -39,6 +39,16 @@ public class SvgTest {
     }
 
     /**
+     * Test verifying that a SVG fragment with preserveAspectRatio is exported correctly to a string.
+     */
+    @Test
+    void svgFragmentWithPreserveAspectRatioIsConvertedCorrectlyToString() {
+        Svg svg = new Svg(false).preserveAspectRatio(PreserveAspectRatioAlignValue.X_MAX_Y_MAX,
+                PreserveAspectRatioMeetOrSliceValue.MEET);
+        assertEquals("<svg preserveAspectRatio=\"xMaxYMax meet\"/>", svg.asString());
+    }
+
+    /**
      * Test verifying that a simple SVG document with a red unit circle in a view box is exported correctly to a string.
      */
     @Test
