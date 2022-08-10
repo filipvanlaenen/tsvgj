@@ -87,10 +87,14 @@ projects.
   * [rect](https://www.w3.org/TR/SVG/shapes.html#RectElement)
 * Text
   * [text](https://www.w3.org/TR/SVG/text.html#TextElement)
+* Embedded content
+  * [image](https://www.w3.org/TR/SVG/embedded.html#ImageElement)
 * Paint servers
   * [pattern](https://www.w3.org/TR/SVG/pservers.html#Patterns)
 
 ## Projects Using TSVGJ
 
 The following projects use TSVGJ:
+* [ASAPOP](https://github.com/filipvanlaenen/asapop)
 * [SHecC](https://github.com/filipvanlaenen/shecc)
+* [TXHTMLJ](https://github.com/filipvanlaenen/txhtmlj)
