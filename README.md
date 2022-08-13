@@ -91,6 +91,8 @@ projects.
   * [image](https://www.w3.org/TR/SVG/embedded.html#ImageElement)
 * Paint servers
   * [pattern](https://www.w3.org/TR/SVG/pservers.html#Patterns)
+* Linking
+  * [a](https://www.w3.org/TR/SVG/linking.html#AElement)
 
 ## Projects Using TSVGJ
 

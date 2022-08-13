@@ -33,6 +33,15 @@ public final class Svg extends SvgElementWithAttributesAndElements implements St
     }
 
     /**
+     * Adds a link element.
+     *
+     * @param a An link element.
+     */
+    public void addElement(final A a) {
+        super.addElement(a);
+    }
+
+    /**
      * Adds an image element.
      *
      * @param image An image element.
