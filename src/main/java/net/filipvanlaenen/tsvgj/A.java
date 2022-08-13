@@ -8,12 +8,7 @@ import net.filipvanlaenen.tsvgj.internal.SvgElementWithAttributesAndElements;
  * @see <a href="https://www.w3.org/TR/SVG/linking.html#AElement">Linking — SVG 2: 16.2. Links out of SVG content: the
  *      ‘a’ element</a>
  */
-public class A extends SvgElementWithAttributesAndElements {
-    @Override
-    public String getElementName() {
-        return "a";
-    }
-
+public final class A extends SvgElementWithAttributesAndElements {
     /**
      * Adds an image element.
      *
@@ -48,6 +43,11 @@ public class A extends SvgElementWithAttributesAndElements {
      */
     public void addElement(final Text text) {
         super.addElement(text);
+    }
+
+    @Override
+    public String getElementName() {
+        return "a";
     }
 
     /**
