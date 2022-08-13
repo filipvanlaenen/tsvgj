@@ -49,6 +49,28 @@ public class SvgTest {
     }
 
     /**
+     * Test verifying that a SVG fragment with an image is exported correctly to a string.
+     */
+    @Test
+    void svgFragmentWithImageShouldBeConvertedCorrectlyToString() {
+        Svg svg = new Svg(false);
+        svg.addElement(new Image().href("foo.png"));
+        assertEquals("<svg>\n  <image href=\"foo.png\"/>\n</svg>", svg.asString());
+    }
+
+    /**
+     * Test verifying that a SVG fragment with a linked image is exported correctly to a string.
+     */
+    @Test
+    void svgFragmentWithLinkedImageShouldBeConvertedCorrectlyToString() {
+        Svg svg = new Svg(false);
+        A a = new A().href("foo.html");
+        a.addElement(new Image().href("foo.png"));
+        svg.addElement(a);
+        assertEquals("<svg>\n  <a href=\"foo.html\">\n    <image href=\"foo.png\"/>\n  </a>\n</svg>", svg.asString());
+    }
+
+    /**
      * Test verifying that a simple SVG document with a red unit circle in a view box is exported correctly to a string.
      */
     @Test

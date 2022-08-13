@@ -15,17 +15,6 @@ public class A extends SvgElementWithAttributesAndElements {
     }
 
     /**
-     * Sets the hyperreference for the link.
-     *
-     * @param href The hyperreference for the link.
-     * @return The instance called.
-     */
-    public A href(final String href) {
-        addStringAttribute("href", href);
-        return this;
-    }
-
-    /**
      * Adds an image element.
      *
      * @param image An image element.
@@ -59,5 +48,16 @@ public class A extends SvgElementWithAttributesAndElements {
      */
     public void addElement(final Text text) {
         super.addElement(text);
+    }
+
+    /**
+     * Sets the hyperreference for the link.
+     *
+     * @param href The hyperreference for the link.
+     * @return The instance called.
+     */
+    public A href(final String href) {
+        addStringAttribute("href", href);
+        return this;
     }
 }
