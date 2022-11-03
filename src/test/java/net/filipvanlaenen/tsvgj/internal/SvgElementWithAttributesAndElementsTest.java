@@ -4,7 +4,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import org.junit.jupiter.api.Test;
 
-import net.filipvanlaenen.bltxmlepj.AttributeValueEnumeration;
+import net.filipvanlaenen.bltxmlepj.CamelCaseAttributeValueEnumeration;
 
 /**
  * Unit tests on the <code>SvgElementWithAttributesAndElements</code> class.
@@ -28,7 +28,7 @@ public class SvgElementWithAttributesAndElementsTest {
     /**
      * Local enumeration for testing purposes.
      */
-    private enum MyEnumeration implements AttributeValueEnumeration {
+    private enum MyEnumeration implements CamelCaseAttributeValueEnumeration {
         /**
          * Simple value.
          */

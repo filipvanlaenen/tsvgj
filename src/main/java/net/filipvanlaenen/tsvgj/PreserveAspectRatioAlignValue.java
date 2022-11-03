@@ -1,6 +1,6 @@
 package net.filipvanlaenen.tsvgj;
 
-import net.filipvanlaenen.bltxmlepj.AttributeValueEnumeration;
+import net.filipvanlaenen.bltxmlepj.CamelCaseAttributeValueEnumeration;
 
 /**
  * An enumeration listing the values for the <code>preserveAspectRatio</code> <code>meetOrSlice</code> attribute.
@@ -8,7 +8,7 @@ import net.filipvanlaenen.bltxmlepj.AttributeValueEnumeration;
  * @see <a href="https://www.w3.org/TR/SVG/coords.html#PreserveAspectRatioAttribute">8.7. The ‘preserveAspectRatio’
  *      attribute</a>
  */
-public enum PreserveAspectRatioAlignValue implements AttributeValueEnumeration {
+public enum PreserveAspectRatioAlignValue implements CamelCaseAttributeValueEnumeration {
     /**
      * None.
      */

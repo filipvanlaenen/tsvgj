@@ -1,6 +1,6 @@
 package net.filipvanlaenen.tsvgj;
 
-import net.filipvanlaenen.bltxmlepj.AttributeValueEnumeration;
+import net.filipvanlaenen.bltxmlepj.CamelCaseAttributeValueEnumeration;
 
 /**
  * An enumeration listing the values for the <code>font-style</code> attribute.
@@ -8,7 +8,7 @@ import net.filipvanlaenen.bltxmlepj.AttributeValueEnumeration;
  * @see <a href="https://www.w3.org/TR/css-fonts-3/#font-style-prop">CSS Fonts
  *      Module Level 3: 3.4. Font style: the font-style property</a>
  */
-public enum FontStyleValue implements AttributeValueEnumeration {
+public enum FontStyleValue implements CamelCaseAttributeValueEnumeration {
     /**
      * Normal text.
      */

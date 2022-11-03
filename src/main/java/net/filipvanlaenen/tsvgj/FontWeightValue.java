@@ -1,11 +1,11 @@
 package net.filipvanlaenen.tsvgj;
 
-import net.filipvanlaenen.bltxmlepj.AttributeValueEnumeration;
+import net.filipvanlaenen.bltxmlepj.CamelCaseAttributeValueEnumeration;
 
 /**
  * An enumeration listing the values for the <code>font-weight</code> attribute.
  */
-public enum FontWeightValue implements AttributeValueEnumeration {
+public enum FontWeightValue implements CamelCaseAttributeValueEnumeration {
     /**
      * Normal text.
      */

@@ -1,14 +1,14 @@
 package net.filipvanlaenen.tsvgj;
 
-import net.filipvanlaenen.bltxmlepj.AttributeValueEnumeration;
+import net.filipvanlaenen.bltxmlepj.CamelCaseAttributeValueEnumeration;
 
 /**
  * An enumeration listing the values for the <code>text-align</code> attribute.
  *
- * @see <a href="https://www.w3.org/TR/css-text-3/#text-align-property">CSS Text
- *      Module Level 3: 6.1. Text Alignment: the text-align shorthand</a>
+ * @see <a href="https://www.w3.org/TR/css-text-3/#text-align-property">CSS Text Module Level 3: 6.1. Text Alignment:
+ *      the text-align shorthand</a>
  */
-public enum TextAlignValue implements AttributeValueEnumeration {
+public enum TextAlignValue implements CamelCaseAttributeValueEnumeration {
     /**
      * Align to the start.
      */
