@@ -86,6 +86,11 @@
     <!--   <property name="fileExtensions" value="java"/> -->
     <!-- </module> -->
 
+    <module name="LineLength">
+      <!-- Modified for TSVGJ to increase line length to 120. -->
+      <property name="max" value="120"/>
+    </module>
+        
     <module name="TreeWalker">
 
         <!-- Checks for Javadoc comments.                     -->
@@ -118,10 +123,7 @@
 
         <!-- Checks for Size Violations.                    -->
         <!-- See http://checkstyle.sourceforge.net/config_sizes.html -->
-        <module name="LineLength">
-          <!-- Modified for TSVGJ to increase line length to 120. -->
-          <property name="max" value="120"/>
-        </module>
+
         <module name="MethodLength"/>
         <module name="ParameterNumber"/>
 
