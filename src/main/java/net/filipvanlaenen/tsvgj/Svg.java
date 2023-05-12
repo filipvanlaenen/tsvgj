@@ -1,6 +1,6 @@
 package net.filipvanlaenen.tsvgj;
 
-import net.filipvanlaenen.tsvgj.internal.SvgElementWithAttributesAndElements;
+import net.filipvanlaenen.tsvgj.internal.SvgElementWithElements;
 
 /**
  * Class representing the root element of an SVG document.
@@ -8,7 +8,7 @@ import net.filipvanlaenen.tsvgj.internal.SvgElementWithAttributesAndElements;
  * @see <a href="https://www.w3.org/TR/SVG/struct.html#SVGElement">Document Structure — SVG 2: 5.1.4. The ‘svg’
  *      element</a>
  */
-public final class Svg extends SvgElementWithAttributesAndElements implements StructuralElement {
+public final class Svg extends SvgElementWithElements implements StructuralElement {
     /**
      * The definitions element.
      */

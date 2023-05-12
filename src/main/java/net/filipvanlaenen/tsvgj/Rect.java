@@ -1,6 +1,6 @@
 package net.filipvanlaenen.tsvgj;
 
-import net.filipvanlaenen.tsvgj.internal.SvgElementWithAttributes;
+import net.filipvanlaenen.tsvgj.internal.EmptySvgElement;
 
 /**
  * A class representing a rectangle.
@@ -8,7 +8,7 @@ import net.filipvanlaenen.tsvgj.internal.SvgElementWithAttributes;
  * @see <a href="https://www.w3.org/TR/SVG/shapes.html#RectElement">Basic Shapes
  *      — SVG 2: 10.2. The ‘rect’ element</a>
  */
-public final class Rect extends SvgElementWithAttributes implements ShapeElement {
+public final class Rect extends EmptySvgElement implements ShapeElement {
 
     @Override
     public String getElementName() {

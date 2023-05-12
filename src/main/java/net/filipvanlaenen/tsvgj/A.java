@@ -1,6 +1,6 @@
 package net.filipvanlaenen.tsvgj;
 
-import net.filipvanlaenen.tsvgj.internal.SvgElementWithAttributesAndElements;
+import net.filipvanlaenen.tsvgj.internal.SvgElementWithElements;
 
 /**
  * A class representing a link.
@@ -8,7 +8,7 @@ import net.filipvanlaenen.tsvgj.internal.SvgElementWithAttributesAndElements;
  * @see <a href="https://www.w3.org/TR/SVG/linking.html#AElement">Linking — SVG 2: 16.2. Links out of SVG content: the
  *      ‘a’ element</a>
  */
-public final class A extends SvgElementWithAttributesAndElements {
+public final class A extends SvgElementWithElements {
     /**
      * Adds an image element.
      *

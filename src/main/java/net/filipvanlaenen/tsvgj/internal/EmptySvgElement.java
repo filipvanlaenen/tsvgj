@@ -1,23 +1,14 @@
 package net.filipvanlaenen.tsvgj.internal;
 
-import net.filipvanlaenen.bltxmlepj.ElementWithAttributesAndContent;
+import net.filipvanlaenen.bltxmlepj.EmptyElement;
 import net.filipvanlaenen.tsvgj.ColorKeyword;
+import net.filipvanlaenen.tsvgj.PaintServerElement;
 
 /**
- * Extension of the <code>ElementWithAttributesAndContent</code> class with
- * methods specific for SVG.
+ * Extension of the <code>EmptyElement</code> class with methods
+ * specific for SVG.
  */
-public abstract class SvgElementWithAttributesAndContent extends ElementWithAttributesAndContent {
-    /**
-     * Constructor taking the content as its parameter.
-     *
-     * @param content
-     *            The content.
-     */
-    protected SvgElementWithAttributesAndContent(final String content) {
-        super(content);
-    }
-
+public abstract class EmptySvgElement extends EmptyElement {
     /**
      * Adds a color attribute to the set of attributes.
      *
@@ -40,5 +31,17 @@ public abstract class SvgElementWithAttributesAndContent extends ElementWithAttr
      */
     protected void addColorAttribute(final String name, final Integer color) {
         addAttribute(name, new HexadecimalColorAttribute(color));
+    }
+
+    /**
+     * Adds a reference to a paint server element to the set of attributes.
+     *
+     * @param name
+     *            The name of the attribute.
+     * @param paintServerElement
+     *            The paint server element to refer to.
+     */
+    protected void addReferringAttribute(final String name, final PaintServerElement paintServerElement) {
+        addAttribute(name, new ReferringAttribute(paintServerElement));
     }
 }

@@ -1,6 +1,6 @@
 package net.filipvanlaenen.tsvgj;
 
-import net.filipvanlaenen.tsvgj.internal.SvgElementWithAttributes;
+import net.filipvanlaenen.tsvgj.internal.EmptySvgElement;
 
 /**
  * A class representing a line.
@@ -8,7 +8,7 @@ import net.filipvanlaenen.tsvgj.internal.SvgElementWithAttributes;
  * @see <a href="https://www.w3.org/TR/SVG/shapes.html#LineElement">Basic Shapes
  *      — SVG 2: 10.5. The ‘line’ element</a>
  */
-public final class Line extends SvgElementWithAttributes implements ShapeElement {
+public final class Line extends EmptySvgElement implements ShapeElement {
     @Override
     public String getElementName() {
         return "line";

@@ -19,7 +19,7 @@ public class SvgElementWithAttributesAndContentTest {
      * Local subclass of <code>ElementWithAttributesAndElements</code> for testing
      * purposes.
      */
-    private class MySvgElementWithAttributesAndContent extends SvgElementWithAttributesAndContent {
+    private class MySvgElementWithAttributesAndContent extends SvgElementWithContent {
         /**
          * Constructor taking the content as its parameter.
          *

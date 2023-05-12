@@ -1,15 +1,14 @@
 package net.filipvanlaenen.tsvgj;
 
-import net.filipvanlaenen.bltxmlepj.ElementWithAttributesAndElements;
+import net.filipvanlaenen.bltxmlepj.ElementWithElements;
 
 /**
  * A class representing a pattern.
  *
- * @see <a href= "https://www.w3.org/TR/SVG/pservers.html#PatternElement">Paint
- *      Servers: Solid Colors, Gradients, and Patterns — SVG 2: 14.3.
- *      Patterns</a>
+ * @see <a href= "https://www.w3.org/TR/SVG/pservers.html#PatternElement">Paint Servers: Solid Colors, Gradients, and
+ *      Patterns — SVG 2: 14.3. Patterns</a>
  */
-public final class Pattern extends ElementWithAttributesAndElements implements PaintServerElement {
+public final class Pattern extends ElementWithElements implements PaintServerElement {
     /**
      * The ID of the pattern element.
      */
@@ -18,8 +17,7 @@ public final class Pattern extends ElementWithAttributesAndElements implements P
     /**
      * Adds a shape element.
      *
-     * @param shape
-     *            A shape element.
+     * @param shape A shape element.
      */
     public void addElement(final ShapeElement shape) {
         super.addElement(shape);
@@ -43,8 +41,7 @@ public final class Pattern extends ElementWithAttributesAndElements implements P
     /**
      * Sets the height of the pattern.
      *
-     * @param height
-     *            The height of the pattern.
+     * @param height The height of the pattern.
      * @return The instance called.
      */
     public Pattern height(final Number height) {
@@ -55,20 +52,18 @@ public final class Pattern extends ElementWithAttributesAndElements implements P
     /**
      * Sets the ID for the pattern.
      *
-     * @param id
-     *            The ID for the pattern.
+     * @param id The ID for the pattern.
      */
     @Override
     public void setId(final int id) {
         this.id = id;
-        addStringAttribute("id", getReference());
+        id(getReference());
     }
 
     /**
      * Adds a transformation to the pattern.
      *
-     * @param transformation
-     *            The specification of the transformation.
+     * @param transformation The specification of the transformation.
      * @return The instance called.
      */
     public Pattern patternTransform(final Transform transformation) {
@@ -79,8 +74,7 @@ public final class Pattern extends ElementWithAttributesAndElements implements P
     /**
      * Sets the value for the pattern units.
      *
-     * @param patternUnits
-     *            The units for the pattern.
+     * @param patternUnits The units for the pattern.
      * @return The instance called.
      */
     public Pattern patternUnits(final PatternUnitsValue patternUnits) {
@@ -91,8 +85,7 @@ public final class Pattern extends ElementWithAttributesAndElements implements P
     /**
      * Sets the width of the pattern.
      *
-     * @param width
-     *            The width of the pattern.
+     * @param width The width of the pattern.
      * @return The instance called.
      */
     public Pattern width(final Number width) {
@@ -103,8 +96,7 @@ public final class Pattern extends ElementWithAttributesAndElements implements P
     /**
      * Sets the x coordinate of the left edge of the pattern.
      *
-     * @param x
-     *            The x coordinate of left edge of the pattern.
+     * @param x The x coordinate of left edge of the pattern.
      * @return The instance called.
      */
     public Pattern x(final Number x) {
@@ -115,8 +107,7 @@ public final class Pattern extends ElementWithAttributesAndElements implements P
     /**
      * Sets the y coordinate of the top edge of the pattern.
      *
-     * @param y
-     *            The y coordinate of top edge of the pattern.
+     * @param y The y coordinate of top edge of the pattern.
      * @return The instance called.
      */
     public Pattern y(final Number y) {

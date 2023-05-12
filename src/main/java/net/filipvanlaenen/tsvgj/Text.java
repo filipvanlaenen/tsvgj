@@ -1,6 +1,6 @@
 package net.filipvanlaenen.tsvgj;
 
-import net.filipvanlaenen.tsvgj.internal.SvgElementWithAttributesAndContent;
+import net.filipvanlaenen.tsvgj.internal.SvgElementWithContent;
 
 /**
  * A class representing text.
@@ -8,7 +8,7 @@ import net.filipvanlaenen.tsvgj.internal.SvgElementWithAttributesAndContent;
  * @see <a href="https://www.w3.org/TR/SVG/text.html#TextElement">Text — SVG 2:
  *      11.2. The ‘text’ and ‘tspan’ elements</a>
  */
-public final class Text extends SvgElementWithAttributesAndContent implements GraphicsElement {
+public final class Text extends SvgElementWithContent implements GraphicsElement {
     /**
      * Constructs a text element with a string as its content.
      *

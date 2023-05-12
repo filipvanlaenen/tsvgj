@@ -1,6 +1,6 @@
 package net.filipvanlaenen.tsvgj;
 
-import net.filipvanlaenen.tsvgj.internal.SvgElementWithAttributes;
+import net.filipvanlaenen.tsvgj.internal.EmptySvgElement;
 
 /**
  * A class representing a circle.
@@ -8,7 +8,7 @@ import net.filipvanlaenen.tsvgj.internal.SvgElementWithAttributes;
  * @see <a href="https://www.w3.org/TR/SVG/shapes.html#CircleElement">Basic
  *      Shapes — SVG 2: 10.3. The ‘circle’ element</a>
  */
-public final class Circle extends SvgElementWithAttributes implements ShapeElement {
+public final class Circle extends EmptySvgElement implements ShapeElement {
     /**
      * Sets the x coordinate of the center.
      *

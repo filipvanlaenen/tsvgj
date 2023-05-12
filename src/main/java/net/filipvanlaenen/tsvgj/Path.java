@@ -5,7 +5,7 @@ import net.filipvanlaenen.tsvgj.internal.ClosePathCommand;
 import net.filipvanlaenen.tsvgj.internal.LineToCommand;
 import net.filipvanlaenen.tsvgj.internal.MoveToCommand;
 import net.filipvanlaenen.tsvgj.internal.PathDefinition;
-import net.filipvanlaenen.tsvgj.internal.SvgElementWithAttributes;
+import net.filipvanlaenen.tsvgj.internal.EmptySvgElement;
 
 /**
  * A class representing a path.
@@ -13,7 +13,7 @@ import net.filipvanlaenen.tsvgj.internal.SvgElementWithAttributes;
  * @see <a href="https://www.w3.org/TR/SVG/paths.html#PathElement">Paths — SVG
  *      2: 9.2. The ‘path’ element</a>
  */
-public final class Path extends SvgElementWithAttributes implements GraphicsElement, ShapeElement {
+public final class Path extends EmptySvgElement implements GraphicsElement, ShapeElement {
     /**
      * The path definition.
      */

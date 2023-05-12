@@ -1,6 +1,6 @@
 package net.filipvanlaenen.tsvgj;
 
-import net.filipvanlaenen.tsvgj.internal.SvgElementWithAttributes;
+import net.filipvanlaenen.tsvgj.internal.EmptySvgElement;
 
 /**
  * A class representing an image.
@@ -8,7 +8,7 @@ import net.filipvanlaenen.tsvgj.internal.SvgElementWithAttributes;
  * @see <a href="https://www.w3.org/TR/SVG/embedded.html#ImageElement">Embedded Content — SVG 2: 12.3. The ‘image’
  *      element</a>
  */
-public final class Image extends SvgElementWithAttributes implements GraphicsElement {
+public final class Image extends EmptySvgElement implements GraphicsElement {
 
     @Override
     public String getElementName() {

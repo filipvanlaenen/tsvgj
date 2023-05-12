@@ -18,7 +18,7 @@ public class SvgElementWithAttributesAndElementsTest {
     /**
      * Local subclass of <code>ElementWithAttributesAndElements</code> for testing purposes.
      */
-    private class MySvgElementWithAttributesAndElements extends SvgElementWithAttributesAndElements {
+    private class MySvgElementWithAttributesAndElements extends SvgElementWithElements {
         @Override
         public String getElementName() {
             return "e";
