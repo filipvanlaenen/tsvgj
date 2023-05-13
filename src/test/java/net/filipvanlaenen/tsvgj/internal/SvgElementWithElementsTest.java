@@ -7,18 +7,18 @@ import org.junit.jupiter.api.Test;
 import net.filipvanlaenen.bltxmlepj.CamelCaseAttributeValueEnumeration;
 
 /**
- * Unit tests on the <code>SvgElementWithAttributesAndElements</code> class.
+ * Unit tests on the <code>SvgElementWithElements</code> class.
  */
-public class SvgElementWithAttributesAndElementsTest {
+public class SvgElementWithElementsTest {
     /**
      * The magic number three.
      */
     private static final int THREE = 3;
 
     /**
-     * Local subclass of <code>ElementWithAttributesAndElements</code> for testing purposes.
+     * Local subclass of <code>SvgElementWithElements</code> for testing purposes.
      */
-    private class MySvgElementWithAttributesAndElements extends SvgElementWithElements {
+    private class MySvgElementWithElements extends SvgElementWithElements {
         @Override
         public String getElementName() {
             return "e";
@@ -44,7 +44,7 @@ public class SvgElementWithAttributesAndElementsTest {
      */
     @Test
     void elementWithNumericArrayAttributeIsExportedCorrectly() {
-        MySvgElementWithAttributesAndElements element = new MySvgElementWithAttributesAndElements();
+        MySvgElementWithElements element = new MySvgElementWithElements();
         element.addNumericArrayAttribute("foo", 1, 2, THREE);
         assertEquals("<e foo=\"1 2 3\"/>", element.asString());
     }
@@ -54,7 +54,7 @@ public class SvgElementWithAttributesAndElementsTest {
      */
     @Test
     void elementWithEnumerationArrayAttributeIsExportedCorrectly() {
-        MySvgElementWithAttributesAndElements element = new MySvgElementWithAttributesAndElements();
+        MySvgElementWithElements element = new MySvgElementWithElements();
         element.addEnumerationArrayAttribute("baz", MyEnumeration.FOO, MyEnumeration.BAR);
         assertEquals("<e baz=\"foo bar\"/>", element.asString());
     }

@@ -7,26 +7,24 @@ import org.junit.jupiter.api.Test;
 import net.filipvanlaenen.tsvgj.ColorKeyword;
 
 /**
- * Unit tests on the <code>SvgElementWithAttributesAndContent</code> class.
+ * Unit tests on the <code>SvgElementWithContent</code> class.
  */
-public class SvgElementWithAttributesAndContentTest {
+public class SvgElementWithContentTest {
     /**
      * Hexadecimal number for testing purposes.
      */
     private static final int HEXADECIMAL_NUMBER_0X123456 = 0x123456;
 
     /**
-     * Local subclass of <code>ElementWithAttributesAndElements</code> for testing
-     * purposes.
+     * Local subclass of <code>SvgElementWithContent</code> for testing purposes.
      */
-    private class MySvgElementWithAttributesAndContent extends SvgElementWithContent {
+    private class MySvgElementWithContent extends SvgElementWithContent {
         /**
          * Constructor taking the content as its parameter.
          *
-         * @param content
-         *            The content.
+         * @param content The content.
          */
-        protected MySvgElementWithAttributesAndContent(final String content) {
+        protected MySvgElementWithContent(final String content) {
             super(content);
         }
 
@@ -41,7 +39,7 @@ public class SvgElementWithAttributesAndContentTest {
      */
     @Test
     void elementWithColorKeywordAttributeIsExportedCorrectly() {
-        MySvgElementWithAttributesAndContent element = new MySvgElementWithAttributesAndContent(null);
+        MySvgElementWithContent element = new MySvgElementWithContent(null);
         element.addColorAttribute("foo", ColorKeyword.ALICEBLUE);
         assertEquals("<e foo=\"aliceblue\"/>", element.asString());
     }
@@ -51,7 +49,7 @@ public class SvgElementWithAttributesAndContentTest {
      */
     @Test
     void elementWithIntegerColorAttributeIsExportedCorrectly() {
-        MySvgElementWithAttributesAndContent element = new MySvgElementWithAttributesAndContent(null);
+        MySvgElementWithContent element = new MySvgElementWithContent(null);
         element.addColorAttribute("foo", HEXADECIMAL_NUMBER_0X123456);
         assertEquals("<e foo=\"#123456\"/>", element.asString());
     }

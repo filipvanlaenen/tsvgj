@@ -9,19 +9,18 @@ import net.filipvanlaenen.tsvgj.PaintServerElement;
 import net.filipvanlaenen.tsvgj.Pattern;
 
 /**
- * Unit tests on the <code>SvgElementWithAttributes</code> class.
+ * Unit tests on the <code>EmptySvgElement</code> class.
  */
-public class SvgElementWithAttributesTest {
+public class EmptySvgElementTest {
     /**
      * Hexadecimal number for testing purposes.
      */
     private static final int HEXADECIMAL_NUMBER_0X123456 = 0x123456;
 
     /**
-     * Local subclass of <code>ElementWithAttributesAndElements</code> for testing
-     * purposes.
+     * Local subclass of <code>EmptySvgElement</code> for testing purposes.
      */
-    private class MySvgElementWithAttributes extends EmptySvgElement {
+    private class MyEmptySvgElement extends EmptySvgElement {
         @Override
         public String getElementName() {
             return "e";
@@ -33,7 +32,7 @@ public class SvgElementWithAttributesTest {
      */
     @Test
     void elementWithColorKeywordAttributeIsExportedCorrectly() {
-        MySvgElementWithAttributes element = new MySvgElementWithAttributes();
+        MyEmptySvgElement element = new MyEmptySvgElement();
         element.addColorAttribute("foo", ColorKeyword.ALICEBLUE);
         assertEquals("<e foo=\"aliceblue\"/>", element.asString());
     }
@@ -43,7 +42,7 @@ public class SvgElementWithAttributesTest {
      */
     @Test
     void elementWithIntegerColorAttributeIsExportedCorrectly() {
-        MySvgElementWithAttributes element = new MySvgElementWithAttributes();
+        MyEmptySvgElement element = new MyEmptySvgElement();
         element.addColorAttribute("foo", HEXADECIMAL_NUMBER_0X123456);
         assertEquals("<e foo=\"#123456\"/>", element.asString());
     }
@@ -53,7 +52,7 @@ public class SvgElementWithAttributesTest {
      */
     @Test
     void elementWithReferringAttributeIsExportedCorrectly() {
-        MySvgElementWithAttributes element = new MySvgElementWithAttributes();
+        MyEmptySvgElement element = new MyEmptySvgElement();
         PaintServerElement referredElement = new Pattern();
         referredElement.setId(1);
         element.addReferringAttribute("foo", referredElement);
