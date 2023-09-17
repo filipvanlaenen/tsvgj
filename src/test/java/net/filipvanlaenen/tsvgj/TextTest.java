@@ -38,8 +38,8 @@ public class TextTest {
     }
 
     /**
-     * Test verifying that a piece of text with the fill color specified as a
-     * hexadecimal integer is exported correctly to a string.
+     * Test verifying that a piece of text with the fill color specified as a hexadecimal integer is exported correctly
+     * to a string.
      */
     @Test
     void textWithHexadecimalFillColorIsConvertedCorrectlyToString() {
@@ -47,6 +47,20 @@ public class TextTest {
         String actual = text.asString();
         String expected = "<text fill=\"#FF0000\" font-family=\"Times New Roman\" font-size=\"2\" x=\"0\""
                 + " y=\"1\">Lorem ipsum</text>";
+        assertEquals(expected, actual);
+    }
+
+    /**
+     * Test verifying that the dominant baseline is exported correctly.
+     */
+    @Test
+    void dominantBaselineIsExportedCorrectlyToString() {
+        Text text = new Text("Lorem ipsum").x(0).y(1).fill(RED).fontSize(2).fontFamily("Times New Roman")
+                .dominantBaseline(DominantBaselineValue.AUTO);
+        String actual = text.asString();
+        String expected =
+                "<text dominant-baseline=\"auto\" fill=\"#FF0000\" font-family=\"Times New Roman\" font-size=\"2\""
+                        + " x=\"0\" y=\"1\">Lorem ipsum</text>";
         assertEquals(expected, actual);
     }
 
@@ -62,6 +76,7 @@ public class TextTest {
                 + " text-align=\"center\" x=\"0\" y=\"1\">Lorem ipsum</text>";
         assertEquals(expected, actual);
     }
+
     /**
      * Test verifying that the text anchor is exported correctly.
      */
@@ -100,6 +115,7 @@ public class TextTest {
                 + " font-style=\"normal\" x=\"0\" y=\"1\">Lorem ipsum</text>";
         assertEquals(expected, actual);
     }
+
     /**
      * Test verifying that the font weight is exported correctly.
      */
@@ -127,8 +143,7 @@ public class TextTest {
     }
 
     /**
-     * Test verifying that a piece of text containing special XML characters is
-     * encoded correctly.
+     * Test verifying that a piece of text containing special XML characters is encoded correctly.
      */
     @Test
     void specialXmlCharactersAreEncodedCorrectly() {

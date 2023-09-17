@@ -18,7 +18,7 @@ public class SvgElementWithContentTest {
     /**
      * Local subclass of <code>SvgElementWithContent</code> for testing purposes.
      */
-    private class MySvgElementWithContent extends SvgElementWithContent {
+    private class MySvgElementWithContent extends SvgElementWithContent<MySvgElementWithContent> {
         /**
          * Constructor taking the content as its parameter.
          *
@@ -32,6 +32,15 @@ public class SvgElementWithContentTest {
         public String getElementName() {
             return "e";
         }
+    }
+
+    /**
+     * Test verifying that a class is exported correctly.
+     */
+    @Test
+    void classShouldBeConvertedCorrectlyToString() {
+        MySvgElementWithContent e = new MySvgElementWithContent(null).clazz("qux");
+        assertEquals("<e class=\"qux\"/>", e.asString());
     }
 
     /**
