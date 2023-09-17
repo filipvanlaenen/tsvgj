@@ -5,8 +5,11 @@ import net.filipvanlaenen.tsvgj.ColorKeyword;
 
 /**
  * Extension of the <code>ElementWithContent</code> class with methods specific for SVG.
+ *
+ * @param <E> The subclass.
  */
-public abstract class SvgElementWithContent extends ElementWithContent {
+public abstract class SvgElementWithContent<E extends SvgElementWithContent<E>> extends ElementWithContent<E> {
+
     /**
      * Constructor taking the content as its parameter.
      *
@@ -34,5 +37,16 @@ public abstract class SvgElementWithContent extends ElementWithContent {
      */
     protected void addColorAttribute(final String name, final Integer color) {
         addAttribute(name, new HexadecimalColorAttribute(color));
+    }
+
+    /**
+     * Sets the class.
+     *
+     * @param clazz The class.
+     * @return The instance called.
+     */
+    public E clazz(final String clazz) {
+        addStringAttribute("class", clazz);
+        return (E) this;
     }
 }

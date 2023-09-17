@@ -5,18 +5,28 @@ import net.filipvanlaenen.tsvgj.internal.SvgElementWithContent;
 /**
  * A class representing text.
  *
- * @see <a href="https://www.w3.org/TR/SVG/text.html#TextElement">Text — SVG 2:
- *      11.2. The ‘text’ and ‘tspan’ elements</a>
+ * @see <a href="https://www.w3.org/TR/SVG/text.html#TextElement">Text — SVG 2: 11.2. The ‘text’ and ‘tspan’
+ *      elements</a>
  */
-public final class Text extends SvgElementWithContent implements GraphicsElement {
+public final class Text extends SvgElementWithContent<Text> implements GraphicsElement {
     /**
      * Constructs a text element with a string as its content.
      *
-     * @param content
-     *            A string.
+     * @param content A string.
      */
     public Text(final String content) {
         super(content);
+    }
+
+    /**
+     * Sets the value for the dominant baseline.
+     *
+     * @param dominantBaseline The dominant baseline for the text.
+     * @return The instance called.
+     */
+    public Text dominantBaseline(final DominantBaselineValue dominantBaseline) {
+        addEnumerationAttribute("dominant-baseline", dominantBaseline);
+        return this;
     }
 
     @Override
@@ -27,8 +37,7 @@ public final class Text extends SvgElementWithContent implements GraphicsElement
     /**
      * Sets the fill color as a hexadecimal integer.
      *
-     * @param fill
-     *            The fill color as a hexadecimal integer.
+     * @param fill The fill color as a hexadecimal integer.
      * @return The instance called.
      */
     public Text fill(final Integer fill) {
@@ -39,8 +48,7 @@ public final class Text extends SvgElementWithContent implements GraphicsElement
     /**
      * Sets the fill color using a color keyword.
      *
-     * @param fill
-     *            The fill color using a color keyword.
+     * @param fill The fill color using a color keyword.
      * @return The instance called.
      */
     public Text fill(final ColorKeyword fill) {
@@ -51,8 +59,7 @@ public final class Text extends SvgElementWithContent implements GraphicsElement
     /**
      * Sets the font family for the text.
      *
-     * @param fontFamily
-     *            The font family for the text.
+     * @param fontFamily The font family for the text.
      * @return The instance called.
      */
     public Text fontFamily(final String fontFamily) {
@@ -63,8 +70,7 @@ public final class Text extends SvgElementWithContent implements GraphicsElement
     /**
      * Sets the font size for the text.
      *
-     * @param fontSize
-     *            The font size for the text.
+     * @param fontSize The font size for the text.
      * @return The instance called.
      */
     public Text fontSize(final Number fontSize) {
@@ -75,8 +81,7 @@ public final class Text extends SvgElementWithContent implements GraphicsElement
     /**
      * Sets the font style for the text.
      *
-     * @param fontStyle
-     *            The font style for the text.
+     * @param fontStyle The font style for the text.
      * @return The instance called.
      */
     public Text fontStyle(final FontStyleValue fontStyle) {
@@ -87,8 +92,7 @@ public final class Text extends SvgElementWithContent implements GraphicsElement
     /**
      * Sets the font weight for the text.
      *
-     * @param fontWeight
-     *            The font weight for the text.
+     * @param fontWeight The font weight for the text.
      * @return The instance called.
      */
     public Text fontWeight(final FontWeightValue fontWeight) {
@@ -99,8 +103,7 @@ public final class Text extends SvgElementWithContent implements GraphicsElement
     /**
      * Sets the value for the text align.
      *
-     * @param textAlign
-     *            The text align for the text.
+     * @param textAlign The text align for the text.
      * @return The instance called.
      */
     public Text textAlign(final TextAlignValue textAlign) {
@@ -111,8 +114,7 @@ public final class Text extends SvgElementWithContent implements GraphicsElement
     /**
      * Sets the value for the text anchor.
      *
-     * @param textAnchor
-     *            The text anchor for the text.
+     * @param textAnchor The text anchor for the text.
      * @return The instance called.
      */
     public Text textAnchor(final TextAnchorValue textAnchor) {
@@ -123,8 +125,7 @@ public final class Text extends SvgElementWithContent implements GraphicsElement
     /**
      * Adds a transformation to the text.
      *
-     * @param transformation
-     *            The specification of the transformation.
+     * @param transformation The specification of the transformation.
      * @return The instance called.
      */
     public Text transform(final Transform transformation) {
@@ -135,8 +136,7 @@ public final class Text extends SvgElementWithContent implements GraphicsElement
     /**
      * Sets the x coordinate of the text.
      *
-     * @param x
-     *            The x coordinate of the text.
+     * @param x The x coordinate of the text.
      * @return The instance called.
      */
     public Text x(final Number x) {
@@ -147,8 +147,7 @@ public final class Text extends SvgElementWithContent implements GraphicsElement
     /**
      * Sets the y coordinate of the text.
      *
-     * @param y
-     *            The y coordinate of the text.
+     * @param y The y coordinate of the text.
      * @return The instance called.
      */
     public Text y(final Number y) {
