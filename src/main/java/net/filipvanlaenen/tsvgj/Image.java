@@ -8,7 +8,7 @@ import net.filipvanlaenen.tsvgj.internal.EmptySvgElement;
  * @see <a href="https://www.w3.org/TR/SVG/embedded.html#ImageElement">Embedded Content — SVG 2: 12.3. The ‘image’
  *      element</a>
  */
-public final class Image extends EmptySvgElement implements GraphicsElement {
+public final class Image extends EmptySvgElement<Image> implements GraphicsElement {
 
     @Override
     public String getElementName() {

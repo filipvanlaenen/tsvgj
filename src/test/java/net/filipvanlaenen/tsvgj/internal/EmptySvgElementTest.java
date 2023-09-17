@@ -20,11 +20,20 @@ public class EmptySvgElementTest {
     /**
      * Local subclass of <code>EmptySvgElement</code> for testing purposes.
      */
-    private class MyEmptySvgElement extends EmptySvgElement {
+    private class MyEmptySvgElement extends EmptySvgElement<MyEmptySvgElement> {
         @Override
         public String getElementName() {
             return "e";
         }
+    }
+
+    /**
+     * Test verifying that a class is exported correctly.
+     */
+    @Test
+    void classShouldBeConvertedCorrectlyToString() {
+        MyEmptySvgElement e = new MyEmptySvgElement().clazz("qux");
+        assertEquals("<e class=\"qux\"/>", e.asString());
     }
 
     /**

@@ -8,7 +8,7 @@ import net.filipvanlaenen.tsvgj.internal.EmptySvgElement;
  * @see <a href="https://www.w3.org/TR/SVG/shapes.html#LineElement">Basic Shapes
  *      — SVG 2: 10.5. The ‘line’ element</a>
  */
-public final class Line extends EmptySvgElement implements ShapeElement {
+public final class Line extends EmptySvgElement<Line> implements ShapeElement {
     @Override
     public String getElementName() {
         return "line";

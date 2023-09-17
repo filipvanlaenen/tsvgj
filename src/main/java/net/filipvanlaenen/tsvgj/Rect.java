@@ -8,7 +8,7 @@ import net.filipvanlaenen.tsvgj.internal.EmptySvgElement;
  * @see <a href="https://www.w3.org/TR/SVG/shapes.html#RectElement">Basic Shapes
  *      — SVG 2: 10.2. The ‘rect’ element</a>
  */
-public final class Rect extends EmptySvgElement implements ShapeElement {
+public final class Rect extends EmptySvgElement<Rect> implements ShapeElement {
 
     @Override
     public String getElementName() {

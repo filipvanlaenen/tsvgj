@@ -8,7 +8,7 @@ import net.filipvanlaenen.tsvgj.internal.EmptySvgElement;
  * @see <a href="https://www.w3.org/TR/SVG/shapes.html#CircleElement">Basic
  *      Shapes — SVG 2: 10.3. The ‘circle’ element</a>
  */
-public final class Circle extends EmptySvgElement implements ShapeElement {
+public final class Circle extends EmptySvgElement<Circle> implements ShapeElement {
     /**
      * Sets the x coordinate of the center.
      *
