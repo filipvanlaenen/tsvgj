@@ -50,4 +50,26 @@ public abstract class EmptySvgElement<E extends EmptySvgElement<E>> extends Empt
         addStringAttribute("class", clazz);
         return (E) this;
     }
+
+    /**
+     * Sets the onmousemove event.
+     *
+     * @param onmousemove The onmousemove event.
+     * @return The instance called.
+     */
+    public E onmousemove(final String onmousemove) {
+        addStringAttribute("onmousemove", onmousemove);
+        return (E) this;
+    }
+
+    /**
+     * Sets the onmouseout event.
+     *
+     * @param onmouseout The onmouseout event.
+     * @return The instance called.
+     */
+    public E onmouseout(final String onmouseout) {
+        addStringAttribute("onmouseout", onmouseout);
+        return (E) this;
+    }
 }

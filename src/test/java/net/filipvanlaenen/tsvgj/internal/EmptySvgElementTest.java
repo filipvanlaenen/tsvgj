@@ -67,4 +67,22 @@ public class EmptySvgElementTest {
         element.addReferringAttribute("foo", referredElement);
         assertEquals("<e foo=\"url(#pattern-1)\"/>", element.asString());
     }
+
+    /**
+     * Test verifying that onmousemove is exported correctly.
+     */
+    @Test
+    void onmousemoveShouldBeConvertedCorrectlyToString() {
+        MyEmptySvgElement e = new MyEmptySvgElement().onmousemove("bar()");
+        assertEquals("<e onmousemove=\"bar()\"/>", e.asString());
+    }
+
+    /**
+     * Test verifying that onmouseout is exported correctly.
+     */
+    @Test
+    void onmouseoutShouldBeConvertedCorrectlyToString() {
+        MyEmptySvgElement e = new MyEmptySvgElement().onmouseout("bar()");
+        assertEquals("<e onmouseout=\"bar()\"/>", e.asString());
+    }
 }
