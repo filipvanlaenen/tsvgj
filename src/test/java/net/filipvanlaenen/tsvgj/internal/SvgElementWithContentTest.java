@@ -62,4 +62,22 @@ public class SvgElementWithContentTest {
         element.addColorAttribute("foo", HEXADECIMAL_NUMBER_0X123456);
         assertEquals("<e foo=\"#123456\"/>", element.asString());
     }
+
+    /**
+     * Test verifying that onmousemove is exported correctly.
+     */
+    @Test
+    void onmousemoveShouldBeConvertedCorrectlyToString() {
+        MySvgElementWithContent e = new MySvgElementWithContent(null).onmousemove("bar()");
+        assertEquals("<e onmousemove=\"bar()\"/>", e.asString());
+    }
+
+    /**
+     * Test verifying that onmouseout is exported correctly.
+     */
+    @Test
+    void onmouseoutShouldBeConvertedCorrectlyToString() {
+        MySvgElementWithContent e = new MySvgElementWithContent(null).onmouseout("bar()");
+        assertEquals("<e onmouseout=\"bar()\"/>", e.asString());
+    }
 }
