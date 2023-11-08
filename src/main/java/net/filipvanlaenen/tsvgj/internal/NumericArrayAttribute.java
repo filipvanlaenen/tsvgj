@@ -2,11 +2,11 @@ package net.filipvanlaenen.tsvgj.internal;
 
 import java.text.DecimalFormat;
 import java.text.DecimalFormatSymbols;
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Locale;
+import java.util.stream.Collectors;
 
 import net.filipvanlaenen.bltxmlepj.Attribute;
+import net.filipvanlaenen.kolektoj.OrderedCollection;
 
 /**
  * A class representing a numeric array attribute.
@@ -15,8 +15,8 @@ public class NumericArrayAttribute implements Attribute {
     /**
      * The decimal format.
      */
-    private static final DecimalFormat DECIMAL_FORMAT = new DecimalFormat("#.######",
-            DecimalFormatSymbols.getInstance(Locale.US));
+    private static final DecimalFormat DECIMAL_FORMAT =
+            new DecimalFormat("#.######", DecimalFormatSymbols.getInstance(Locale.US));
 
     /**
      * The value of the attribute, an array of numbers.
@@ -26,8 +26,7 @@ public class NumericArrayAttribute implements Attribute {
     /**
      * Constructs an attribute with a numeric array value.
      *
-     * @param numbers
-     *            The numbers.
+     * @param numbers The numbers.
      */
     NumericArrayAttribute(final Number... numbers) {
         this.numbers = numbers;
@@ -40,10 +39,7 @@ public class NumericArrayAttribute implements Attribute {
      */
     @Override
     public String asString() {
-        List<String> values = new ArrayList<String>();
-        for (Number number : numbers) {
-            values.add(DECIMAL_FORMAT.format(number));
-        }
-        return String.join(" ", values);
+        return OrderedCollection.of(numbers).stream().map(n -> DECIMAL_FORMAT.format(n))
+                .collect(Collectors.joining(" "));
     }
 }
