@@ -1,10 +1,10 @@
 package net.filipvanlaenen.tsvgj.internal;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.stream.Collectors;
 
 import net.filipvanlaenen.bltxmlepj.Attribute;
 import net.filipvanlaenen.bltxmlepj.AttributeValueEnumeration;
+import net.filipvanlaenen.kolektoj.OrderedCollection;
 
 /**
  * A class representing an enumeration array attribute.
@@ -18,8 +18,7 @@ public class EnumerationArrayAttribute implements Attribute {
     /**
      * Constructs an attribute with an enumeration array value.
      *
-     * @param enumerationValues
-     *            The enumeration values.
+     * @param enumerationValues The enumeration values.
      */
     EnumerationArrayAttribute(final AttributeValueEnumeration... enumerationValues) {
         this.enumerationValues = enumerationValues;
@@ -32,10 +31,7 @@ public class EnumerationArrayAttribute implements Attribute {
      */
     @Override
     public String asString() {
-        List<String> values = new ArrayList<String>();
-        for (AttributeValueEnumeration enumerationValue : enumerationValues) {
-            values.add(enumerationValue.asString());
-        }
-        return String.join(" ", values);
+        return OrderedCollection.of(enumerationValues).stream().map(AttributeValueEnumeration::asString)
+                .collect(Collectors.joining(" "));
     }
 }

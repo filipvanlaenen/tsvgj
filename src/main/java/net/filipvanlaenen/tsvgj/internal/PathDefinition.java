@@ -1,8 +1,10 @@
 package net.filipvanlaenen.tsvgj.internal;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.stream.Collectors;
+
 import net.filipvanlaenen.bltxmlepj.Attribute;
+import net.filipvanlaenen.kolektoj.ModifiableOrderedCollection;
+import net.filipvanlaenen.kolektoj.array.ModifiableOrderedArrayCollection;
 
 /**
  * A class representing the definition of a {@link Path}.
@@ -11,13 +13,13 @@ public class PathDefinition implements Attribute {
     /**
      * The list with commands.
      */
-    private final List<PathCommand> commands = new ArrayList<PathCommand>();
+    private final ModifiableOrderedCollection<PathCommand> commands =
+            new ModifiableOrderedArrayCollection<PathCommand>();
 
     /**
      * Adds a command to the path definition.
      *
-     * @param command
-     *            The command to be added to the path definition.
+     * @param command The command to be added to the path definition.
      */
     public void add(final PathCommand command) {
         commands.add(command);
@@ -30,10 +32,6 @@ public class PathDefinition implements Attribute {
      */
     @Override
     public String asString() {
-        List<String> commandStrings = new ArrayList<String>();
-        for (PathCommand command : commands) {
-            commandStrings.add(command.asString());
-        }
-        return String.join(" ", commandStrings);
+        return commands.stream().map(PathCommand::asString).collect(Collectors.joining(" "));
     }
 }
