@@ -10,6 +10,9 @@ an easy way, with all the advantages of typing. Below is a short list of the fea
 * Coverage of the basic elements and concepts of SVG
   * It is not expected to it will be possible to cover all aspects of all elements and concepts of SVG
 
+Note that this library can be used to produce invalid SVG code, and that it won't be able to produce all possible
+valid SVG code.
+
 * [Example](#example)
 * [Getting Started](#getting-started)
 * [Elements Implemented](#elements-implemented)
