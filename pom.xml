@@ -48,7 +48,7 @@
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-pmd-plugin</artifactId>
-        <version>3.21.0</version>
+        <version>3.25.0</version>
         <configuration>
           <sourceEncoding>${project.build.sourceEncoding}</sourceEncoding>
           <targetJdk>${project.build.javaVersion}</targetJdk>
