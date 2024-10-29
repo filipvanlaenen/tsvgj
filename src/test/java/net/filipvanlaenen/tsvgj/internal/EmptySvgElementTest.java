@@ -13,6 +13,18 @@ import net.filipvanlaenen.tsvgj.Pattern;
  */
 public class EmptySvgElementTest {
     /**
+     * The magic number three.
+     */
+    private static final int THREE = 3;
+    /**
+     * The magic number four.
+     */
+    private static final int FOUR = 4;
+    /**
+     * The magic number five.
+     */
+    private static final int FIVE = 5;
+    /**
      * Hexadecimal number for testing purposes.
      */
     private static final int HEXADECIMAL_NUMBER_0X123456 = 0x123456;
@@ -54,6 +66,16 @@ public class EmptySvgElementTest {
         MyEmptySvgElement element = new MyEmptySvgElement();
         element.addColorAttribute("foo", HEXADECIMAL_NUMBER_0X123456);
         assertEquals("<e foo=\"#123456\"/>", element.asString());
+    }
+
+    /**
+     * Tests that an element with a points attribute is exported correctly.
+     */
+    @Test
+    void elementWithPointsAttributeIsExportedCorrectly() {
+        MyEmptySvgElement element = new MyEmptySvgElement();
+        element.addPointsAttribute("foo", new Number[] {0, 1, 2, THREE, FOUR, FIVE});
+        assertEquals("<e foo=\"0,1 2,3 4,5\"/>", element.asString());
     }
 
     /**

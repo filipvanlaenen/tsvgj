@@ -85,6 +85,7 @@ Not all SVG elements and concepts have been implemented yet. Below is a list wit
   * [circle](https://www.w3.org/TR/SVG/shapes.html#CircleElement)
   * [ellipse](https://www.w3.org/TR/SVG/shapes.html#EllipseElement)
   * [line](https://www.w3.org/TR/SVG/shapes.html#LineElement)
+  * [polyline](https://www.w3.org/TR/SVG/shapes.html#PolylineElement)
   * [rect](https://www.w3.org/TR/SVG/shapes.html#RectElement)
 * Text
   * [text](https://www.w3.org/TR/SVG/text.html#TextElement)

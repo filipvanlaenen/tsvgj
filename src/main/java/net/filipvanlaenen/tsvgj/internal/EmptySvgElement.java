@@ -31,6 +31,16 @@ public abstract class EmptySvgElement<E extends EmptySvgElement<E>> extends Empt
     }
 
     /**
+     * Adds an attribute listing points to the set of attributes.
+     *
+     * @param name        The name of the attribute.
+     * @param coordinates The list of coordinates for the points of the attribute .
+     */
+    protected void addPointsAttribute(final String name, final Number... coordinates) {
+        addAttribute(name, new PointsAttribute(coordinates));
+    }
+
+    /**
      * Adds a reference to a paint server element to the set of attributes.
      *
      * @param name               The name of the attribute.
