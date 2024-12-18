@@ -95,6 +95,8 @@ Not all SVG elements and concepts have been implemented yet. Below is a list wit
   * [image](https://www.w3.org/TR/SVG/embedded.html#ImageElement)
 * Paint servers
   * [pattern](https://www.w3.org/TR/SVG/pservers.html#Patterns)
+  * [radialGradient](https://www.w3.org/TR/SVG/pservers.html#RadialGradientElement)
+  * [stop](https://www.w3.org/TR/SVG/pservers.html#StopElement)
 * Linking
   * [a](https://www.w3.org/TR/SVG/linking.html#AElement)
 

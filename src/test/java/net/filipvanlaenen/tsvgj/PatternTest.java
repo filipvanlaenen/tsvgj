@@ -90,7 +90,7 @@ public class PatternTest {
      */
     @Test
     void patternWithPatternUnitsIsExportedCorrectly() {
-        String actual = pattern.patternUnits(PatternUnitsValue.USER_SPACE_ON_USE).asString();
+        String actual = pattern.patternUnits(CoordinateSystemUnitsValue.USER_SPACE_ON_USE).asString();
         StringBuilder sb = new StringBuilder();
         sb.append("<pattern height=\"3\" patternUnits=\"userSpaceOnUse\" width=\"2\" x=\"0\" y=\"1\">\n");
         sb.append("  <rect fill=\"red\" height=\"7\" width=\"6\" x=\"4\" y=\"5\"/>\n");

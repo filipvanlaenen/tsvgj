@@ -5,8 +5,10 @@ import net.filipvanlaenen.bltxmlepj.ElementWithElements;
 
 /**
  * Extension of the <code>ElementWithElements</code> class with methods specific for SVG.
+ *
+ * @param <E> The subclass.
  */
-public abstract class SvgElementWithElements extends ElementWithElements {
+public abstract class SvgElementWithElements<E extends SvgElementWithElements<E>> extends ElementWithElements<E> {
     /**
      * Adds an enumeration array attribute to the set of attributes.
      *

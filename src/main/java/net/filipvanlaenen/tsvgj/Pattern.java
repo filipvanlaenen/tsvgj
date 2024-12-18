@@ -1,14 +1,14 @@
 package net.filipvanlaenen.tsvgj;
 
-import net.filipvanlaenen.bltxmlepj.ElementWithElements;
+import net.filipvanlaenen.tsvgj.internal.SvgElementWithElements;
 
 /**
  * A class representing a pattern.
  *
- * @see <a href= "https://www.w3.org/TR/SVG/pservers.html#PatternElement">Paint Servers: Solid Colors, Gradients, and
+ * @see <a href="https://www.w3.org/TR/SVG/pservers.html#PatternElement">Paint Servers: Solid Colors, Gradients, and
  *      Patterns — SVG 2: 14.3. Patterns</a>
  */
-public final class Pattern extends ElementWithElements implements PaintServerElement {
+public final class Pattern extends SvgElementWithElements<RadialGradient> implements PaintServerElement {
     /**
      * The ID of the pattern element.
      */
@@ -77,7 +77,7 @@ public final class Pattern extends ElementWithElements implements PaintServerEle
      * @param patternUnits The units for the pattern.
      * @return The instance called.
      */
-    public Pattern patternUnits(final PatternUnitsValue patternUnits) {
+    public Pattern patternUnits(final CoordinateSystemUnitsValue patternUnits) {
         addEnumerationAttribute("patternUnits", patternUnits);
         return this;
     }
