@@ -3,25 +3,25 @@ package net.filipvanlaenen.tsvgj;
 import net.filipvanlaenen.tsvgj.internal.SvgElementWithMixedContent;
 
 /**
- * A class representing text.
+ * A class representing portion of text.
  *
  * @see <a href="https://www.w3.org/TR/SVG/text.html#TextElement">Text — SVG 2: 11.2. The ‘text’ and ‘tspan’
  *      elements</a>
  */
-public final class Text extends SvgElementWithMixedContent<Text> implements GraphicsElement {
+public final class TSpan extends SvgElementWithMixedContent<TSpan> implements GraphicsElement, TextContentChildElement {
     /**
      * Default constructor.
      */
-    public Text() {
+    public TSpan() {
         super();
     }
 
     /**
-     * Constructs a text element with a string as its content.
+     * Constructs a tspan element with a string as its content.
      *
      * @param content A string.
      */
-    public Text(final String content) {
+    public TSpan(final String content) {
         super(content);
     }
 
@@ -40,14 +40,14 @@ public final class Text extends SvgElementWithMixedContent<Text> implements Grap
      * @param dominantBaseline The dominant baseline for the text.
      * @return The instance called.
      */
-    public Text dominantBaseline(final DominantBaselineValue dominantBaseline) {
+    public TSpan dominantBaseline(final DominantBaselineValue dominantBaseline) {
         addEnumerationAttribute("dominant-baseline", dominantBaseline);
         return this;
     }
 
     @Override
     public String getElementName() {
-        return "text";
+        return "tspan";
     }
 
     /**
@@ -56,7 +56,7 @@ public final class Text extends SvgElementWithMixedContent<Text> implements Grap
      * @param fill The fill color as a hexadecimal integer.
      * @return The instance called.
      */
-    public Text fill(final Integer fill) {
+    public TSpan fill(final Integer fill) {
         addColorAttribute("fill", fill);
         return this;
     }
@@ -67,7 +67,7 @@ public final class Text extends SvgElementWithMixedContent<Text> implements Grap
      * @param fill The fill color using a color keyword.
      * @return The instance called.
      */
-    public Text fill(final ColorKeyword fill) {
+    public TSpan fill(final ColorKeyword fill) {
         addColorAttribute("fill", fill);
         return this;
     }
@@ -78,7 +78,7 @@ public final class Text extends SvgElementWithMixedContent<Text> implements Grap
      * @param fontFamily The font family for the text.
      * @return The instance called.
      */
-    public Text fontFamily(final String fontFamily) {
+    public TSpan fontFamily(final String fontFamily) {
         addStringAttribute("font-family", fontFamily);
         return this;
     }
@@ -89,7 +89,7 @@ public final class Text extends SvgElementWithMixedContent<Text> implements Grap
      * @param fontSize The font size for the text.
      * @return The instance called.
      */
-    public Text fontSize(final Number fontSize) {
+    public TSpan fontSize(final Number fontSize) {
         addNumericAttribute("font-size", fontSize);
         return this;
     }
@@ -100,7 +100,7 @@ public final class Text extends SvgElementWithMixedContent<Text> implements Grap
      * @param fontStyle The font style for the text.
      * @return The instance called.
      */
-    public Text fontStyle(final FontStyleValue fontStyle) {
+    public TSpan fontStyle(final FontStyleValue fontStyle) {
         addEnumerationAttribute("font-style", fontStyle);
         return this;
     }
@@ -111,7 +111,7 @@ public final class Text extends SvgElementWithMixedContent<Text> implements Grap
      * @param fontWeight The font weight for the text.
      * @return The instance called.
      */
-    public Text fontWeight(final FontWeightValue fontWeight) {
+    public TSpan fontWeight(final FontWeightValue fontWeight) {
         addEnumerationAttribute("font-weight", fontWeight);
         return this;
     }
@@ -122,7 +122,7 @@ public final class Text extends SvgElementWithMixedContent<Text> implements Grap
      * @param textAlign The text align for the text.
      * @return The instance called.
      */
-    public Text textAlign(final TextAlignValue textAlign) {
+    public TSpan textAlign(final TextAlignValue textAlign) {
         addEnumerationAttribute("text-align", textAlign);
         return this;
     }
@@ -133,7 +133,7 @@ public final class Text extends SvgElementWithMixedContent<Text> implements Grap
      * @param textAnchor The text anchor for the text.
      * @return The instance called.
      */
-    public Text textAnchor(final TextAnchorValue textAnchor) {
+    public TSpan textAnchor(final TextAnchorValue textAnchor) {
         addEnumerationAttribute("text-anchor", textAnchor);
         return this;
     }
@@ -144,7 +144,7 @@ public final class Text extends SvgElementWithMixedContent<Text> implements Grap
      * @param transformation The specification of the transformation.
      * @return The instance called.
      */
-    public Text transform(final Transform transformation) {
+    public TSpan transform(final Transform transformation) {
         addAttribute("transform", transformation);
         return this;
     }
@@ -155,7 +155,7 @@ public final class Text extends SvgElementWithMixedContent<Text> implements Grap
      * @param x The x coordinate of the text.
      * @return The instance called.
      */
-    public Text x(final Number x) {
+    public TSpan x(final Number x) {
         addNumericAttribute("x", x);
         return this;
     }
@@ -166,7 +166,7 @@ public final class Text extends SvgElementWithMixedContent<Text> implements Grap
      * @param y The y coordinate of the text.
      * @return The instance called.
      */
-    public Text y(final Number y) {
+    public TSpan y(final Number y) {
         addNumericAttribute("y", y);
         return this;
     }

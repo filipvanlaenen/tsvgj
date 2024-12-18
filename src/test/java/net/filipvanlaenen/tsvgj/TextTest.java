@@ -154,4 +154,12 @@ public class TextTest {
         assertEquals(expected, actual);
     }
 
+    @Test
+    public void textWithTSpanChildElementIsExportedCorrectly() {
+        Text text = new Text();
+        text.addElement(new TSpan("Foo"));
+        String actual = text.asString();
+        String expected = "<text>\n" + "  <tspan>Foo</tspan>\n" + "</text>";
+        assertEquals(expected, actual);
+    }
 }
