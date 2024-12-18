@@ -43,7 +43,7 @@ public class TSpanTest {
      * to a string.
      */
     @Test
-    void TSpanWithHexadecimalFillColorIsConvertedCorrectlyToString() {
+    void textWithHexadecimalFillColorIsConvertedCorrectlyToString() {
         TSpan tspan = new TSpan("Lorem ipsum").x(0).y(1).fill(RED).fontSize(2).fontFamily("Times New Roman");
         String actual = tspan.asString();
         String expected = "<tspan fill=\"#FF0000\" font-family=\"Times New Roman\" font-size=\"2\" x=\"0\""
@@ -69,7 +69,7 @@ public class TSpanTest {
      * Test verifying that the text align is exported correctly.
      */
     @Test
-    void TSpanAlignIsExportedCorrectlyToString() {
+    void textAlignIsExportedCorrectlyToString() {
         TSpan tspan = new TSpan("Lorem ipsum").x(0).y(1).fill(RED).fontSize(2).fontFamily("Times New Roman")
                 .textAlign(TextAlignValue.CENTER);
         String actual = tspan.asString();
@@ -82,7 +82,7 @@ public class TSpanTest {
      * Test verifying that the text anchor is exported correctly.
      */
     @Test
-    void TSpanAnchorIsExportedCorrectlyToString() {
+    void textAnchorIsExportedCorrectlyToString() {
         TSpan tspan = new TSpan("Lorem ipsum").x(0).y(1).fill(RED).fontSize(2).fontFamily("Times New Roman")
                 .textAnchor(TextAnchorValue.MIDDLE);
         String actual = tspan.asString();
