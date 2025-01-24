@@ -8,7 +8,7 @@ import net.filipvanlaenen.tsvgj.internal.SvgElementWithElements;
  * @see <a href="https://www.w3.org/TR/SVG/struct.html#SVGElement">Document Structure — SVG 2: 5.1.4. The ‘svg’
  *      element</a>
  */
-public final class Svg extends SvgElementWithElements implements StructuralElement {
+public final class Svg extends SvgElementWithElements<Svg> implements StructuralElement {
     /**
      * The definitions element.
      */
@@ -66,6 +66,15 @@ public final class Svg extends SvgElementWithElements implements StructuralEleme
      */
     public void addElement(final StructuralElement structuralElement) {
         super.addElement(structuralElement);
+    }
+
+    /**
+     * Adds a style element.
+     *
+     * @param style A style element.
+     */
+    public void addElement(final Style style) {
+        super.addElement(style);
     }
 
     /**

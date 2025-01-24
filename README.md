@@ -79,6 +79,8 @@ Not all SVG elements and concepts have been implemented yet. Below is a list wit
   * [svg](https://www.w3.org/TR/SVG/struct.html#SVGElement)
   * [defs](https://www.w3.org/TR/SVG/struct.html#DefsElement) (implicitly)
   * [g](https://www.w3.org/TR/SVG/struct.html#GElement)
+* Styling
+  * [style](https://www.w3.org/TR/SVG/styling.html#StyleElement)
 * Paths
   * [path](https://www.w3.org/TR/SVG/paths.html#PathElement)
 * Basic shapes
