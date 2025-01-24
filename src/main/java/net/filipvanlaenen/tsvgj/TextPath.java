@@ -8,7 +8,8 @@ import net.filipvanlaenen.tsvgj.internal.SvgElementWithMixedContent;
  *
  * @see <a href="https://www.w3.org/TR/SVG/text.html#TextPathElement">Text — SVG 2: 11.8.1. The ‘textPath’ element</a>
  */
-public class TextPath extends SvgElementWithMixedContent<Text> implements GraphicsElement, TextContentChildElement {
+public final class TextPath extends SvgElementWithMixedContent<Text>
+        implements GraphicsElement, TextContentChildElement {
     /**
      * Default constructor.
      */

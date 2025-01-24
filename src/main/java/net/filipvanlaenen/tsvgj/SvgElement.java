@@ -11,14 +11,14 @@ public interface SvgElement extends Element {
      *
      * @return The ID of the element.
      */
-    public Integer getId();
+    Integer getId();
 
     /**
      * Returns a reference to the element.
      *
      * @return A reference to the element.
      */
-    public default String getReference() {
+    default String getReference() {
         return getElementName() + "-" + getId().toString();
     }
 
@@ -27,5 +27,5 @@ public interface SvgElement extends Element {
      *
      * @param id The ID.
      */
-    public void setId(final int id);
+    void setId(int id);
 }
