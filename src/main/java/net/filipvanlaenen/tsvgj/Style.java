@@ -8,7 +8,7 @@ import net.filipvanlaenen.tsvgj.internal.SvgElementWithContent;
  * @see <a href="https://www.w3.org/TR/SVG/styling.html#StyleElement">Document Structure — SVG 2: 6.2. Inline style
  *      sheets: the ‘style’ element</a>
  */
-public class Style extends SvgElementWithContent<Style> {
+public final class Style extends SvgElementWithContent<Style> {
     /**
      * Constructs a style element with a string as its content.
      *

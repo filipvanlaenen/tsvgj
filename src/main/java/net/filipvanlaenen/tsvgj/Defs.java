@@ -5,8 +5,8 @@ import net.filipvanlaenen.bltxmlepj.ElementWithElements;
 /**
  * A class representing definitions.
  *
- * @see <a href="https://www.w3.org/TR/SVG/struct.html#DefsElement">Document
- *      Structure — SVG 2: 5.4.2. The ‘defs’ element</a>
+ * @see <a href="https://www.w3.org/TR/SVG/struct.html#DefsElement">Document Structure — SVG 2: 5.4.2. The ‘defs’
+ *      element</a>
  */
 public final class Defs extends ElementWithElements implements StructuralElement {
     /**
@@ -17,8 +17,7 @@ public final class Defs extends ElementWithElements implements StructuralElement
     /**
      * Adds a paint server element.
      *
-     * @param paintServerElement
-     *            A paint server element.
+     * @param paintServerElement A paint server element.
      */
     public void addElement(final PaintServerElement paintServerElement) {
         super.addElement(paintServerElement);

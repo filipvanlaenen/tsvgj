@@ -8,7 +8,7 @@ import net.filipvanlaenen.tsvgj.internal.EmptySvgElement;
  * @see <a href="https://www.w3.org/TR/SVG/pservers.html#StopElement">Paint Servers: Solid Colors, Gradients, and
  *      Patterns — SVG 2: 14.2.4. Gradient stops</a>
  */
-public final class Stop extends EmptySvgElement<Stop> implements ShapeElement {
+public final class Stop extends EmptySvgElement<Stop> {
     @Override
     public String getElementName() {
         return "stop";

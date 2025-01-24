@@ -33,8 +33,7 @@ public class RectTest {
     }
 
     /**
-     * Test verifying that a rectangle using a hexadecimal integer for the fill
-     * color is exported correctly to a string.
+     * Test verifying that a rectangle using a hexadecimal integer for the fill color is exported correctly to a string.
      */
     @Test
     void rectangleWithHexadecimalFillColorIsConvertedCorrectlyToString() {
@@ -45,8 +44,7 @@ public class RectTest {
     }
 
     /**
-     * Test verifying that a rectangle with stroke none is exported correctly to a
-     * string.
+     * Test verifying that a rectangle with stroke none is exported correctly to a string.
      */
     @Test
     void rectangleWithStrokeNoneIsConvertedCorrectlyToString() {
@@ -57,8 +55,8 @@ public class RectTest {
     }
 
     /**
-     * Test verifying that a rectangle using a hexadecimal integer for the stroke
-     * color is exported correctly to a string.
+     * Test verifying that a rectangle using a hexadecimal integer for the stroke color is exported correctly to a
+     * string.
      */
     @Test
     void rectangleWithHexadecimalStrokeColorIsConvertedCorrectlyToString() {
@@ -69,8 +67,7 @@ public class RectTest {
     }
 
     /**
-     * Test verifying that a rectangle using a pattern as fill is exported
-     * correctly.
+     * Test verifying that a rectangle using a pattern as fill is exported correctly.
      */
     @Test
     void rectangleFilledWithPatternShouldBeConvertedCorrectlyToString() {

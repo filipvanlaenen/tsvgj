@@ -69,8 +69,7 @@ public class DefsTest {
     }
 
     /**
-     * Verifying that a pattern that has been added is referenced correctly when it
-     * is used in a circle.
+     * Verifying that a pattern that has been added is referenced correctly when it is used in a circle.
      */
     @Test
     void patternIsReferencedCorrectlyFromCircle() {
@@ -90,8 +89,7 @@ public class DefsTest {
     }
 
     /**
-     * Verifying that a pattern that has been added is referenced correctly when it
-     * is used in a rectangle.
+     * Verifying that a pattern that has been added is referenced correctly when it is used in a rectangle.
      */
     @Test
     void patternIsReferencedCorrectlyFromRectangle() {
