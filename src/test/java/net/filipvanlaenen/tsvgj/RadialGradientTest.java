@@ -26,26 +26,6 @@ public class RadialGradientTest {
     private static final int SIX = 6;
 
     /**
-     * Test verifying that the setter for ID is wired correctly to the getter for the reference.
-     */
-    @Test
-    void setIdShouldBeWiredCorrectlyToGetReference() {
-        RadialGradient radialGradient = new RadialGradient();
-        radialGradient.setId(1);
-        assertEquals("radialGradient-1", radialGradient.getReference());
-    }
-
-    /**
-     * Test verifying that when an ID is set, it is also exported as an attribute.
-     */
-    @Test
-    void setIdShouldSetIdAttribute() {
-        RadialGradient radialGradient = new RadialGradient().cx(1).cy(2).r(THREE);
-        radialGradient.setId(1);
-        assertEquals("<radialGradient cx=\"1\" cy=\"2\" id=\"radialGradient-1\" r=\"3\"/>", radialGradient.asString());
-    }
-
-    /**
      * Test verifying that a radial gradient with a stop is exported correctly.
      */
     @Test

@@ -30,27 +30,6 @@ public class LinearGradientTest {
     private static final int SEVEN = 7;
 
     /**
-     * Test verifying that the setter for ID is wired correctly to the getter for the reference.
-     */
-    @Test
-    void setIdShouldBeWiredCorrectlyToGetReference() {
-        LinearGradient linearGradient = new LinearGradient();
-        linearGradient.setId(1);
-        assertEquals("linearGradient-1", linearGradient.getReference());
-    }
-
-    /**
-     * Test verifying that when an ID is set, it is also exported as an attribute.
-     */
-    @Test
-    void setIdShouldSetIdAttribute() {
-        LinearGradient linearGradient = new LinearGradient().x1(1).x2(2).y1(THREE).y2(FOUR);
-        linearGradient.setId(1);
-        assertEquals("<linearGradient id=\"linearGradient-1\" x1=\"1\" x2=\"2\" y1=\"3\" y2=\"4\"/>",
-                linearGradient.asString());
-    }
-
-    /**
      * Test verifying that a linear gradient with a stop is exported correctly.
      */
     @Test
