@@ -36,7 +36,7 @@ public class LinearGradientTest {
     void setIdShouldBeWiredCorrectlyToGetReference() {
         LinearGradient linearGradient = new LinearGradient();
         linearGradient.setId(1);
-        assertEquals("linear-gradient-1", linearGradient.getReference());
+        assertEquals("linearGradient-1", linearGradient.getReference());
     }
 
     /**
@@ -46,7 +46,7 @@ public class LinearGradientTest {
     void setIdShouldSetIdAttribute() {
         LinearGradient linearGradient = new LinearGradient().x1(1).x2(2).y1(THREE).y2(FOUR);
         linearGradient.setId(1);
-        assertEquals("<linearGradient id=\"linear-gradient-1\" x1=\"1\" x2=\"2\" y1=\"3\" y2=\"4\"/>",
+        assertEquals("<linearGradient id=\"linearGradient-1\" x1=\"1\" x2=\"2\" y1=\"3\" y2=\"4\"/>",
                 linearGradient.asString());
     }
 

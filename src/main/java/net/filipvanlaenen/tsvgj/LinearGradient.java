@@ -10,11 +10,6 @@ import net.filipvanlaenen.tsvgj.internal.SvgElementWithElements;
  */
 public final class LinearGradient extends SvgElementWithElements<LinearGradient> implements PaintServerElement {
     /**
-     * The ID of the linear gradient element.
-     */
-    private Integer id;
-
-    /**
      * Adds a stop element.
      *
      * @param stop A stop element.
@@ -26,27 +21,6 @@ public final class LinearGradient extends SvgElementWithElements<LinearGradient>
     @Override
     public String getElementName() {
         return "linearGradient";
-    }
-
-    /**
-     * Returns a reference to the linear gradient.
-     *
-     * @return A reference to the linear gradient.
-     */
-    @Override
-    public String getReference() {
-        return "linear-gradient-" + id.toString();
-    }
-
-    /**
-     * Sets the ID for the linear gradient.
-     *
-     * @param id The ID for the linear gradient.
-     */
-    @Override
-    public void setId(final int id) {
-        this.id = id;
-        id(getReference());
     }
 
     /**

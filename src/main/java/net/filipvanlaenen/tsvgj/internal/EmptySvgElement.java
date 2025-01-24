@@ -3,13 +3,19 @@ package net.filipvanlaenen.tsvgj.internal;
 import net.filipvanlaenen.bltxmlepj.EmptyElement;
 import net.filipvanlaenen.tsvgj.ColorKeyword;
 import net.filipvanlaenen.tsvgj.PaintServerElement;
+import net.filipvanlaenen.tsvgj.SvgElement;
 
 /**
  * Extension of the <code>EmptyElement</code> class with methods specific for SVG.
  *
  * @param <E> The subclass.
  */
-public abstract class EmptySvgElement<E extends EmptySvgElement<E>> extends EmptyElement<E> {
+public abstract class EmptySvgElement<E extends EmptySvgElement<E>> extends EmptyElement<E> implements SvgElement {
+    /**
+     * The ID.
+     */
+    private Integer id;
+
     /**
      * Adds a color attribute to the set of attributes.
      *
@@ -61,6 +67,11 @@ public abstract class EmptySvgElement<E extends EmptySvgElement<E>> extends Empt
         return (E) this;
     }
 
+    @Override
+    public Integer getId() {
+        return id;
+    }
+
     /**
      * Sets the onmousemove event.
      *
@@ -81,5 +92,15 @@ public abstract class EmptySvgElement<E extends EmptySvgElement<E>> extends Empt
     public E onmouseout(final String onmouseout) {
         addStringAttribute("onmouseout", onmouseout);
         return (E) this;
+    }
+
+    /**
+     * Sets the ID.
+     *
+     * @param id The ID.
+     */
+    public void setId(final int id) {
+        this.id = id;
+        id(getReference());
     }
 }

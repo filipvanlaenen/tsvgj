@@ -2,13 +2,20 @@ package net.filipvanlaenen.tsvgj.internal;
 
 import net.filipvanlaenen.bltxmlepj.AttributeValueEnumeration;
 import net.filipvanlaenen.bltxmlepj.ElementWithElements;
+import net.filipvanlaenen.tsvgj.SvgElement;
 
 /**
  * Extension of the <code>ElementWithElements</code> class with methods specific for SVG.
  *
  * @param <E> The subclass.
  */
-public abstract class SvgElementWithElements<E extends SvgElementWithElements<E>> extends ElementWithElements<E> {
+public abstract class SvgElementWithElements<E extends SvgElementWithElements<E>> extends ElementWithElements<E>
+        implements SvgElement {
+    /**
+     * The ID.
+     */
+    private Integer id;
+
     /**
      * Adds an enumeration array attribute to the set of attributes.
      *
@@ -27,5 +34,20 @@ public abstract class SvgElementWithElements<E extends SvgElementWithElements<E>
      */
     protected void addNumericArrayAttribute(final String name, final Number... numbers) {
         addAttribute(name, new NumericArrayAttribute(numbers));
+    }
+
+    @Override
+    public Integer getId() {
+        return id;
+    }
+
+    /**
+     * Sets the ID.
+     *
+     * @param id The ID.
+     */
+    public void setId(final int id) {
+        this.id = id;
+        id(getReference());
     }
 }

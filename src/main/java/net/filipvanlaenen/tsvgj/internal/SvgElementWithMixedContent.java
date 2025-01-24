@@ -2,6 +2,7 @@ package net.filipvanlaenen.tsvgj.internal;
 
 import net.filipvanlaenen.bltxmlepj.ElementWithMixedContent;
 import net.filipvanlaenen.tsvgj.ColorKeyword;
+import net.filipvanlaenen.tsvgj.SvgElement;
 
 /**
  * Extension of the <code>ElementWithMixedContent</code> class with methods specific for SVG.
@@ -9,7 +10,12 @@ import net.filipvanlaenen.tsvgj.ColorKeyword;
  * @param <E> The subclass.
  */
 public abstract class SvgElementWithMixedContent<E extends SvgElementWithMixedContent<E>>
-        extends ElementWithMixedContent<E> {
+        extends ElementWithMixedContent<E> implements SvgElement {
+    /**
+     * The ID.
+     */
+    private Integer id;
+
     /**
      * Default constructor.
      */
@@ -57,6 +63,11 @@ public abstract class SvgElementWithMixedContent<E extends SvgElementWithMixedCo
         return (E) this;
     }
 
+    @Override
+    public Integer getId() {
+        return id;
+    }
+
     /**
      * Sets the onmousemove event.
      *
@@ -77,5 +88,11 @@ public abstract class SvgElementWithMixedContent<E extends SvgElementWithMixedCo
     public E onmouseout(final String onmouseout) {
         addStringAttribute("onmouseout", onmouseout);
         return (E) this;
+    }
+
+    @Override
+    public void setId(final int id) {
+        this.id = id;
+        id(getReference());
     }
 }

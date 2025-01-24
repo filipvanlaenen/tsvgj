@@ -1,28 +1,28 @@
 package net.filipvanlaenen.tsvgj.internal;
 
 import net.filipvanlaenen.bltxmlepj.Attribute;
-import net.filipvanlaenen.tsvgj.PaintServerElement;
+import net.filipvanlaenen.tsvgj.SvgElement;
 
 /**
  * A class representing an attribute referring to an element.
  */
 public final class ReferringAttribute implements Attribute {
     /**
-     * The paint server element the attribute refers to.
+     * The element the attribute refers to.
      */
-    private final PaintServerElement paintServerElement;
+    private final SvgElement element;
 
     /**
-     * Constructor using the paint server element to which to refer as its parameter.
+     * Constructor using the element to which to refer as its parameter.
      *
-     * @param paintServerElement The paint server element to refer to.
+     * @param element The element to refer to.
      */
-    public ReferringAttribute(final PaintServerElement paintServerElement) {
-        this.paintServerElement = paintServerElement;
+    public ReferringAttribute(final SvgElement element) {
+        this.element = element;
     }
 
     @Override
     public String asString() {
-        return "url(#" + paintServerElement.getReference() + ")";
+        return "url(#" + element.getReference() + ")";
     }
 }

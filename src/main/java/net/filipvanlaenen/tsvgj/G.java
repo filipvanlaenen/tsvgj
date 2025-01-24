@@ -1,6 +1,6 @@
 package net.filipvanlaenen.tsvgj;
 
-import net.filipvanlaenen.bltxmlepj.ElementWithElements;
+import net.filipvanlaenen.tsvgj.internal.SvgElementWithElements;
 
 /**
  * A class representing a grouping.
@@ -8,7 +8,7 @@ import net.filipvanlaenen.bltxmlepj.ElementWithElements;
  * @see <a href="https://www.w3.org/TR/SVG/struct.html#GElement">Document
  *      Structure — SVG 2: 5.2.2. The ‘g’ element</a>
  */
-public final class G extends ElementWithElements implements StructuralElement {
+public final class G extends SvgElementWithElements<G> implements StructuralElement {
     /**
      * Adds a shape element.
      *

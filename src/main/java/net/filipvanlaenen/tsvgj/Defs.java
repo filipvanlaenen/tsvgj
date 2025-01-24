@@ -1,6 +1,6 @@
 package net.filipvanlaenen.tsvgj;
 
-import net.filipvanlaenen.bltxmlepj.ElementWithElements;
+import net.filipvanlaenen.tsvgj.internal.SvgElementWithElements;
 
 /**
  * A class representing definitions.
@@ -8,7 +8,7 @@ import net.filipvanlaenen.bltxmlepj.ElementWithElements;
  * @see <a href="https://www.w3.org/TR/SVG/struct.html#DefsElement">Document Structure — SVG 2: 5.4.2. The ‘defs’
  *      element</a>
  */
-public final class Defs extends ElementWithElements implements StructuralElement {
+public final class Defs extends SvgElementWithElements<Defs> implements StructuralElement {
     /**
      * Counter to assign IDs to paint server elements.
      */

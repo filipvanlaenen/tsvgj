@@ -1,5 +1,6 @@
 package net.filipvanlaenen.tsvgj;
 
+import net.filipvanlaenen.tsvgj.internal.ReferringAttribute;
 import net.filipvanlaenen.tsvgj.internal.SvgElementWithMixedContent;
 
 /**
@@ -24,8 +25,39 @@ public class TextPath extends SvgElementWithMixedContent<Text> implements Graphi
         super(content);
     }
 
+    /**
+     * Adds a text content child element.
+     *
+     * @param textContentChildElement A text content child element.
+     */
+    public void addElement(final TextContentChildElement textContentChildElement) {
+        super.addElement(textContentChildElement);
+    }
+
     @Override
     public String getElementName() {
         return "textPath";
+    }
+
+    /**
+     * Sets the path.
+     *
+     * @param path The path.
+     * @return The instance called.
+     */
+    public TextPath href(final Path path) {
+        addAttribute("href", new ReferringAttribute(path));
+        return this;
+    }
+
+    /**
+     * Sets a shape element as the path.
+     *
+     * @param shapeElement The shape element to be used as a path.
+     * @return The instance called.
+     */
+    public TextPath href(final ShapeElement shapeElement) {
+        addAttribute("href", new ReferringAttribute(shapeElement));
+        return this;
     }
 }

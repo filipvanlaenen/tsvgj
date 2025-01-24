@@ -32,7 +32,7 @@ public class RadialGradientTest {
     void setIdShouldBeWiredCorrectlyToGetReference() {
         RadialGradient radialGradient = new RadialGradient();
         radialGradient.setId(1);
-        assertEquals("radial-gradient-1", radialGradient.getReference());
+        assertEquals("radialGradient-1", radialGradient.getReference());
     }
 
     /**
@@ -42,7 +42,7 @@ public class RadialGradientTest {
     void setIdShouldSetIdAttribute() {
         RadialGradient radialGradient = new RadialGradient().cx(1).cy(2).r(THREE);
         radialGradient.setId(1);
-        assertEquals("<radialGradient cx=\"1\" cy=\"2\" id=\"radial-gradient-1\" r=\"3\"/>", radialGradient.asString());
+        assertEquals("<radialGradient cx=\"1\" cy=\"2\" id=\"radialGradient-1\" r=\"3\"/>", radialGradient.asString());
     }
 
     /**

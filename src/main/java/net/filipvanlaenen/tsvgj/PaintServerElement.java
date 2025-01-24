@@ -7,17 +7,4 @@ package net.filipvanlaenen.tsvgj;
  *      Symbols — SVG 2: 13.2. Specifying paint – paint server element</a>
  */
 public interface PaintServerElement extends SvgElement {
-    /**
-     * Returns a reference to the paint server element.
-     *
-     * @return A reference to the paint server element.
-     */
-    String getReference();
-
-    /**
-     * Sets the ID for the paint server element.
-     *
-     * @param id The ID for the paint server element.
-     */
-    void setId(int id);
 }
