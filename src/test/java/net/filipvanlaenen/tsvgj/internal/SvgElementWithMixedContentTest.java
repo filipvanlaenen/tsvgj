@@ -51,6 +51,26 @@ public class SvgElementWithMixedContentTest {
     }
 
     /**
+     * Test verifying that the setter for ID is wired correctly to the getter for the reference.
+     */
+    @Test
+    void setIdShouldBeWiredCorrectlyToGetReference() {
+        MySvgElementWithMixedContent e = new MySvgElementWithMixedContent();
+        e.setId(1);
+        assertEquals("e-1", e.getReference());
+    }
+
+    /**
+     * Test verifying that when an ID is set, it is also exported as an attribute.
+     */
+    @Test
+    void setIdShouldSetIdAttribute() {
+        MySvgElementWithMixedContent e = new MySvgElementWithMixedContent();
+        e.setId(1);
+        assertEquals("<e id=\"e-1\"/>", e.asString());
+    }
+
+    /**
      * Tests that an element with a color keyword attribute is exported correctly.
      */
     @Test
