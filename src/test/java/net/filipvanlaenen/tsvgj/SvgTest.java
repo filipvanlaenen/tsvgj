@@ -166,4 +166,14 @@ public class SvgTest {
         String expected = sb.toString();
         assertEquals(expected, actual);
     }
+
+    /**
+     * Test verifying that a SVG fragment with a style element is exported correctly to a string.
+     */
+    @Test
+    void svgFragmentWithStyleShouldBeConvertedCorrectlyToString() {
+        Svg svg = new Svg(false);
+        svg.addElement(new Style(".foo { text-align: center}"));
+        assertEquals("<svg>\n  <style>.foo { text-align: center}</style>\n</svg>", svg.asString());
+    }
 }
