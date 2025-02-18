@@ -67,6 +67,11 @@ public abstract class EmptySvgElement<E extends EmptySvgElement<E>> extends Empt
         return (E) this;
     }
 
+    /**
+     * Returns the ID of the element.
+     *
+     * @return The ID of the element.
+     */
     @Override
     public Integer getId() {
         return id;

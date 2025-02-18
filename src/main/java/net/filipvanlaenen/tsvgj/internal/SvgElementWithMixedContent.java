@@ -63,6 +63,11 @@ public abstract class SvgElementWithMixedContent<E extends SvgElementWithMixedCo
         return (E) this;
     }
 
+    /**
+     * Returns the ID of the element.
+     *
+     * @return The ID of the element.
+     */
     @Override
     public Integer getId() {
         return id;
@@ -90,6 +95,11 @@ public abstract class SvgElementWithMixedContent<E extends SvgElementWithMixedCo
         return (E) this;
     }
 
+    /**
+     * Sets the ID.
+     *
+     * @param id The ID.
+     */
     @Override
     public void setId(final int id) {
         this.id = id;
