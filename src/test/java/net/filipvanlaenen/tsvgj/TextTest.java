@@ -154,6 +154,9 @@ public class TextTest {
         assertEquals(expected, actual);
     }
 
+    /**
+     * Test verifying that text with a span child element is encoded correctly.
+     */
     @Test
     public void textWithTSpanChildElementIsExportedCorrectly() {
         Text text = new Text();
