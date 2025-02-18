@@ -10,11 +10,6 @@ import net.filipvanlaenen.tsvgj.internal.SvgElementWithElements;
  */
 public final class Pattern extends SvgElementWithElements<RadialGradient> implements PaintServerElement {
     /**
-     * The ID of the pattern element.
-     */
-    private Integer id;
-
-    /**
      * Adds a shape element.
      *
      * @param shape A shape element.
@@ -29,16 +24,6 @@ public final class Pattern extends SvgElementWithElements<RadialGradient> implem
     }
 
     /**
-     * Returns a reference to the pattern.
-     *
-     * @return A reference to the pattern.
-     */
-    @Override
-    public String getReference() {
-        return "pattern-" + id.toString();
-    }
-
-    /**
      * Sets the height of the pattern.
      *
      * @param height The height of the pattern.
@@ -47,17 +32,6 @@ public final class Pattern extends SvgElementWithElements<RadialGradient> implem
     public Pattern height(final Number height) {
         addNumericAttribute("height", height);
         return this;
-    }
-
-    /**
-     * Sets the ID for the pattern.
-     *
-     * @param id The ID for the pattern.
-     */
-    @Override
-    public void setId(final int id) {
-        this.id = id;
-        id(getReference());
     }
 
     /**

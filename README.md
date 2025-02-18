@@ -96,6 +96,8 @@ Not all SVG elements and concepts have been implemented yet. Below is a list wit
   * [tspan](https://www.w3.org/TR/SVG/text.html#TextElement)
 * Embedded content
   * [image](https://www.w3.org/TR/SVG/embedded.html#ImageElement)
+* Painting
+  * [marker](https://www.w3.org/TR/SVG/painting.html#MarkerElement)
 * Paint servers
   * [linearGradient](https://www.w3.org/TR/SVG/pservers.html#LinearGradientElement)
   * [pattern](https://www.w3.org/TR/SVG/pservers.html#Patterns)
