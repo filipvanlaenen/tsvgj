@@ -8,7 +8,14 @@ import net.filipvanlaenen.tsvgj.internal.SvgElementWithContent;
  * @see <a href="https://www.w3.org/TR/SVG/interact.html#ScriptElement">Document Structure — SVG 2: 15.10. The ‘script’
  *      element</a>
  */
-public class Script extends SvgElementWithContent<Script> {
+public final class Script extends SvgElementWithContent<Script> {
+    /**
+     * Constructs a script element without content.
+     */
+    public Script() {
+        super(null);
+    }
+
     /**
      * Constructs a script element with a string as its content.
      *
