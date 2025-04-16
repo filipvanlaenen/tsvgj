@@ -49,7 +49,7 @@ You can use the TSVGJ library in another Java project by adding the following de
     <groupId>net.filipvanlaenen</groupId>
     <artifactId>tsvgj</artifactId>
     <version>1.0.0</version>
-  </de/dependency>
+  </dependency>
 ```
 
 Since the project hasn't been deployed to a central Maven repository yet, you either have to add my private Maven
