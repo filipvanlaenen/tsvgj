@@ -48,4 +48,62 @@ public class PolylineTest {
         assertEquals(expected, actual);
     }
 
+    /**
+     * Test verifying that a polyline with an end marker is exported correctly.
+     */
+    @Test
+    void polylineWithEndMarkerShouldBeConvertedCorrectlyToString() {
+        Marker marker = new Marker();
+        marker.setId(1);
+        Polyline polyline =
+                new Polyline().points(0, 1, 2, THREE, FOUR, FIVE).stroke(RED).strokeWidth(FOUR).markerEnd(marker);
+        String actual = polyline.asString();
+        String expected = "<polyline marker-end=\"url(#marker-1)\" points=\"0,1 2,3 4,5\" stroke=\"#FF0000\""
+                + " stroke-width=\"4\"/>";
+        assertEquals(expected, actual);
+    }
+
+    /**
+     * Test verifying that a polyline with a middle marker is exported correctly.
+     */
+    @Test
+    void polylineWithMiddleMarkerShouldBeConvertedCorrectlyToString() {
+        Marker marker = new Marker();
+        marker.setId(1);
+        Polyline polyline =
+                new Polyline().points(0, 1, 2, THREE, FOUR, FIVE).stroke(RED).strokeWidth(FOUR).markerMid(marker);
+        String actual = polyline.asString();
+        String expected = "<polyline marker-mid=\"url(#marker-1)\" points=\"0,1 2,3 4,5\" stroke=\"#FF0000\""
+                + " stroke-width=\"4\"/>";
+        assertEquals(expected, actual);
+    }
+
+    /**
+     * Test verifying that a polyline with a start marker is exported correctly.
+     */
+    @Test
+    void polylineWithStartMarkerShouldBeConvertedCorrectlyToString() {
+        Marker marker = new Marker();
+        marker.setId(1);
+        Polyline polyline =
+                new Polyline().points(0, 1, 2, THREE, FOUR, FIVE).stroke(RED).strokeWidth(FOUR).markerStart(marker);
+        String actual = polyline.asString();
+        String expected = "<polyline marker-start=\"url(#marker-1)\" points=\"0,1 2,3 4,5\" stroke=\"#FF0000\""
+                + " stroke-width=\"4\"/>";
+        assertEquals(expected, actual);
+    }
+
+    /**
+     * Test verifying that a polyline with a mask is exported correctly.
+     */
+    @Test
+    void polylineWithMaskShouldBeConvertedCorrectlyToString() {
+        Mask mask = new Mask();
+        mask.setId(1);
+        Polyline polyline = new Polyline().points(0, 1, 2, THREE, FOUR, FIVE).stroke(RED).strokeWidth(FOUR).mask(mask);
+        String actual = polyline.asString();
+        String expected =
+                "<polyline mask=\"url(#mask-1)\" points=\"0,1 2,3 4,5\" stroke=\"#FF0000\" stroke-width=\"4\"/>";
+        assertEquals(expected, actual);
+    }
 }
