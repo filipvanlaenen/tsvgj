@@ -74,6 +74,58 @@ public class PolygonTest {
     }
 
     /**
+     * Test verifying that a polygon with an end marker is exported correctly.
+     */
+    @Test
+    void polygonWithEndMarkerShouldBeConvertedCorrectlyToString() {
+        Marker marker = new Marker();
+        marker.setId(1);
+        Polygon polygon = new Polygon().points(0, 1, 2, THREE, FOUR, FIVE).markerEnd(marker);
+        String actual = polygon.asString();
+        String expected = "<polygon marker-end=\"url(#marker-1)\" points=\"0,1 2,3 4,5\"/>";
+        assertEquals(expected, actual);
+    }
+
+    /**
+     * Test verifying that a polygon with a middle marker is exported correctly.
+     */
+    @Test
+    void polygonWithMiddleMarkerShouldBeConvertedCorrectlyToString() {
+        Marker marker = new Marker();
+        marker.setId(1);
+        Polygon polygon = new Polygon().points(0, 1, 2, THREE, FOUR, FIVE).markerMid(marker);
+        String actual = polygon.asString();
+        String expected = "<polygon marker-mid=\"url(#marker-1)\" points=\"0,1 2,3 4,5\"/>";
+        assertEquals(expected, actual);
+    }
+
+    /**
+     * Test verifying that a polygon with a start marker is exported correctly.
+     */
+    @Test
+    void polygonWithStartMarkerShouldBeConvertedCorrectlyToString() {
+        Marker marker = new Marker();
+        marker.setId(1);
+        Polygon polygon = new Polygon().points(0, 1, 2, THREE, FOUR, FIVE).markerStart(marker);
+        String actual = polygon.asString();
+        String expected = "<polygon marker-start=\"url(#marker-1)\" points=\"0,1 2,3 4,5\"/>";
+        assertEquals(expected, actual);
+    }
+
+    /**
+     * Test verifying that a polygon with a mask is exported correctly.
+     */
+    @Test
+    void polygonWithMaskShouldBeConvertedCorrectlyToString() {
+        Mask mask = new Mask();
+        mask.setId(1);
+        Polygon polygon = new Polygon().points(0, 1, 2, THREE, FOUR, FIVE).mask(mask);
+        String actual = polygon.asString();
+        String expected = "<polygon mask=\"url(#mask-1)\" points=\"0,1 2,3 4,5\"/>";
+        assertEquals(expected, actual);
+    }
+
+    /**
      * Test verifying that a polygon using a pattern as fill is exported correctly.
      */
     @Test
