@@ -99,6 +99,58 @@ public class EllipseTest {
     }
 
     /**
+     * Test verifying that an ellipse with an end marker is exported correctly.
+     */
+    @Test
+    void ellipseWithEndMarkerShouldBeConvertedCorrectlyToString() {
+        Marker marker = new Marker();
+        marker.setId(1);
+        Ellipse ellipse = new Ellipse().cx(0).cy(1).rx(2).ry(THREE).markerEnd(marker);
+        String actual = ellipse.asString();
+        String expected = "<ellipse cx=\"0\" cy=\"1\" marker-end=\"url(#marker-1)\" rx=\"2\" ry=\"3\"/>";
+        assertEquals(expected, actual);
+    }
+
+    /**
+     * Test verifying that an ellipse with a middle marker is exported correctly.
+     */
+    @Test
+    void ellipseWithMiddleMarkerShouldBeConvertedCorrectlyToString() {
+        Marker marker = new Marker();
+        marker.setId(1);
+        Ellipse ellipse = new Ellipse().cx(0).cy(1).rx(2).ry(THREE).markerMid(marker);
+        String actual = ellipse.asString();
+        String expected = "<ellipse cx=\"0\" cy=\"1\" marker-mid=\"url(#marker-1)\" rx=\"2\" ry=\"3\"/>";
+        assertEquals(expected, actual);
+    }
+
+    /**
+     * Test verifying that an ellipse with a start marker is exported correctly.
+     */
+    @Test
+    void ellipseWithStartMarkerShouldBeConvertedCorrectlyToString() {
+        Marker marker = new Marker();
+        marker.setId(1);
+        Ellipse ellipse = new Ellipse().cx(0).cy(1).rx(2).ry(THREE).markerStart(marker);
+        String actual = ellipse.asString();
+        String expected = "<ellipse cx=\"0\" cy=\"1\" marker-start=\"url(#marker-1)\" rx=\"2\" ry=\"3\"/>";
+        assertEquals(expected, actual);
+    }
+
+    /**
+     * Test verifying that an ellipse with a mask is exported correctly.
+     */
+    @Test
+    void ellipseWithMaskShouldBeConvertedCorrectlyToString() {
+        Mask mask = new Mask();
+        mask.setId(1);
+        Ellipse ellipse = new Ellipse().cx(0).cy(1).rx(2).ry(THREE).mask(mask);
+        String actual = ellipse.asString();
+        String expected = "<ellipse cx=\"0\" cy=\"1\" mask=\"url(#mask-1)\" rx=\"2\" ry=\"3\"/>";
+        assertEquals(expected, actual);
+    }
+
+    /**
      * Test verifying that an ellipse using a pattern as fill is exported correctly.
      */
     @Test
