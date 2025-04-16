@@ -86,6 +86,16 @@ public final class Svg extends SvgElementWithElements<Svg> implements Structural
         super.addElement(text);
     }
 
+    /**
+     * Ensures that there's a defs element defined.
+     */
+    private void ensureDefs() {
+        if (defs == null) {
+            defs = new Defs();
+            addElement(defs);
+        }
+    }
+
     @Override
     public String getElementName() {
         return "svg";
@@ -116,15 +126,32 @@ public final class Svg extends SvgElementWithElements<Svg> implements Structural
     }
 
     /**
+     * Registers a marker element for reference.
+     *
+     * @param marker The marker element to register.
+     */
+    public void registerElementForReference(final Marker marker) {
+        ensureDefs();
+        defs.addElement(marker);
+    }
+
+    /**
+     * Registers a mask element for reference.
+     *
+     * @param mask The mask element to register.
+     */
+    public void registerElementForReference(final Mask mask) {
+        ensureDefs();
+        defs.addElement(mask);
+    }
+
+    /**
      * Registers a paint server element for reference.
      *
      * @param paintServerElement The paint server element to register.
      */
     public void registerElementForReference(final PaintServerElement paintServerElement) {
-        if (defs == null) {
-            defs = new Defs();
-            addElement(defs);
-        }
+        ensureDefs();
         defs.addElement(paintServerElement);
     }
 

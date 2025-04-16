@@ -5,15 +5,14 @@ import net.filipvanlaenen.tsvgj.internal.EmptySvgElement;
 /**
  * A class representing a circle.
  *
- * @see <a href="https://www.w3.org/TR/SVG/shapes.html#CircleElement">Basic
- *      Shapes — SVG 2: 10.3. The ‘circle’ element</a>
+ * @see <a href="https://www.w3.org/TR/SVG/shapes.html#CircleElement">Basic Shapes — SVG 2: 10.3. The ‘circle’
+ *      element</a>
  */
 public final class Circle extends EmptySvgElement<Circle> implements ShapeElement {
     /**
      * Sets the x coordinate of the center.
      *
-     * @param cx
-     *            The x coordinate of the center.
+     * @param cx The x coordinate of the center.
      * @return The instance called.
      */
     public Circle cx(final Number cx) {
@@ -24,8 +23,7 @@ public final class Circle extends EmptySvgElement<Circle> implements ShapeElemen
     /**
      * Sets the y coordinate of the center.
      *
-     * @param cy
-     *            The y coordinate of the center.
+     * @param cy The y coordinate of the center.
      * @return The instance called.
      */
     public Circle cy(final Number cy) {
@@ -36,8 +34,7 @@ public final class Circle extends EmptySvgElement<Circle> implements ShapeElemen
     /**
      * Sets the fill color using a hexadecimal integer.
      *
-     * @param fill
-     *            The fill color as a hexadecimal integer.
+     * @param fill The fill color as a hexadecimal integer.
      * @return The instance called.
      */
     public Circle fill(final Integer fill) {
@@ -48,8 +45,7 @@ public final class Circle extends EmptySvgElement<Circle> implements ShapeElemen
     /**
      * Sets the fill color using a color keyword.
      *
-     * @param fill
-     *            The fill color using a color keyword.
+     * @param fill The fill color using a color keyword.
      * @return The instance called.
      */
     public Circle fill(final ColorKeyword fill) {
@@ -60,8 +56,7 @@ public final class Circle extends EmptySvgElement<Circle> implements ShapeElemen
     /**
      * Sets the fill color to none.
      *
-     * @param none
-     *            The value none.
+     * @param none The value none.
      * @return The instance called.
      */
     public Circle fill(final NoneValue none) {
@@ -72,8 +67,7 @@ public final class Circle extends EmptySvgElement<Circle> implements ShapeElemen
     /**
      * Sets the fill color using a paint server element.
      *
-     * @param paintServerElement
-     *            The paint server element used to fill the circle.
+     * @param paintServerElement The paint server element used to fill the circle.
      * @return The instance called.
      */
     public Circle fill(final PaintServerElement paintServerElement) {
@@ -84,8 +78,7 @@ public final class Circle extends EmptySvgElement<Circle> implements ShapeElemen
     /**
      * Sets the fill opacity.
      *
-     * @param fillOpacity
-     *            The fill opacity.
+     * @param fillOpacity The fill opacity.
      * @return The instance called.
      */
     public Circle fillOpacity(final double fillOpacity) {
@@ -99,10 +92,53 @@ public final class Circle extends EmptySvgElement<Circle> implements ShapeElemen
     }
 
     /**
+     * Sets the end marker.
+     *
+     * @param marker The end marker for the circle.
+     * @return The instance called.
+     */
+    public Circle markerEnd(final Marker marker) {
+        addReferringAttribute("marker-end", marker);
+        return this;
+    }
+
+    /**
+     * Sets the middle marker.
+     *
+     * @param marker The middle marker for the circle.
+     * @return The instance called.
+     */
+    public Circle markerMid(final Marker marker) {
+        addReferringAttribute("marker-mid", marker);
+        return this;
+    }
+
+    /**
+     * Sets the start marker.
+     *
+     * @param marker The start marker for the circle.
+     * @return The instance called.
+     */
+    public Circle markerStart(final Marker marker) {
+        addReferringAttribute("marker-start", marker);
+        return this;
+    }
+
+    /**
+     * Sets the mask.
+     *
+     * @param mask The mask for the circle.
+     * @return The instance called.
+     */
+    public Circle mask(final Mask mask) {
+        addReferringAttribute("mask", mask);
+        return this;
+    }
+
+    /**
      * Sets the opacity.
      *
-     * @param opacity
-     *            The opacity.
+     * @param opacity The opacity.
      * @return The instance called.
      */
     public Circle opacity(final double opacity) {
@@ -113,8 +149,7 @@ public final class Circle extends EmptySvgElement<Circle> implements ShapeElemen
     /**
      * Sets the radius.
      *
-     * @param r
-     *            The radius.
+     * @param r The radius.
      * @return The instance called.
      */
     public Circle r(final Number r) {
@@ -125,8 +160,7 @@ public final class Circle extends EmptySvgElement<Circle> implements ShapeElemen
     /**
      * Sets the stroke color using a hexadecimal integer.
      *
-     * @param stroke
-     *            The stroke color as a hexadecimal integer.
+     * @param stroke The stroke color as a hexadecimal integer.
      * @return The instance called.
      */
     public Circle stroke(final Integer stroke) {
@@ -137,8 +171,7 @@ public final class Circle extends EmptySvgElement<Circle> implements ShapeElemen
     /**
      * Sets the stroke color using a color keyword.
      *
-     * @param stroke
-     *            The stroke color using a color keyword.
+     * @param stroke The stroke color using a color keyword.
      * @return The instance called.
      */
     public Circle stroke(final ColorKeyword stroke) {
@@ -149,8 +182,7 @@ public final class Circle extends EmptySvgElement<Circle> implements ShapeElemen
     /**
      * Sets the stroke width.
      *
-     * @param strokeWidth
-     *            The stroke width.
+     * @param strokeWidth The stroke width.
      * @return The instance called.
      */
     public Circle strokeWidth(final double strokeWidth) {

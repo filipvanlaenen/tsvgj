@@ -107,6 +107,8 @@ Not all SVG elements and concepts have been implemented yet. Below is a list wit
   * [script](https://www.w3.org/TR/SVG/interact.html#ScriptElement)
 * Linking
   * [a](https://www.w3.org/TR/SVG/linking.html#AElement)
+* CSS masking
+  * [mask](https://drafts.fxtf.org/css-masking-1/#MaskElement)
 
 ## Projects Using TSVGJ
 

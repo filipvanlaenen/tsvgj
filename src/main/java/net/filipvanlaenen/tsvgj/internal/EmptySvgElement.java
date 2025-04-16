@@ -2,6 +2,8 @@ package net.filipvanlaenen.tsvgj.internal;
 
 import net.filipvanlaenen.bltxmlepj.EmptyElement;
 import net.filipvanlaenen.tsvgj.ColorKeyword;
+import net.filipvanlaenen.tsvgj.Marker;
+import net.filipvanlaenen.tsvgj.Mask;
 import net.filipvanlaenen.tsvgj.PaintServerElement;
 import net.filipvanlaenen.tsvgj.SvgElement;
 
@@ -44,6 +46,26 @@ public abstract class EmptySvgElement<E extends EmptySvgElement<E>> extends Empt
      */
     protected void addPointsAttribute(final String name, final Number... coordinates) {
         addAttribute(name, new PointsAttribute(coordinates));
+    }
+
+    /**
+     * Adds a reference to a marker element to the set of attributes.
+     *
+     * @param name   The name of the attribute.
+     * @param marker The marker element to refer to.
+     */
+    protected void addReferringAttribute(final String name, final Marker marker) {
+        addAttribute(name, new ReferringAttribute(marker));
+    }
+
+    /**
+     * Adds a reference to a mask element to the set of attributes.
+     *
+     * @param name The name of the attribute.
+     * @param mask The mask element to refer to.
+     */
+    protected void addReferringAttribute(final String name, final Mask mask) {
+        addAttribute(name, new ReferringAttribute(mask));
     }
 
     /**

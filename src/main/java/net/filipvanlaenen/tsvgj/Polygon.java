@@ -49,6 +49,50 @@ public final class Polygon extends EmptySvgElement<Polygon> implements ShapeElem
     }
 
     /**
+     * Sets the end marker.
+     *
+     * @param marker The end marker for the polygon.
+     * @return The instance called.
+     */
+    public Polygon markerEnd(final Marker marker) {
+        addReferringAttribute("marker-end", marker);
+        return this;
+    }
+
+    /**
+     * Sets the middle marker.
+     *
+     * @param marker The middle marker for the polygon.
+     * @return The instance called.
+     */
+    public Polygon markerMid(final Marker marker) {
+        addReferringAttribute("marker-mid", marker);
+        return this;
+    }
+
+    /**
+     * Sets the start marker.
+     *
+     * @param marker The start marker for the polygon.
+     * @return The instance called.
+     */
+    public Polygon markerStart(final Marker marker) {
+        addReferringAttribute("marker-start", marker);
+        return this;
+    }
+
+    /**
+     * Sets the mask.
+     *
+     * @param mask The mask for the polygon.
+     * @return The instance called.
+     */
+    public Polygon mask(final Mask mask) {
+        addReferringAttribute("mask", mask);
+        return this;
+    }
+
+    /**
      * Sets the coordinates of the points.
      *
      * @param coordinates The coordinates of the points.

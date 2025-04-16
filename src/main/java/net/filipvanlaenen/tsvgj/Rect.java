@@ -59,6 +59,50 @@ public final class Rect extends EmptySvgElement<Rect> implements ShapeElement {
     }
 
     /**
+     * Sets the end marker.
+     *
+     * @param marker The end marker for the rectangle.
+     * @return The instance called.
+     */
+    public Rect markerEnd(final Marker marker) {
+        addReferringAttribute("marker-end", marker);
+        return this;
+    }
+
+    /**
+     * Sets the middle marker.
+     *
+     * @param marker The middle marker for the rectangle.
+     * @return The instance called.
+     */
+    public Rect markerMid(final Marker marker) {
+        addReferringAttribute("marker-mid", marker);
+        return this;
+    }
+
+    /**
+     * Sets the start marker.
+     *
+     * @param marker The start marker for the rectangle.
+     * @return The instance called.
+     */
+    public Rect markerStart(final Marker marker) {
+        addReferringAttribute("marker-start", marker);
+        return this;
+    }
+
+    /**
+     * Sets the mask.
+     *
+     * @param mask The mask for the rectangle.
+     * @return The instance called.
+     */
+    public Rect mask(final Mask mask) {
+        addReferringAttribute("mask", mask);
+        return this;
+    }
+
+    /**
      * Sets the stroke color to none.
      *
      * @param none The value none.

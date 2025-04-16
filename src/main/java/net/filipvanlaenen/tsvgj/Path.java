@@ -104,6 +104,50 @@ public final class Path extends EmptySvgElement<Path> implements GraphicsElement
     }
 
     /**
+     * Sets the end marker.
+     *
+     * @param marker The end marker for the path.
+     * @return The instance called.
+     */
+    public Path markerEnd(final Marker marker) {
+        addReferringAttribute("marker-end", marker);
+        return this;
+    }
+
+    /**
+     * Sets the middle marker.
+     *
+     * @param marker The middle marker for the path.
+     * @return The instance called.
+     */
+    public Path markerMid(final Marker marker) {
+        addReferringAttribute("marker-mid", marker);
+        return this;
+    }
+
+    /**
+     * Sets the start marker.
+     *
+     * @param marker The start marker for the path.
+     * @return The instance called.
+     */
+    public Path markerStart(final Marker marker) {
+        addReferringAttribute("marker-start", marker);
+        return this;
+    }
+
+    /**
+     * Sets the mask.
+     *
+     * @param mask The mask for the path.
+     * @return The instance called.
+     */
+    public Path mask(final Mask mask) {
+        addReferringAttribute("mask", mask);
+        return this;
+    }
+
+    /**
      * Adds an absolute move-to command to the path definition.
      *
      * @param x The x coordinate to move to.

@@ -92,6 +92,50 @@ public final class Ellipse extends EmptySvgElement<Ellipse> implements ShapeElem
     }
 
     /**
+     * Sets the end marker.
+     *
+     * @param marker The end marker for the ellipse.
+     * @return The instance called.
+     */
+    public Ellipse markerEnd(final Marker marker) {
+        addReferringAttribute("marker-end", marker);
+        return this;
+    }
+
+    /**
+     * Sets the middle marker.
+     *
+     * @param marker The middle marker for the ellipse.
+     * @return The instance called.
+     */
+    public Ellipse markerMid(final Marker marker) {
+        addReferringAttribute("marker-mid", marker);
+        return this;
+    }
+
+    /**
+     * Sets the start marker.
+     *
+     * @param marker The start marker for the ellipse.
+     * @return The instance called.
+     */
+    public Ellipse markerStart(final Marker marker) {
+        addReferringAttribute("marker-start", marker);
+        return this;
+    }
+
+    /**
+     * Sets the mask.
+     *
+     * @param mask The mask for the ellipse.
+     * @return The instance called.
+     */
+    public Ellipse mask(final Mask mask) {
+        addReferringAttribute("mask", mask);
+        return this;
+    }
+
+    /**
      * Sets the opacity.
      *
      * @param opacity The opacity.
