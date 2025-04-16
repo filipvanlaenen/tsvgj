@@ -67,6 +67,58 @@ public class RectTest {
     }
 
     /**
+     * Test verifying that a rectangle with an end marker is exported correctly.
+     */
+    @Test
+    void rectangleWithEndMarkerShouldBeConvertedCorrectlyToString() {
+        Marker marker = new Marker();
+        marker.setId(1);
+        Rect rect = new Rect().x(0).y(1).width(2).height(THREE).markerEnd(marker);
+        String actual = rect.asString();
+        String expected = "<rect height=\"3\" marker-end=\"url(#marker-1)\" width=\"2\" x=\"0\" y=\"1\"/>";
+        assertEquals(expected, actual);
+    }
+
+    /**
+     * Test verifying that a rectangle with an middle marker is exported correctly.
+     */
+    @Test
+    void rectangleWithMiddleMarkerShouldBeConvertedCorrectlyToString() {
+        Marker marker = new Marker();
+        marker.setId(1);
+        Rect rect = new Rect().x(0).y(1).width(2).height(THREE).markerMid(marker);
+        String actual = rect.asString();
+        String expected = "<rect height=\"3\" marker-mid=\"url(#marker-1)\" width=\"2\" x=\"0\" y=\"1\"/>";
+        assertEquals(expected, actual);
+    }
+
+    /**
+     * Test verifying that a rectangle with an start marker is exported correctly.
+     */
+    @Test
+    void rectangleWithStartMarkerShouldBeConvertedCorrectlyToString() {
+        Marker marker = new Marker();
+        marker.setId(1);
+        Rect rect = new Rect().x(0).y(1).width(2).height(THREE).markerStart(marker);
+        String actual = rect.asString();
+        String expected = "<rect height=\"3\" marker-start=\"url(#marker-1)\" width=\"2\" x=\"0\" y=\"1\"/>";
+        assertEquals(expected, actual);
+    }
+
+    /**
+     * Test verifying that a rectangle with a mask is exported correctly.
+     */
+    @Test
+    void rectangleWithMaskShouldBeConvertedCorrectlyToString() {
+        Mask mask = new Mask();
+        mask.setId(1);
+        Rect rect = new Rect().x(0).y(1).width(2).height(THREE).mask(mask);
+        String actual = rect.asString();
+        String expected = "<rect height=\"3\" mask=\"url(#mask-1)\" width=\"2\" x=\"0\" y=\"1\"/>";
+        assertEquals(expected, actual);
+    }
+
+    /**
      * Test verifying that a rectangle using a pattern as fill is exported correctly.
      */
     @Test
