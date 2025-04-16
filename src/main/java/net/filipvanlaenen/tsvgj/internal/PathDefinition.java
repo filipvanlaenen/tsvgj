@@ -7,7 +7,7 @@ import net.filipvanlaenen.kolektoj.ModifiableOrderedCollection;
 import net.filipvanlaenen.kolektoj.array.ModifiableOrderedArrayCollection;
 
 /**
- * A class representing the definition of a {@link Path}.
+ * A class representing the definition of a path.
  */
 public class PathDefinition implements Attribute {
     /**

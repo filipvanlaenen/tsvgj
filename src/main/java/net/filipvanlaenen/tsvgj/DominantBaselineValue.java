@@ -5,7 +5,7 @@ import net.filipvanlaenen.bltxmlepj.KebabCaseAttributeValueEnumeration;
 /**
  * An enumeration listing the values for the <code>dominant-baseline</code> attribute.
  *
- * @see <a href="https://www.w3.org/TR/css-inline-3/#dominant-baseline-property>CSS Text Module Level 3: 4.1. Dominant
+ * @see <a href="https://www.w3.org/TR/css-inline-3/#dominant-baseline-property">CSS Text Module Level 3: 4.1. Dominant
  *      Baselines: the dominant-baseline property</a>
  */
 public enum DominantBaselineValue implements KebabCaseAttributeValueEnumeration {
