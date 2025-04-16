@@ -5,6 +5,8 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import org.junit.jupiter.api.Test;
 
 import net.filipvanlaenen.tsvgj.ColorKeyword;
+import net.filipvanlaenen.tsvgj.Marker;
+import net.filipvanlaenen.tsvgj.Mask;
 import net.filipvanlaenen.tsvgj.PaintServerElement;
 import net.filipvanlaenen.tsvgj.Pattern;
 
@@ -89,14 +91,38 @@ public class EmptySvgElementTest {
     }
 
     /**
-     * Tests that an element with a referring attribute is exported correctly.
+     * Tests that a marker element with a referring attribute is exported correctly.
      */
     @Test
-    void elementWithReferringAttributeIsExportedCorrectly() {
+    void markerWithReferringAttributeIsExportedCorrectly() {
         MyEmptySvgElement element = new MyEmptySvgElement();
-        PaintServerElement referredElement = new Pattern();
-        referredElement.setId(1);
-        element.addReferringAttribute("foo", referredElement);
+        Marker marker = new Marker();
+        marker.setId(1);
+        element.addReferringAttribute("foo", marker);
+        assertEquals("<e foo=\"url(#marker-1)\"/>", element.asString());
+    }
+
+    /**
+     * Tests that a mask element with a referring attribute is exported correctly.
+     */
+    @Test
+    void maskWithReferringAttributeIsExportedCorrectly() {
+        MyEmptySvgElement element = new MyEmptySvgElement();
+        Mask mask = new Mask();
+        mask.setId(1);
+        element.addReferringAttribute("foo", mask);
+        assertEquals("<e foo=\"url(#mask-1)\"/>", element.asString());
+    }
+
+    /**
+     * Tests that a paint server element with a referring attribute is exported correctly.
+     */
+    @Test
+    void paintServerElementWithReferringAttributeIsExportedCorrectly() {
+        MyEmptySvgElement element = new MyEmptySvgElement();
+        PaintServerElement paintServerElement = new Pattern();
+        paintServerElement.setId(1);
+        element.addReferringAttribute("foo", paintServerElement);
         assertEquals("<e foo=\"url(#pattern-1)\"/>", element.asString());
     }
 
