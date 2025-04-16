@@ -13,6 +13,26 @@ public class SvgTest {
      */
     private static final int RED = 0xFF0000;
     /**
+     * The magic number three.
+     */
+    private static final int THREE = 3;
+    /**
+     * The magic number four.
+     */
+    private static final int FOUR = 4;
+    /**
+     * The magic number five.
+     */
+    private static final int FIVE = 5;
+    /**
+     * The magic number six.
+     */
+    private static final int SIX = 6;
+    /**
+     * The magic number seven.
+     */
+    private static final int SEVEN = 7;
+    /**
      * The magic number thousand.
      */
     private static final int THOUSAND = 1000;
@@ -136,6 +156,57 @@ public class SvgTest {
         sb.append("    <text fill=\"red\" font-family=\"Times New Roman\" font-size=\"2\" x=\"0\"");
         sb.append(" y=\"1\">Lorem ipsum</text>\n");
         sb.append("  </g>\n");
+        sb.append("</svg>");
+        String expected = sb.toString();
+        assertEquals(expected, actual);
+    }
+
+    /**
+     * Test verifying that a marker can be registered for reference.
+     */
+    @Test
+    void markerShouldBeRegisteredForReference() {
+        Svg svg = new Svg().width(TWO_THOUSAND).height(THOUSAND).viewBox(-1, -1, 2, 1);
+        Marker marker = new Marker().refX(0).refY(1).markerHeight(2).markerWidth(THREE).viewBox(FOUR, FIVE, SIX, SEVEN);
+        marker.addElement(new Circle().cx(0).cy(0).r(1).fill(ColorKeyword.RED));
+        svg.registerElementForReference(marker);
+        Rect rect = new Rect().x(0).y(0).width(1).height(1).markerMid(marker);
+        svg.addElement(rect);
+        String actual = svg.asString();
+        StringBuilder sb = new StringBuilder();
+        sb.append("<svg height=\"1000\" viewBox=\"-1 -1 2 1\" width=\"2000\" xmlns=\"http://www.w3.org/2000/svg\">\n");
+        sb.append("  <defs>\n");
+        sb.append("    <marker id=\"marker-1\" markerHeight=\"2\" markerWidth=\"3\" refX=\"0\" refY=\"1\""
+                + " viewBox=\"4 5 6 7\">\n");
+        sb.append("      <circle cx=\"0\" cy=\"0\" fill=\"red\" r=\"1\"/>\n");
+        sb.append("    </marker>\n");
+        sb.append("  </defs>\n");
+        sb.append("  <rect height=\"1\" marker-mid=\"url(#marker-1)\" width=\"1\" x=\"0\" y=\"0\"/>\n");
+        sb.append("</svg>");
+        String expected = sb.toString();
+        assertEquals(expected, actual);
+    }
+
+    /**
+     * Test verifying that a mask can be registered for reference.
+     */
+    @Test
+    void maskShouldBeRegisteredForReference() {
+        Svg svg = new Svg().width(TWO_THOUSAND).height(THOUSAND).viewBox(-1, -1, 2, 1);
+        Mask mask = new Mask().x(0).y(1).height(2).width(THREE);
+        mask.addElement(new Circle().cx(0).cy(0).r(1).fill(ColorKeyword.RED));
+        svg.registerElementForReference(mask);
+        Rect rect = new Rect().x(0).y(0).width(1).height(1).mask(mask);
+        svg.addElement(rect);
+        String actual = svg.asString();
+        StringBuilder sb = new StringBuilder();
+        sb.append("<svg height=\"1000\" viewBox=\"-1 -1 2 1\" width=\"2000\" xmlns=\"http://www.w3.org/2000/svg\">\n");
+        sb.append("  <defs>\n");
+        sb.append("    <mask height=\"2\" id=\"mask-1\" width=\"3\" x=\"0\" y=\"1\">\n");
+        sb.append("      <circle cx=\"0\" cy=\"0\" fill=\"red\" r=\"1\"/>\n");
+        sb.append("    </mask>\n");
+        sb.append("  </defs>\n");
+        sb.append("  <rect height=\"1\" mask=\"url(#mask-1)\" width=\"1\" x=\"0\" y=\"0\"/>\n");
         sb.append("</svg>");
         String expected = sb.toString();
         assertEquals(expected, actual);
