@@ -16,6 +16,26 @@ public class CircleTest {
      * The magic number 0.5.
      */
     private static final double HALF = 0.5D;
+    /**
+     * The magic number three.
+     */
+    private static final int THREE = 3;
+    /**
+     * The magic number four.
+     */
+    private static final int FOUR = 4;
+    /**
+     * The magic number five.
+     */
+    private static final int FIVE = 5;
+    /**
+     * The magic number six.
+     */
+    private static final int SIX = 6;
+    /**
+     * The magic number seven.
+     */
+    private static final int SEVEN = 7;
 
     /**
      * Test verifying that a circle with a color specified as a hexadecimal integer is exported correctly to a string.
@@ -66,9 +86,11 @@ public class CircleTest {
      */
     @Test
     void redOutlinedCircleIsConvertedCorrectlyToString() {
-        Circle circle = new Circle().cx(0).cy(1).r(2).fill(NoneValue.NONE).stroke(ColorKeyword.BLUE).strokeWidth(HALF);
+        Circle circle = new Circle().cx(0).cy(1).r(2).fill(NoneValue.NONE).stroke(ColorKeyword.BLUE)
+                .strokeDashArray(THREE, FOUR, FIVE).strokeDashOffset(SIX).strokeOpacity(SEVEN).strokeWidth(HALF);
         String actual = circle.asString();
-        String expected = "<circle cx=\"0\" cy=\"1\" fill=\"none\" r=\"2\" stroke=\"blue\" stroke-width=\"0.5\"/>";
+        String expected = "<circle cx=\"0\" cy=\"1\" fill=\"none\" r=\"2\" stroke=\"blue\" stroke-dasharray=\"3 4 5\""
+                + " stroke-dashoffset=\"6\" stroke-opacity=\"7\" stroke-width=\"0.5\"/>";
         assertEquals(expected, actual);
     }
 

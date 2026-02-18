@@ -81,7 +81,7 @@ public final class Ellipse extends EmptySvgElement<Ellipse> implements ShapeElem
      * @param fillOpacity The fill opacity.
      * @return The instance called.
      */
-    public Ellipse fillOpacity(final double fillOpacity) {
+    public Ellipse fillOpacity(final Number fillOpacity) {
         addNumericAttribute("fill-opacity", fillOpacity);
         return this;
     }
@@ -141,7 +141,7 @@ public final class Ellipse extends EmptySvgElement<Ellipse> implements ShapeElem
      * @param opacity The opacity.
      * @return The instance called.
      */
-    public Ellipse opacity(final double opacity) {
+    public Ellipse opacity(final Number opacity) {
         addNumericAttribute("opacity", opacity);
         return this;
     }
@@ -191,12 +191,45 @@ public final class Ellipse extends EmptySvgElement<Ellipse> implements ShapeElem
     }
 
     /**
+     * Sets the stroke dash array.
+     *
+     * @param strokeDashArray The stroke dash array.
+     * @return The instance called.
+     */
+    public Ellipse strokeDashArray(final Number... strokeDashArray) {
+        addNumericArrayAttribute("stroke-dasharray", strokeDashArray);
+        return this;
+    }
+
+    /**
+     * Sets the stroke dash offset.
+     *
+     * @param strokeDashOffset The stroke dash offset.
+     * @return The instance called.
+     */
+    public Ellipse strokeDashOffset(final Number strokeDashOffset) {
+        addNumericAttribute("stroke-dashoffset", strokeDashOffset);
+        return this;
+    }
+
+    /**
+     * Sets the stroke opacity.
+     *
+     * @param strokeOpacity The stroke opacity.
+     * @return The instance called.
+     */
+    public Ellipse strokeOpacity(final Number strokeOpacity) {
+        addNumericAttribute("stroke-opacity", strokeOpacity);
+        return this;
+    }
+
+    /**
      * Sets the stroke width.
      *
      * @param strokeWidth The stroke width.
      * @return The instance called.
      */
-    public Ellipse strokeWidth(final double strokeWidth) {
+    public Ellipse strokeWidth(final Number strokeWidth) {
         addNumericAttribute("stroke-width", strokeWidth);
         return this;
     }

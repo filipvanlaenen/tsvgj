@@ -20,6 +20,26 @@ public class LineTest {
      * The magic number four.
      */
     private static final int FOUR = 4;
+    /**
+     * The magic number five.
+     */
+    private static final int FIVE = 5;
+    /**
+     * The magic number six.
+     */
+    private static final int SIX = 6;
+    /**
+     * The magic number seven.
+     */
+    private static final int SEVEN = 7;
+    /**
+     * The magic number eight.
+     */
+    private static final int EIGHT = 8;
+    /**
+     * The magic number nine.
+     */
+    private static final int NINE = 9;
 
     /**
      * Test verifying that a line with a hexadecimal color is exported correctly to a string.
@@ -37,9 +57,11 @@ public class LineTest {
      */
     @Test
     void lineWithKeywordColorStrokeIsConvertedCorrectlyToString() {
-        Line line = new Line().x1(0).y1(1).x2(2).y2(THREE).stroke(ColorKeyword.RED).strokeWidth(FOUR);
+        Line line = new Line().x1(0).y1(1).x2(2).y2(THREE).stroke(ColorKeyword.RED).strokeDashArray(FOUR, FIVE, SIX)
+                .strokeDashOffset(SEVEN).strokeOpacity(EIGHT).strokeWidth(NINE);
         String actual = line.asString();
-        String expected = "<line stroke=\"red\" stroke-width=\"4\" x1=\"0\" x2=\"2\" y1=\"1\" y2=\"3\"/>";
+        String expected = "<line stroke=\"red\" stroke-dasharray=\"4 5 6\" stroke-dashoffset=\"7\""
+                + " stroke-opacity=\"8\" stroke-width=\"9\" x1=\"0\" x2=\"2\" y1=\"1\" y2=\"3\"/>";
         assertEquals(expected, actual);
     }
 

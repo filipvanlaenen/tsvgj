@@ -48,7 +48,7 @@ You can use the TSVGJ library in another Java project by adding the following de
   <dependency>
     <groupId>net.filipvanlaenen</groupId>
     <artifactId>tsvgj</artifactId>
-    <version>1.0.0</version>
+    <version>1.1.0</version>
   </dependency>
 ```
 

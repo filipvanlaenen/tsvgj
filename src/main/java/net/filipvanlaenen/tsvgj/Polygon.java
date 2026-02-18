@@ -126,12 +126,45 @@ public final class Polygon extends EmptySvgElement<Polygon> implements ShapeElem
     }
 
     /**
+     * Sets the stroke dash array.
+     *
+     * @param strokeDashArray The stroke dash array.
+     * @return The instance called.
+     */
+    public Polygon strokeDashArray(final Number... strokeDashArray) {
+        addNumericArrayAttribute("stroke-dasharray", strokeDashArray);
+        return this;
+    }
+
+    /**
+     * Sets the stroke dash offset.
+     *
+     * @param strokeDashOffset The stroke dash offset.
+     * @return The instance called.
+     */
+    public Polygon strokeDashOffset(final Number strokeDashOffset) {
+        addNumericAttribute("stroke-dashoffset", strokeDashOffset);
+        return this;
+    }
+
+    /**
+     * Sets the stroke opacity.
+     *
+     * @param strokeOpacity The stroke opacity.
+     * @return The instance called.
+     */
+    public Polygon strokeOpacity(final Number strokeOpacity) {
+        addNumericAttribute("stroke-opacity", strokeOpacity);
+        return this;
+    }
+
+    /**
      * Sets the stroke width.
      *
      * @param strokeWidth The stroke width.
      * @return The instance called.
      */
-    public Polygon strokeWidth(final double strokeWidth) {
+    public Polygon strokeWidth(final Number strokeWidth) {
         addNumericAttribute("stroke-width", strokeWidth);
         return this;
     }

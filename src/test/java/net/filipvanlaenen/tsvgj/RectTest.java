@@ -17,6 +17,26 @@ public class RectTest {
      */
     private static final int THREE = 3;
     /**
+     * The magic number four.
+     */
+    private static final int FOUR = 4;
+    /**
+     * The magic number five.
+     */
+    private static final int FIVE = 5;
+    /**
+     * The magic number six.
+     */
+    private static final int SIX = 6;
+    /**
+     * The magic number seven.
+     */
+    private static final int SEVEN = 7;
+    /**
+     * The magic number eight.
+     */
+    private static final int EIGHT = 8;
+    /**
      * The magic number 0.5.
      */
     private static final double HALF = 0.5D;
@@ -60,9 +80,11 @@ public class RectTest {
      */
     @Test
     void rectangleWithHexadecimalStrokeColorIsConvertedCorrectlyToString() {
-        Rect rect = new Rect().x(0).y(1).width(2).height(THREE).stroke(RED).strokeWidth(HALF);
+        Rect rect = new Rect().x(0).y(1).width(2).height(THREE).stroke(RED).strokeDashArray(FOUR, FIVE, SIX)
+                .strokeDashOffset(SEVEN).strokeOpacity(EIGHT).strokeWidth(HALF);
         String actual = rect.asString();
-        String expected = "<rect height=\"3\" stroke=\"#FF0000\" stroke-width=\"0.5\" width=\"2\" x=\"0\" y=\"1\"/>";
+        String expected = "<rect height=\"3\" stroke=\"#FF0000\" stroke-dasharray=\"4 5 6\" stroke-dashoffset=\"7\""
+                + " stroke-opacity=\"8\" stroke-width=\"0.5\" width=\"2\" x=\"0\" y=\"1\"/>";
         assertEquals(expected, actual);
     }
 

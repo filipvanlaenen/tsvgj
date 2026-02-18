@@ -28,6 +28,18 @@ public class EllipseTest {
      * The magic number five.
      */
     private static final int FIVE = 5;
+    /**
+     * The magic number six.
+     */
+    private static final int SIX = 6;
+    /**
+     * The magic number seven.
+     */
+    private static final int SEVEN = 7;
+    /**
+     * The magic number eight.
+     */
+    private static final int EIGHT = 8;
 
     /**
      * Test verifying that an ellipse with a color specified as a hexadecimal integer is exported correctly to a string.
@@ -79,10 +91,10 @@ public class EllipseTest {
     @Test
     void redOutlinedEllipseIsConvertedCorrectlyToString() {
         Ellipse ellipse = new Ellipse().cx(0).cy(1).rx(2).ry(THREE).fill(NoneValue.NONE).stroke(ColorKeyword.BLUE)
-                .strokeWidth(HALF);
+                .strokeDashArray(FOUR, FIVE, SIX).strokeDashOffset(SEVEN).strokeOpacity(EIGHT).strokeWidth(HALF);
         String actual = ellipse.asString();
-        String expected =
-                "<ellipse cx=\"0\" cy=\"1\" fill=\"none\" rx=\"2\" ry=\"3\" stroke=\"blue\" stroke-width=\"0.5\"/>";
+        String expected = "<ellipse cx=\"0\" cy=\"1\" fill=\"none\" rx=\"2\" ry=\"3\" stroke=\"blue\""
+                + " stroke-dasharray=\"4 5 6\" stroke-dashoffset=\"7\" stroke-opacity=\"8\" stroke-width=\"0.5\"/>";
         assertEquals(expected, actual);
     }
 

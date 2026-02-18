@@ -81,7 +81,7 @@ public final class Circle extends EmptySvgElement<Circle> implements ShapeElemen
      * @param fillOpacity The fill opacity.
      * @return The instance called.
      */
-    public Circle fillOpacity(final double fillOpacity) {
+    public Circle fillOpacity(final Number fillOpacity) {
         addNumericAttribute("fill-opacity", fillOpacity);
         return this;
     }
@@ -141,7 +141,7 @@ public final class Circle extends EmptySvgElement<Circle> implements ShapeElemen
      * @param opacity The opacity.
      * @return The instance called.
      */
-    public Circle opacity(final double opacity) {
+    public Circle opacity(final Number opacity) {
         addNumericAttribute("opacity", opacity);
         return this;
     }
@@ -180,12 +180,45 @@ public final class Circle extends EmptySvgElement<Circle> implements ShapeElemen
     }
 
     /**
+     * Sets the stroke dash array.
+     *
+     * @param strokeDashArray The stroke dash array.
+     * @return The instance called.
+     */
+    public Circle strokeDashArray(final Number... strokeDashArray) {
+        addNumericArrayAttribute("stroke-dasharray", strokeDashArray);
+        return this;
+    }
+
+    /**
+     * Sets the stroke dash offset.
+     *
+     * @param strokeDashOffset The stroke dash offset.
+     * @return The instance called.
+     */
+    public Circle strokeDashOffset(final Number strokeDashOffset) {
+        addNumericAttribute("stroke-dashoffset", strokeDashOffset);
+        return this;
+    }
+
+    /**
+     * Sets the stroke opacity.
+     *
+     * @param strokeOpacity The stroke opacity.
+     * @return The instance called.
+     */
+    public Circle strokeOpacity(final Number strokeOpacity) {
+        addNumericAttribute("stroke-opacity", strokeOpacity);
+        return this;
+    }
+
+    /**
      * Sets the stroke width.
      *
      * @param strokeWidth The stroke width.
      * @return The instance called.
      */
-    public Circle strokeWidth(final double strokeWidth) {
+    public Circle strokeWidth(final Number strokeWidth) {
         addNumericAttribute("stroke-width", strokeWidth);
         return this;
     }

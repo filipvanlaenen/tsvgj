@@ -40,15 +40,29 @@ public class PathTest {
      * The magic number seven.
      */
     private static final int SEVEN = 7;
+    /**
+     * The magic number eight.
+     */
+    private static final int EIGHT = 8;
+    /**
+     * The magic number nine.
+     */
+    private static final int NINE = 9;
+    /**
+     * The magic number ten.
+     */
+    private static final int TEN = 10;
 
     /**
      * Test verifying that a path describing a red line is exported correctly to a string.
      */
     @Test
     void redLineIsConvertedCorrectlyToString() {
-        Path path = new Path().moveTo(0, 1).lineTo(THREE, FOUR).stroke(ColorKeyword.RED).strokeWidth(FOUR);
+        Path path = new Path().moveTo(0, 1).lineTo(THREE, FOUR).stroke(ColorKeyword.RED)
+                .strokeDashArray(FIVE, SIX, SEVEN).strokeDashOffset(EIGHT).strokeOpacity(NINE).strokeWidth(TEN);
         String actual = path.asString();
-        String expected = "<path d=\"M 0 1 L 3 4\" stroke=\"red\" stroke-width=\"4\"/>";
+        String expected = "<path d=\"M 0 1 L 3 4\" stroke=\"red\" stroke-dasharray=\"5 6 7\" stroke-dashoffset=\"8\""
+                + " stroke-opacity=\"9\" stroke-width=\"10\"/>";
         assertEquals(expected, actual);
     }
 

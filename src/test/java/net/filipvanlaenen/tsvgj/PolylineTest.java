@@ -24,6 +24,30 @@ public class PolylineTest {
      * The magic number five.
      */
     private static final int FIVE = 5;
+    /**
+     * The magic number six.
+     */
+    private static final int SIX = 6;
+    /**
+     * The magic number seven.
+     */
+    private static final int SEVEN = 7;
+    /**
+     * The magic number eight.
+     */
+    private static final int EIGHT = 8;
+    /**
+     * The magic number nine.
+     */
+    private static final int NINE = 9;
+    /**
+     * The magic number ten.
+     */
+    private static final int TEN = 10;
+    /**
+     * The magic number eleven.
+     */
+    private static final int ELEVEN = 11;
 
     /**
      * Test verifying that a polyline with a hexadecimal color is exported correctly to a string.
@@ -41,10 +65,11 @@ public class PolylineTest {
      */
     @Test
     void polylineWithKeywordColorStrokeIsConvertedCorrectlyToString() {
-        Polyline polyline =
-                new Polyline().points(0, 1, 2, THREE, FOUR, FIVE).stroke(ColorKeyword.RED).strokeWidth(FOUR);
+        Polyline polyline = new Polyline().points(0, 1, 2, THREE, FOUR, FIVE).stroke(ColorKeyword.RED)
+                .strokeDashArray(SIX, SEVEN, EIGHT).strokeDashOffset(NINE).strokeOpacity(TEN).strokeWidth(ELEVEN);
         String actual = polyline.asString();
-        String expected = "<polyline points=\"0,1 2,3 4,5\" stroke=\"red\" stroke-width=\"4\"/>";
+        String expected = "<polyline points=\"0,1 2,3 4,5\" stroke=\"red\" stroke-dasharray=\"6 7 8\""
+                + " stroke-dashoffset=\"9\" stroke-opacity=\"10\" stroke-width=\"11\"/>";
         assertEquals(expected, actual);
     }
 

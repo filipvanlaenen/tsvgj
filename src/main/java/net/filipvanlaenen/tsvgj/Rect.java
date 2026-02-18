@@ -125,12 +125,45 @@ public final class Rect extends EmptySvgElement<Rect> implements ShapeElement {
     }
 
     /**
+     * Sets the stroke dash array.
+     *
+     * @param strokeDashArray The stroke dash array.
+     * @return The instance called.
+     */
+    public Rect strokeDashArray(final Number... strokeDashArray) {
+        addNumericArrayAttribute("stroke-dasharray", strokeDashArray);
+        return this;
+    }
+
+    /**
+     * Sets the stroke dash offset.
+     *
+     * @param strokeDashOffset The stroke dash offset.
+     * @return The instance called.
+     */
+    public Rect strokeDashOffset(final Number strokeDashOffset) {
+        addNumericAttribute("stroke-dashoffset", strokeDashOffset);
+        return this;
+    }
+
+    /**
+     * Sets the stroke opacity.
+     *
+     * @param strokeOpacity The stroke opacity.
+     * @return The instance called.
+     */
+    public Rect strokeOpacity(final Number strokeOpacity) {
+        addNumericAttribute("stroke-opacity", strokeOpacity);
+        return this;
+    }
+
+    /**
      * Sets the stroke width.
      *
      * @param strokeWidth The stroke width.
      * @return The instance called.
      */
-    public Rect strokeWidth(final double strokeWidth) {
+    public Rect strokeWidth(final Number strokeWidth) {
         addNumericAttribute("stroke-width", strokeWidth);
         return this;
     }

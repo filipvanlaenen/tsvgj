@@ -81,6 +81,16 @@ public class EmptySvgElementTest {
     }
 
     /**
+     * Tests that an element with a numeric array attribute is exported correctly.
+     */
+    @Test
+    void elementWithNumericArrayAttributeIsExportedCorrectly() {
+        MyEmptySvgElement element = new MyEmptySvgElement();
+        element.addNumericArrayAttribute("foo", 1, 2, THREE);
+        assertEquals("<e foo=\"1 2 3\"/>", element.asString());
+    }
+
+    /**
      * Tests that an element with a points attribute is exported correctly.
      */
     @Test

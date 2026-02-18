@@ -165,7 +165,7 @@ public final class Path extends EmptySvgElement<Path> implements GraphicsElement
      * @param opacity The opacity.
      * @return The instance called.
      */
-    public Path opacity(final double opacity) {
+    public Path opacity(final Number opacity) {
         addNumericAttribute("opacity", opacity);
         return this;
     }
@@ -189,6 +189,39 @@ public final class Path extends EmptySvgElement<Path> implements GraphicsElement
      */
     public Path stroke(final Integer stroke) {
         addColorAttribute("stroke", stroke);
+        return this;
+    }
+
+    /**
+     * Sets the stroke dash array.
+     *
+     * @param strokeDashArray The stroke dash array.
+     * @return The instance called.
+     */
+    public Path strokeDashArray(final Number... strokeDashArray) {
+        addNumericArrayAttribute("stroke-dasharray", strokeDashArray);
+        return this;
+    }
+
+    /**
+     * Sets the stroke dash offset.
+     *
+     * @param strokeDashOffset The stroke dash offset.
+     * @return The instance called.
+     */
+    public Path strokeDashOffset(final Number strokeDashOffset) {
+        addNumericAttribute("stroke-dashoffset", strokeDashOffset);
+        return this;
+    }
+
+    /**
+     * Sets the stroke opacity.
+     *
+     * @param strokeOpacity The stroke opacity.
+     * @return The instance called.
+     */
+    public Path strokeOpacity(final Number strokeOpacity) {
+        addNumericAttribute("stroke-opacity", strokeOpacity);
         return this;
     }
 

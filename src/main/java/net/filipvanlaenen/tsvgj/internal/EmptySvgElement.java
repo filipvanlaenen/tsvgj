@@ -39,6 +39,16 @@ public abstract class EmptySvgElement<E extends EmptySvgElement<E>> extends Empt
     }
 
     /**
+     * Adds a numeric array attribute to the set of attributes.
+     *
+     * @param name    The name of the attribute.
+     * @param numbers The numeric array value of the attribute.
+     */
+    protected void addNumericArrayAttribute(final String name, final Number... numbers) {
+        addAttribute(name, new NumericArrayAttribute(numbers));
+    }
+
+    /**
      * Adds an attribute listing points to the set of attributes.
      *
      * @param name        The name of the attribute.

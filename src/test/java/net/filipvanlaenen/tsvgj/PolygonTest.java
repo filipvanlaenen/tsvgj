@@ -25,6 +25,26 @@ public class PolygonTest {
      */
     private static final int FIVE = 5;
     /**
+     * The magic number six.
+     */
+    private static final int SIX = 6;
+    /**
+     * The magic number seven.
+     */
+    private static final int SEVEN = 7;
+    /**
+     * The magic number eight.
+     */
+    private static final int EIGHT = 8;
+    /**
+     * The magic number nine.
+     */
+    private static final int NINE = 9;
+    /**
+     * The magic number ten.
+     */
+    private static final int TEN = 10;
+    /**
      * The magic number 0.5.
      */
     private static final double HALF = 0.5D;
@@ -67,9 +87,11 @@ public class PolygonTest {
      */
     @Test
     void polygonWithHexadecimalStrokeColorIsConvertedCorrectlyToString() {
-        Polygon polygon = new Polygon().points(0, 1, 2, THREE, FOUR, FIVE).stroke(RED).strokeWidth(HALF);
+        Polygon polygon = new Polygon().points(0, 1, 2, THREE, FOUR, FIVE).stroke(RED)
+                .strokeDashArray(SIX, SEVEN, EIGHT).strokeDashOffset(NINE).strokeOpacity(TEN).strokeWidth(HALF);
         String actual = polygon.asString();
-        String expected = "<polygon points=\"0,1 2,3 4,5\" stroke=\"#FF0000\" stroke-width=\"0.5\"/>";
+        String expected = "<polygon points=\"0,1 2,3 4,5\" stroke=\"#FF0000\" stroke-dasharray=\"6 7 8\""
+                + " stroke-dashoffset=\"9\" stroke-opacity=\"10\" stroke-width=\"0.5\"/>";
         assertEquals(expected, actual);
     }
 
